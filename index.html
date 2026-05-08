@@ -765,6 +765,95 @@
       font-family: 'Cormorant Garamond', serif; font-style: italic;
       line-height: 2; max-width: 520px;
     }
+
+    /* ── SCRIPTBRIDGE FEATURED PROJECT ── */
+    .work-item.featured {
+      border: 1px solid var(--violet-dim);
+      background: linear-gradient(135deg, rgba(157,127,232,0.04) 0%, rgba(157,127,232,0.01) 100%);
+      border-radius: 4px;
+    }
+    [data-theme="light"] .work-item.featured {
+      border-color: rgba(104,64,192,0.25);
+      background: rgba(104,64,192,0.03);
+    }
+    .project-header {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 0.8rem; margin-bottom: 0.6rem;
+    }
+    .project-live-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--violet); border: 1px solid var(--violet-dim);
+      padding: 0.32rem 0.8rem; border-radius: 2px; text-decoration: none;
+      transition: all 0.2s;
+    }
+    .project-live-link:hover { background: var(--violet); color: #fff; }
+    .project-live-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: #4caf50;
+      box-shadow: 0 0 6px rgba(76,175,80,0.7); flex-shrink: 0;
+    }
+    .project-stats {
+      display: flex; gap: 1.5rem; flex-wrap: wrap;
+      margin: 1.2rem 0; padding: 1rem 0;
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    }
+    .project-stat { display: flex; flex-direction: column; gap: 0.15rem; }
+    .project-stat-num {
+      font-size: 1.2rem; font-weight: 700; color: var(--violet);
+      letter-spacing: -0.02em; line-height: 1;
+    }
+    .project-stat-label {
+      font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .project-features {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0.8rem; margin-top: 1rem;
+    }
+    @media (max-width: 600px) { .project-features { grid-template-columns: 1fr; } }
+    .project-feature {
+      padding: 0.8rem; background: var(--surface2);
+      border-radius: 3px; border: 1px solid var(--border);
+    }
+    .project-feature-icon { font-size: 1rem; margin-bottom: 0.4rem; display: block; }
+    .project-feature-title {
+      font-size: 0.7rem; font-weight: 600; color: var(--text);
+      letter-spacing: 0.04em; margin-bottom: 0.25rem;
+    }
+    .project-feature-desc { font-size: 0.65rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── SECTION NAVIGATOR ── */
+    .section-nav {
+      background: var(--surface); border-top: 1px solid var(--border);
+      padding: 5rem 2.5rem; text-align: center;
+    }
+    .section-nav-inner { max-width: 480px; margin: 0 auto; }
+    .section-nav-eyebrow {
+      font-size: 0.6rem; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 1.2rem;
+    }
+    .section-nav-title {
+      font-size: clamp(1.4rem, 3.5vw, 2rem); font-weight: 700;
+      line-height: 1.25; color: var(--text); margin-bottom: 2.5rem;
+      letter-spacing: -0.01em;
+    }
+    .section-nav-title em { font-style: italic; color: var(--violet); }
+    .section-nav-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .snb {
+      display: inline-block; font-family: inherit; cursor: pointer;
+      font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.75rem 1.8rem; border-radius: 2px; text-decoration: none;
+      transition: all 0.22s;
+    }
+    .snb-primary {
+      background: var(--violet); color: #fff; border: 1px solid var(--violet);
+    }
+    .snb-primary:hover { background: var(--violet-dim); border-color: var(--violet-dim); }
+    .snb-secondary {
+      background: transparent; color: var(--muted);
+      border: 1px solid var(--border);
+    }
+    .snb-secondary:hover { color: var(--text); border-color: var(--muted); }
   </style>
 </head>
 <body>
@@ -1057,6 +1146,22 @@
   </div>
 </div>
 
+<!-- CREATIVE → SECTION NAV -->
+<div class="section-nav">
+  <div class="section-nav-inner">
+    <div class="section-nav-eyebrow en">You've seen the creator.</div>
+    <div class="section-nav-eyebrow zh">这是创作者的一面。</div>
+    <h3 class="section-nav-title en">Curious about the <em>professional side?</em></h3>
+    <h3 class="section-nav-title zh">想了解<em>专业经历</em>吗？</h3>
+    <div class="section-nav-btns">
+      <a href="#work" class="snb snb-primary en">See Work Experience →</a>
+      <a href="#work" class="snb snb-primary zh">查看工作经历 →</a>
+      <button onclick="showGateway()" class="snb snb-secondary en">← Start Over</button>
+      <button onclick="showGateway()" class="snb snb-secondary zh">← 重新选择</button>
+    </div>
+  </div>
+</div>
+
 <hr class="divider" />
 
 <!-- WORK -->
@@ -1092,26 +1197,81 @@
         </div>
       </div>
 
-      <!-- 2. ScriptBridge Founder -->
-      <div class="work-item">
+      <!-- 2. ScriptBridge — Featured Project -->
+      <div class="work-item featured">
         <div class="work-meta">
-          <div class="work-role en">Founder</div>
-          <div class="work-role zh">创始人</div>
-          <div class="work-org">ScriptBridge</div>
+          <div class="work-role en">Founder · Product · Builder</div>
+          <div class="work-role zh">创始人 · 产品 · 建造</div>
+          <div class="project-header">
+            <div class="work-org">ScriptBridge</div>
+            <a href="https://8844-code.github.io/scriptbridge/" target="_blank" class="project-live-link">
+              <span class="project-live-dot"></span>
+              <span class="en">Live →</span><span class="zh">已上线 →</span>
+            </a>
+          </div>
           <div class="work-period en">2026 — Present</div>
           <div class="work-period zh">2026 — 至今</div>
         </div>
+
         <div class="work-body en">
-          Building the <strong>first legitimate marketplace for Chinese screenplay rights</strong> — copyright registration on upload, escrow payments, standardized contracts. Designed and deployed the full platform with AI tools. Currently in beta, acquiring first users via Xiaohongshu.
+          The <strong>first legitimate marketplace for Chinese screenplay rights</strong> — connecting writers with global buyers through transparent pricing, legal contracts, and escrow payments. Built the entire platform solo with AI tools, from product concept to live deployment.
         </div>
         <div class="work-body zh">
-          构建<strong>第一个正规的中文剧本版权交易平台</strong>——上传即版权存证、资金托管、标准合同。借助AI工具独立完成完整平台的设计与部署。目前处于内测阶段，通过小红书获取首批用户。
+          <strong>第一个正规的中文剧本版权交易平台</strong>——透明定价、法律合同、资金托管，连接创作者与全球买家。从产品概念到线上部署，借助AI工具独立完成整个平台的构建。
         </div>
-        <div class="work-tags">
+
+        <div class="project-stats">
+          <div class="project-stat">
+            <span class="project-stat-num">¥37B+</span>
+            <span class="project-stat-label en">Market size 2023</span>
+            <span class="project-stat-label zh">2023年市场规模</span>
+          </div>
+          <div class="project-stat">
+            <span class="project-stat-num">268%</span>
+            <span class="project-stat-label en">YoY growth</span>
+            <span class="project-stat-label zh">同比增长</span>
+          </div>
+          <div class="project-stat">
+            <span class="project-stat-num">¥100B</span>
+            <span class="project-stat-label en">Projected 2027</span>
+            <span class="project-stat-label zh">预计2027年规模</span>
+          </div>
+          <div class="project-stat">
+            <span class="project-stat-num">0</span>
+            <span class="project-stat-label en">Legitimate competitors</span>
+            <span class="project-stat-label zh">正规竞品</span>
+          </div>
+        </div>
+
+        <div class="project-features">
+          <div class="project-feature">
+            <span class="project-feature-icon">⚖️</span>
+            <div class="project-feature-title en">Copyright on Upload</div>
+            <div class="project-feature-title zh">上传即存证</div>
+            <div class="project-feature-desc en">Automatic rights registration the moment a script is submitted. No more WeChat handshakes.</div>
+            <div class="project-feature-desc zh">剧本提交即自动版权存证，不再依赖微信群的口头承诺。</div>
+          </div>
+          <div class="project-feature">
+            <span class="project-feature-icon">🔒</span>
+            <div class="project-feature-title en">Escrow Payments</div>
+            <div class="project-feature-title zh">资金托管</div>
+            <div class="project-feature-desc en">Funds held until delivery is confirmed. Creators get paid. Buyers get what they paid for.</div>
+            <div class="project-feature-desc zh">交付确认前资金托管，创作者不被白嫖，买家权益有保障。</div>
+          </div>
+          <div class="project-feature">
+            <span class="project-feature-icon">🌐</span>
+            <div class="project-feature-title en">Global Licensing</div>
+            <div class="project-feature-title zh">灵活授权</div>
+            <div class="project-feature-desc en">Buyout or license — exclusive/non-exclusive, by region, by year. Standard contracts, legal weight.</div>
+            <div class="project-feature-desc zh">买断或授权，独家/非独家，按地区按年限，平台标准合同，具备法律效力。</div>
+          </div>
+        </div>
+
+        <div class="work-tags" style="margin-top:1.2rem;">
           <span class="tag">Founder</span>
-          <span class="tag">AI</span>
-          <span class="tag en">Beta</span><span class="tag zh">内测</span>
-          <span class="tag">GitHub Pages</span>
+          <span class="tag">AI-built</span>
+          <span class="tag en">Live · Beta</span><span class="tag zh">已上线 · 内测</span>
+          <span class="tag en">Short Drama · Film · IP</span><span class="tag zh">短剧 · 电影 · 小说IP</span>
         </div>
       </div>
 
@@ -1229,6 +1389,22 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</div>
+
+<!-- WORK → SECTION NAV -->
+<div class="section-nav">
+  <div class="section-nav-inner">
+    <div class="section-nav-eyebrow en">You've seen the builder.</div>
+    <div class="section-nav-eyebrow zh">这是建造者的一面。</div>
+    <h3 class="section-nav-title en">Want to meet the <em>creator?</em></h3>
+    <h3 class="section-nav-title zh">想认识<em>创作者</em>吗？</h3>
+    <div class="section-nav-btns">
+      <a href="#creative" class="snb snb-primary en">See Creative Work →</a>
+      <a href="#creative" class="snb snb-primary zh">查看创作作品 →</a>
+      <button onclick="showGateway()" class="snb snb-secondary en">← Start Over</button>
+      <button onclick="showGateway()" class="snb snb-secondary zh">← 重新选择</button>
     </div>
   </div>
 </div>
@@ -1480,6 +1656,11 @@
     }, 400);
   }
   function skipGateway() { dismissGateway(); }
+  function showGateway() {
+    sessionStorage.removeItem('rj-visited');
+    gw.classList.remove('gone', 'leaving');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
   // Only show once per session
   if (sessionStorage.getItem('rj-visited')) gw.classList.add('gone');
 
