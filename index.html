@@ -321,33 +321,49 @@
     }
 
     /* ── WORK ── */
-    .work-list { display: flex; flex-direction: column; gap: 1.5px; background: var(--border); }
-
-    .work-item {
-      background: var(--bg);
-      display: grid; grid-template-columns: 1fr 2fr auto;
-      align-items: start; gap: 2rem;
-      padding: 2rem 2rem;
-      transition: background 0.25s;
+    /* ── WORK ACCORDION ── */
+    .work-accordion { display: flex; flex-direction: column; gap: 3px; }
+    .work-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 3px; overflow: hidden;
+      transition: border-color 0.25s, background 0.2s;
     }
-    .work-item:hover { background: var(--surface); }
-
-    .work-meta { }
-    .work-role {
-      font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--violet); margin-bottom: 0.4rem;
+    .work-card:hover { border-color: rgba(157,127,232,0.3); background: var(--surface); }
+    .work-card.open { border-color: rgba(157,127,232,0.42); background: var(--surface); }
+    .work-card-header {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1.2rem 1.5rem; cursor: pointer; user-select: none;
     }
-    .work-org {
-      font-size: 1.05rem; font-weight: 600; color: var(--text);
+    .work-card-left { flex: 1; min-width: 0; }
+    .work-card-role {
+      font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--violet); margin-bottom: 0.28rem;
     }
-    .work-period {
-      font-size: 0.72rem; color: var(--muted); margin-top: 0.3rem;
+    .work-card-name { font-size: 0.98rem; font-weight: 600; color: var(--text); margin-bottom: 0.15rem; }
+    .work-card-period { font-size: 0.65rem; color: var(--muted); }
+    .work-card-hint {
+      font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--muted); white-space: nowrap; flex-shrink: 0;
+      transition: color 0.2s;
     }
-
-    .work-body { font-size: 0.88rem; color: var(--muted); line-height: 1.75; }
+    .work-card:hover .work-card-hint { color: var(--violet); }
+    .work-card.open .work-card-hint { opacity: 0; }
+    .work-card-arrow {
+      font-size: 0.85rem; color: var(--muted); flex-shrink: 0;
+      transition: transform 0.28s ease, color 0.2s;
+      margin-left: 0.4rem;
+    }
+    .work-card:hover .work-card-arrow { color: var(--violet); }
+    .work-card.open .work-card-arrow { transform: rotate(90deg); color: var(--violet); }
+    .work-card-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .work-card.open .work-card-body { max-height: 1200px; }
+    .work-card-body-inner {
+      border-top: 1px solid var(--border);
+      padding: 1.3rem 1.5rem 1.6rem;
+    }
+    .work-body { font-size: 0.86rem; color: var(--muted); line-height: 1.8; }
     .work-body strong { color: var(--text); font-weight: 500; }
-
-    .work-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: flex-end; padding-top: 0.2rem; }
+    .work-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
     .tag {
       font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
       color: var(--violet); border: 1px solid var(--violet-dim);
@@ -1133,6 +1149,16 @@
       </div>
 
       <div class="creative-card">
+        <span class="creative-icon">🎨</span>
+        <div class="creative-title en">Painting & Drawing</div>
+        <div class="creative-title zh">绘画</div>
+        <div class="creative-desc en">Art-exam background. Sketch, oil, and watercolor. Years of training built a visual instinct that flows into everything — filmmaking, photography, composition.</div>
+        <div class="creative-desc zh">艺考生背景。素描、油画、水彩。多年训练积累的视觉直觉，渗透进了一切——影视、摄影、构图。</div>
+        <div class="creative-note en">Works coming soon</div>
+        <div class="creative-note zh">作品整理中</div>
+      </div>
+
+      <div class="creative-card">
         <span class="creative-icon">🎵</span>
         <div class="creative-title en">Singing & Sound</div>
         <div class="creative-title zh">唱歌与声音</div>
@@ -1156,8 +1182,6 @@
     <div class="section-nav-btns">
       <a href="#work" class="snb snb-primary en">See Work Experience →</a>
       <a href="#work" class="snb snb-primary zh">查看工作经历 →</a>
-      <button onclick="showGateway()" class="snb snb-secondary en">← Start Over</button>
-      <button onclick="showGateway()" class="snb snb-secondary zh">← 重新选择</button>
     </div>
   </div>
 </div>
@@ -1172,220 +1196,271 @@
     <h2 class="section-title en">How I <em>work.</em></h2>
     <h2 class="section-title zh">我的<em>工作。</em></h2>
 
-    <div class="work-list fade-in">
+    <div class="work-accordion fade-in">
 
-      <!-- 1. English Teacher (Current) -->
-      <div class="work-item">
-        <div class="work-meta">
-          <div class="work-role en">Current · Preply</div>
-          <div class="work-role zh">现任 · Preply</div>
-          <div class="work-org en">Online English Teacher</div>
-          <div class="work-org zh">线上英语老师</div>
-          <div class="work-period en">2025 — Present</div>
-          <div class="work-period zh">2025 — 至今</div>
+      <!-- English Teacher (Independent) -->
+      <div class="work-card" onclick="toggleWork(this)">
+        <div class="work-card-header">
+          <div class="work-card-left">
+            <div class="work-card-role en">Current · Independent</div>
+            <div class="work-card-role zh">现任 · 独立</div>
+            <div class="work-card-name en">English Teacher</div>
+            <div class="work-card-name zh">英语老师</div>
+            <div class="work-card-period en">2025 — Present</div>
+            <div class="work-card-period zh">2025 — 至今</div>
+          </div>
+          <span class="work-card-hint en">See more →</span>
+          <span class="work-card-hint zh">点击查看 →</span>
+          <span class="work-card-arrow">→</span>
         </div>
-        <div class="work-body en">
-          1-on-1 English instruction for learners worldwide via Preply. Built a growing student base from zero — income rising month-over-month. Curriculum design, phonetics coaching, and progress tracking informed by my own language-learning journey.
-        </div>
-        <div class="work-body zh">
-          通过Preply平台为全球学员提供一对一英语教学，从零积累学生群体，收入持续增长。课程设计、发音训练与学习进度追踪均建立在自身语言学习经历的深刻理解之上。
-        </div>
-        <div class="work-tags">
-          <span class="tag">Preply</span>
-          <span class="tag en">1-on-1</span><span class="tag zh">一对一</span>
-          <span class="tag en">Phonetics</span><span class="tag zh">发音</span>
+        <div class="work-card-body">
+          <div class="work-card-body-inner">
+            <div class="work-body en">Independent 1-on-1 English instruction for learners worldwide. Built a growing student base from zero — income rising month-over-month. Curriculum design, phonetics coaching, and conversation training informed by my own language-learning journey.</div>
+            <div class="work-body zh">独立提供全球学员一对一英语教学，从零积累学生群体，收入持续增长。课程设计、发音训练与口语指导均建立在自身语言学习经历的深刻理解之上。</div>
+            <div class="work-tags">
+              <span class="tag en">Independent</span><span class="tag zh">独立</span>
+              <span class="tag en">1-on-1</span><span class="tag zh">一对一</span>
+              <span class="tag en">Phonetics</span><span class="tag zh">发音</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- 2. ScriptBridge — Featured Project -->
-      <div class="work-item featured">
-        <div class="work-meta">
-          <div class="work-role en">Founder · Product · Builder</div>
-          <div class="work-role zh">创始人 · 产品 · 建造</div>
-          <div class="project-header">
-            <div class="work-org">ScriptBridge</div>
-            <a href="https://8844-code.github.io/scriptbridge/" target="_blank" class="project-live-link">
-              <span class="project-live-dot"></span>
-              <span class="en">Live →</span><span class="zh">已上线 →</span>
-            </a>
+      <!-- Chinese Teacher (Preply) -->
+      <div class="work-card" onclick="toggleWork(this)">
+        <div class="work-card-header">
+          <div class="work-card-left">
+            <div class="work-card-role en">In Preparation · Preply</div>
+            <div class="work-card-role zh">筹备中 · Preply</div>
+            <div class="work-card-name en">Chinese Teacher</div>
+            <div class="work-card-name zh">中文老师</div>
+            <div class="work-card-period en">2025 — Present</div>
+            <div class="work-card-period zh">2025 — 至今</div>
           </div>
-          <div class="work-period en">2026 — Present</div>
-          <div class="work-period zh">2026 — 至今</div>
+          <span class="work-card-hint en">See more →</span>
+          <span class="work-card-hint zh">点击查看 →</span>
+          <span class="work-card-arrow">→</span>
         </div>
-
-        <div class="work-body en">
-          The <strong>first legitimate marketplace for Chinese screenplay rights</strong> — connecting writers with global buyers through transparent pricing, legal contracts, and escrow payments. Built the entire platform solo with AI tools, from product concept to live deployment.
-        </div>
-        <div class="work-body zh">
-          <strong>第一个正规的中文剧本版权交易平台</strong>——透明定价、法律合同、资金托管，连接创作者与全球买家。从产品概念到线上部署，借助AI工具独立完成整个平台的构建。
-        </div>
-
-        <div class="project-stats">
-          <div class="project-stat">
-            <span class="project-stat-num">¥37B+</span>
-            <span class="project-stat-label en">Market size 2023</span>
-            <span class="project-stat-label zh">2023年市场规模</span>
+        <div class="work-card-body">
+          <div class="work-card-body-inner">
+            <div class="work-body en">Registered as a Mandarin Chinese teacher on Preply. Profile in development — building course structure for international learners. Native speaker with strong instinct for tone, rhythm, and how language actually sounds in daily life.</div>
+            <div class="work-body zh">已在Preply注册中文老师，课程体系搭建中。以母语者视角帮助国际学员感受中文的声调、节奏与日常语感。</div>
+            <div class="work-tags">
+              <span class="tag">Preply</span>
+              <span class="tag en">Mandarin</span><span class="tag zh">普通话</span>
+              <span class="tag en">In prep</span><span class="tag zh">筹备中</span>
+            </div>
           </div>
-          <div class="project-stat">
-            <span class="project-stat-num">268%</span>
-            <span class="project-stat-label en">YoY growth</span>
-            <span class="project-stat-label zh">同比增长</span>
-          </div>
-          <div class="project-stat">
-            <span class="project-stat-num">¥100B</span>
-            <span class="project-stat-label en">Projected 2027</span>
-            <span class="project-stat-label zh">预计2027年规模</span>
-          </div>
-          <div class="project-stat">
-            <span class="project-stat-num">0</span>
-            <span class="project-stat-label en">Legitimate competitors</span>
-            <span class="project-stat-label zh">正规竞品</span>
-          </div>
-        </div>
-
-        <div class="project-features">
-          <div class="project-feature">
-            <span class="project-feature-icon">⚖️</span>
-            <div class="project-feature-title en">Copyright on Upload</div>
-            <div class="project-feature-title zh">上传即存证</div>
-            <div class="project-feature-desc en">Automatic rights registration the moment a script is submitted. No more WeChat handshakes.</div>
-            <div class="project-feature-desc zh">剧本提交即自动版权存证，不再依赖微信群的口头承诺。</div>
-          </div>
-          <div class="project-feature">
-            <span class="project-feature-icon">🔒</span>
-            <div class="project-feature-title en">Escrow Payments</div>
-            <div class="project-feature-title zh">资金托管</div>
-            <div class="project-feature-desc en">Funds held until delivery is confirmed. Creators get paid. Buyers get what they paid for.</div>
-            <div class="project-feature-desc zh">交付确认前资金托管，创作者不被白嫖，买家权益有保障。</div>
-          </div>
-          <div class="project-feature">
-            <span class="project-feature-icon">🌐</span>
-            <div class="project-feature-title en">Global Licensing</div>
-            <div class="project-feature-title zh">灵活授权</div>
-            <div class="project-feature-desc en">Buyout or license — exclusive/non-exclusive, by region, by year. Standard contracts, legal weight.</div>
-            <div class="project-feature-desc zh">买断或授权，独家/非独家，按地区按年限，平台标准合同，具备法律效力。</div>
-          </div>
-        </div>
-
-        <div class="work-tags" style="margin-top:1.2rem;">
-          <span class="tag">Founder</span>
-          <span class="tag">AI-built</span>
-          <span class="tag en">Live · Beta</span><span class="tag zh">已上线 · 内测</span>
-          <span class="tag en">Short Drama · Film · IP</span><span class="tag zh">短剧 · 电影 · 小说IP</span>
         </div>
       </div>
 
-      <!-- 3. Yunnan Net -->
-      <div class="work-item">
-        <div class="work-meta">
-          <div class="work-role en">Content Producer</div>
-          <div class="work-role zh">内容制作</div>
-          <div class="work-org en">Yunnan Net · State Media</div>
-          <div class="work-org zh">云南网 · 国家媒体</div>
-          <div class="work-period en">2025</div>
-          <div class="work-period zh">2025</div>
+      <!-- ScriptBridge — Featured -->
+      <div class="work-card featured" onclick="toggleWork(this)">
+        <div class="work-card-header">
+          <div class="work-card-left">
+            <div class="work-card-role en">Founder · Product · Builder</div>
+            <div class="work-card-role zh">创始人 · 产品 · 建造</div>
+            <div class="work-card-name">ScriptBridge</div>
+            <div class="work-card-period en">2026 — Present</div>
+            <div class="work-card-period zh">2026 — 至今</div>
+          </div>
+          <a href="https://8844-code.github.io/scriptbridge/" target="_blank" class="project-live-link" onclick="event.stopPropagation()">
+            <span class="project-live-dot"></span>
+            <span class="en">Live →</span><span class="zh">已上线 →</span>
+          </a>
+          <span class="work-card-hint en" style="margin-left:0.8rem;">Expand →</span>
+          <span class="work-card-hint zh" style="margin-left:0.8rem;">展开 →</span>
+          <span class="work-card-arrow" style="margin-left:0.4rem;">→</span>
         </div>
-        <div class="work-body en">
-          Full-cycle content production for one of Yunnan's official state media platforms — field shooting, editing, copywriting, and social media account management. End-to-end ownership from location to final output.
-        </div>
-        <div class="work-body zh">
-          为云南省官方媒体平台负责完整的内容制作流程——外拍、剪辑、文案撰写及社交媒体账号运营，独立掌控从现场到成片的全链条。
-        </div>
-        <div class="work-tags">
-          <span class="tag en">State Media</span><span class="tag zh">国家媒体</span>
-          <span class="tag en">Editing</span><span class="tag zh">剪辑</span>
-          <span class="tag en">Social Media</span><span class="tag zh">账号运营</span>
-        </div>
-      </div>
-
-      <!-- 4. Apple Authorized Reseller -->
-      <div class="work-item">
-        <div class="work-meta">
-          <div class="work-role en">Sales & Content Creator</div>
-          <div class="work-role zh">销售 & 内容创作</div>
-          <div class="work-org en">Apple Authorized Reseller</div>
-          <div class="work-org zh">Apple授权专卖店</div>
-          <div class="work-period en">2024 — 2025</div>
-          <div class="work-period zh">2024 — 2025</div>
-        </div>
-        <div class="work-body en">
-          In-store customer service, product education, and sales. Simultaneously managed the store's short-video content — scripting, shooting, editing, and growing the brand's social media presence from the ground up.
-        </div>
-        <div class="work-body zh">
-          门店客户接待、产品讲解与销售。同时主导门店短视频账号的从零搭建——策划、拍摄、剪辑，持续扩大品牌的社交媒体影响力。
-        </div>
-        <div class="work-tags">
-          <span class="tag">Apple</span>
-          <span class="tag en">Short Video</span><span class="tag zh">短视频</span>
-          <span class="tag en">Social Media</span><span class="tag zh">账号运营</span>
-        </div>
-      </div>
-
-      <!-- 5. Dayao County Media Center -->
-      <div class="work-item">
-        <div class="work-meta">
-          <div class="work-role en">Media Reporter</div>
-          <div class="work-role zh">媒体记者</div>
-          <div class="work-org en">Dayao County Convergence Media Center</div>
-          <div class="work-org zh">大姚县融媒体中心</div>
-          <div class="work-period en">2024</div>
-          <div class="work-period zh">2024</div>
-        </div>
-        <div class="work-body en">
-          News gathering, reporting, and production at a county-level convergence media organization — covering local stories across text, video, and social platforms.
-        </div>
-        <div class="work-body zh">
-          县级融媒体机构新闻采集与制作——跨文字、视频与社交平台报道本地新闻事件。
-        </div>
-        <div class="work-tags">
-          <span class="tag en">News</span><span class="tag zh">新闻</span>
-          <span class="tag en">Convergence Media</span><span class="tag zh">融媒体</span>
-        </div>
-      </div>
-
-      <!-- 6. Cangshan Nature Museum, Dali -->
-      <div class="work-item">
-        <div class="work-meta">
-          <div class="work-role en">Communications & Interpretation</div>
-          <div class="work-role zh">传播与讲解</div>
-          <div class="work-org en">Cangshan Nature Photo Museum · Dali</div>
-          <div class="work-org zh">大理苍山自然影像博物馆</div>
-          <div class="work-period en">2024</div>
-          <div class="work-period zh">2024</div>
-        </div>
-        <div class="work-body en">
-          Visitor reception and guided interpretation at a natural-history photography museum. Curated and archived exhibition documentation, produced editorial content for WeChat, and designed recruitment materials.
-        </div>
-        <div class="work-body zh">
-          自然影像博物馆参观接待与专业讲解。整理归档展出作品文书，撰写微信推文内容，制作招聘海报。
-        </div>
-        <div class="work-tags">
-          <span class="tag en">Museum</span><span class="tag zh">博物馆</span>
-          <span class="tag en">Interpretation</span><span class="tag zh">讲解</span>
-          <span class="tag en">Editorial</span><span class="tag zh">编辑写作</span>
+        <div class="work-card-body">
+          <div class="work-card-body-inner">
+            <div class="work-body en">The <strong>first legitimate marketplace for Chinese screenplay rights</strong> — transparent pricing, legal contracts, escrow payments. Built solo with AI tools from product concept to live deployment.</div>
+            <div class="work-body zh"><strong>第一个正规的中文剧本版权交易平台</strong>——透明定价、法律合同、资金托管。借助AI工具从产品概念到线上部署独立完成。</div>
+            <div class="project-stats">
+              <div class="project-stat">
+                <span class="project-stat-num">¥37B+</span>
+                <span class="project-stat-label en">Market size 2023</span>
+                <span class="project-stat-label zh">2023年市场规模</span>
+              </div>
+              <div class="project-stat">
+                <span class="project-stat-num">268%</span>
+                <span class="project-stat-label en">YoY growth</span>
+                <span class="project-stat-label zh">同比增长</span>
+              </div>
+              <div class="project-stat">
+                <span class="project-stat-num">0</span>
+                <span class="project-stat-label en">Legitimate competitors</span>
+                <span class="project-stat-label zh">正规竞品</span>
+              </div>
+            </div>
+            <div class="project-features">
+              <div class="project-feature">
+                <span class="project-feature-icon">⚖️</span>
+                <div class="project-feature-title en">Copyright on Upload</div>
+                <div class="project-feature-title zh">上传即存证</div>
+                <div class="project-feature-desc en">Automatic rights registration the moment a script is submitted.</div>
+                <div class="project-feature-desc zh">剧本提交即自动版权存证，不再靠口头承诺。</div>
+              </div>
+              <div class="project-feature">
+                <span class="project-feature-icon">🔒</span>
+                <div class="project-feature-title en">Escrow Payments</div>
+                <div class="project-feature-title zh">资金托管</div>
+                <div class="project-feature-desc en">Funds held until delivery is confirmed. No more getting ripped off.</div>
+                <div class="project-feature-desc zh">交付确认前资金托管，创作者不被白嫖。</div>
+              </div>
+              <div class="project-feature">
+                <span class="project-feature-icon">🌐</span>
+                <div class="project-feature-title en">Global Licensing</div>
+                <div class="project-feature-title zh">灵活授权</div>
+                <div class="project-feature-desc en">Buyout or license — by region, by year. Legal contracts included.</div>
+                <div class="project-feature-desc zh">买断或授权，按地区按年限，标准合同具备法律效力。</div>
+              </div>
+            </div>
+            <div class="work-tags">
+              <span class="tag">Founder</span>
+              <span class="tag">AI-built</span>
+              <span class="tag en">Live · Beta</span><span class="tag zh">已上线 · 内测</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- 7. Kunming TV -->
-      <div class="work-item">
-        <div class="work-meta">
-          <div class="work-role en">Field Reporter & Cameraman</div>
-          <div class="work-role zh">外采记者 & 摄像</div>
-          <div class="work-org en">Kunming TV · Urban Barcode</div>
-          <div class="work-org zh">昆明电视台 · 都市条形码</div>
-          <div class="work-period en">2023 — 2024</div>
-          <div class="work-period zh">2023 — 2024</div>
+      <!-- Yunnan Net -->
+      <div class="work-card" onclick="toggleWork(this)">
+        <div class="work-card-header">
+          <div class="work-card-left">
+            <div class="work-card-role en">Content Producer</div>
+            <div class="work-card-role zh">内容制作</div>
+            <div class="work-card-name en">Yunnan Net · State Media</div>
+            <div class="work-card-name zh">云南网 · 国家媒体</div>
+            <div class="work-card-period en">2025</div>
+            <div class="work-card-period zh">2025</div>
+          </div>
+          <span class="work-card-hint en">See more →</span>
+          <span class="work-card-hint zh">点击查看 →</span>
+          <span class="work-card-arrow">→</span>
         </div>
-        <div class="work-body en">
-          Sole field journalist on a civil-affairs news program. Handled the full pipeline solo — on-location shooting with professional broadcast cameras, subject interviews, and news-script writing, from departure to broadcast.
+        <div class="work-card-body">
+          <div class="work-card-body-inner">
+            <div class="work-body en">Full-cycle content production for Yunnan's official state media — field shooting, editing, copywriting, and social media account management. End-to-end from location to final output.</div>
+            <div class="work-body zh">为云南省官方媒体负责完整内容制作——外拍、剪辑、文案、账号运营，独立掌控从现场到成片的全链条。</div>
+            <div class="work-tags">
+              <span class="tag en">State Media</span><span class="tag zh">国家媒体</span>
+              <span class="tag en">Editing</span><span class="tag zh">剪辑</span>
+              <span class="tag en">Social Media</span><span class="tag zh">账号运营</span>
+            </div>
+          </div>
         </div>
-        <div class="work-body zh">
-          民生新闻节目外采记者，全流程独立负责——专业摄像机现场拍摄、采访受访者、新闻稿写作，从出发到播出一人完成。
+      </div>
+
+      <!-- Apple -->
+      <div class="work-card" onclick="toggleWork(this)">
+        <div class="work-card-header">
+          <div class="work-card-left">
+            <div class="work-card-role en">Sales & Content Creator</div>
+            <div class="work-card-role zh">销售 & 内容创作</div>
+            <div class="work-card-name en">Apple Authorized Reseller</div>
+            <div class="work-card-name zh">Apple授权专卖店</div>
+            <div class="work-card-period en">2024 — 2025</div>
+            <div class="work-card-period zh">2024 — 2025</div>
+          </div>
+          <span class="work-card-hint en">See more →</span>
+          <span class="work-card-hint zh">点击查看 →</span>
+          <span class="work-card-arrow">→</span>
         </div>
-        <div class="work-tags">
-          <span class="tag en">Broadcast TV</span><span class="tag zh">电视台</span>
-          <span class="tag en">Field Journalism</span><span class="tag zh">外采</span>
-          <span class="tag en">Scriptwriting</span><span class="tag zh">新闻稿</span>
+        <div class="work-card-body">
+          <div class="work-card-body-inner">
+            <div class="work-body en">In-store customer service and product education. Simultaneously managed the store's short-video account — shooting, editing, and growing its social media presence from scratch.</div>
+            <div class="work-body zh">门店客户接待与产品讲解。同时主导门店短视频账号从零搭建——策划、拍摄、剪辑，持续扩大品牌社交媒体影响力。</div>
+            <div class="work-tags">
+              <span class="tag">Apple</span>
+              <span class="tag en">Short Video</span><span class="tag zh">短视频</span>
+              <span class="tag en">Social Media</span><span class="tag zh">账号运营</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dayao Media -->
+      <div class="work-card" onclick="toggleWork(this)">
+        <div class="work-card-header">
+          <div class="work-card-left">
+            <div class="work-card-role en">Media Reporter</div>
+            <div class="work-card-role zh">媒体记者</div>
+            <div class="work-card-name en">Dayao County Convergence Media</div>
+            <div class="work-card-name zh">大姚县融媒体中心</div>
+            <div class="work-card-period en">2024</div>
+            <div class="work-card-period zh">2024</div>
+          </div>
+          <span class="work-card-hint en">See more →</span>
+          <span class="work-card-hint zh">点击查看 →</span>
+          <span class="work-card-arrow">→</span>
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-body-inner">
+            <div class="work-body en">News gathering, reporting, and production at a county-level convergence media organization — covering local stories across text, video, and social platforms.</div>
+            <div class="work-body zh">县级融媒体机构新闻采集与制作——跨文字、视频与社交平台报道本地新闻。</div>
+            <div class="work-tags">
+              <span class="tag en">News</span><span class="tag zh">新闻</span>
+              <span class="tag en">Convergence Media</span><span class="tag zh">融媒体</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cangshan Museum -->
+      <div class="work-card" onclick="toggleWork(this)">
+        <div class="work-card-header">
+          <div class="work-card-left">
+            <div class="work-card-role en">Communications & Interpretation</div>
+            <div class="work-card-role zh">传播与讲解</div>
+            <div class="work-card-name en">Cangshan Nature Photo Museum · Dali</div>
+            <div class="work-card-name zh">大理苍山自然影像博物馆</div>
+            <div class="work-card-period en">2024</div>
+            <div class="work-card-period zh">2024</div>
+          </div>
+          <span class="work-card-hint en">See more →</span>
+          <span class="work-card-hint zh">点击查看 →</span>
+          <span class="work-card-arrow">→</span>
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-body-inner">
+            <div class="work-body en">Visitor reception and guided interpretation at a natural-history photography museum. Curated exhibition documentation, produced editorial content, and designed recruitment materials.</div>
+            <div class="work-body zh">自然影像博物馆参观接待与专业讲解。整理归档展览文书，撰写推文内容，制作招聘海报。</div>
+            <div class="work-tags">
+              <span class="tag en">Museum</span><span class="tag zh">博物馆</span>
+              <span class="tag en">Interpretation</span><span class="tag zh">讲解</span>
+              <span class="tag en">Editorial</span><span class="tag zh">编辑写作</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kunming TV -->
+      <div class="work-card" onclick="toggleWork(this)">
+        <div class="work-card-header">
+          <div class="work-card-left">
+            <div class="work-card-role en">Field Reporter & Cameraman</div>
+            <div class="work-card-role zh">外采记者 & 摄像</div>
+            <div class="work-card-name en">Kunming TV · Urban Barcode</div>
+            <div class="work-card-name zh">昆明电视台 · 都市条形码</div>
+            <div class="work-card-period en">2023 — 2024</div>
+            <div class="work-card-period zh">2023 — 2024</div>
+          </div>
+          <span class="work-card-hint en">See more →</span>
+          <span class="work-card-hint zh">点击查看 →</span>
+          <span class="work-card-arrow">→</span>
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-body-inner">
+            <div class="work-body en">Sole field journalist on a civil-affairs news program — broadcast camera shooting, subject interviews, and news-script writing. Full pipeline handled solo, from departure to broadcast.</div>
+            <div class="work-body zh">民生新闻节目外采记者，全流程独立负责——专业摄像机拍摄、采访受访者、新闻稿写作，从出发到播出一人完成。</div>
+            <div class="work-tags">
+              <span class="tag en">Broadcast TV</span><span class="tag zh">电视台</span>
+              <span class="tag en">Field Journalism</span><span class="tag zh">外采</span>
+              <span class="tag en">Scriptwriting</span><span class="tag zh">新闻稿</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1403,8 +1478,6 @@
     <div class="section-nav-btns">
       <a href="#creative" class="snb snb-primary en">See Creative Work →</a>
       <a href="#creative" class="snb snb-primary zh">查看创作作品 →</a>
-      <button onclick="showGateway()" class="snb snb-secondary en">← Start Over</button>
-      <button onclick="showGateway()" class="snb snb-secondary zh">← 重新选择</button>
     </div>
   </div>
 </div>
@@ -1656,6 +1729,14 @@
     }, 400);
   }
   function skipGateway() { dismissGateway(); }
+  // ── Work accordion ──
+  function toggleWork(el) {
+    const card = el.closest('.work-card');
+    const wasOpen = card.classList.contains('open');
+    document.querySelectorAll('.work-card.open').forEach(c => c.classList.remove('open'));
+    if (!wasOpen) card.classList.add('open');
+  }
+
   function showGateway() {
     sessionStorage.removeItem('rj-visited');
     gw.classList.remove('gone', 'leaving');
