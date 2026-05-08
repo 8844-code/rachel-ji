@@ -723,48 +723,47 @@
       .gw-title { font-size: 3rem; }
     }
 
-    /* ── PHOTO GALLERY ── */
-    .photo-gallery { margin-top: 2.5rem; }
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto;
-      gap: 0.5rem;
+    /* ── PHOTO CARD PREVIEW ── */
+    .photo-thumb-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3px; height: 150px; overflow: hidden;
+      margin-bottom: 1.2rem; border-radius: 2px;
     }
-    .photo-item {
-      position: relative; overflow: hidden; cursor: pointer;
-      background: var(--surface);
-      aspect-ratio: 3/2;
+    .photo-thumb-grid img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: brightness(0.75) saturate(0.85);
+      transition: filter 0.3s;
     }
-    .photo-item.tall { aspect-ratio: 2/3; }
-    .photo-item.wide { grid-column: span 2; aspect-ratio: 16/9; }
-    .photo-item img {
-      width: 100%; height: 100%; object-fit: cover; display: block;
-      transition: transform 0.5s ease, filter 0.4s ease;
-      filter: brightness(0.88) saturate(0.9);
-    }
-    .photo-item:hover img { transform: scale(1.04); filter: brightness(1) saturate(1); }
-    .photo-caption {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      padding: 1.2rem 1rem 0.9rem;
-      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
-      opacity: 0; transform: translateY(4px);
-      transition: opacity 0.3s, transform 0.3s;
-    }
-    .photo-item:hover .photo-caption { opacity: 1; transform: translateY(0); }
-    .photo-series { font-size: 0.7rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.6); }
-    .photo-title { font-size: 1rem; font-weight: 700; color: #fff; margin-top: 0.2rem; }
-    .photo-meta { font-size: 0.6rem; color: rgba(255,255,255,0.45); margin-top: 0.2rem; letter-spacing: 0.1em; }
-    [data-theme="light"] .photo-caption { background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 100%); }
+    .card-clickable:hover .photo-thumb-grid img { filter: brightness(0.88) saturate(1); }
 
-    @media (max-width: 760px) {
-      .photo-grid { grid-template-columns: repeat(2, 1fr); }
-      .photo-item.wide { grid-column: span 2; }
-      .photo-item.tall { aspect-ratio: 3/4; }
+    /* ── PHOTO MODAL GALLERY ── */
+    .photo-modal-gallery { display: flex; flex-direction: column; }
+    .photo-modal-item { display: flex; flex-direction: column; }
+    .photo-modal-item img {
+      width: 100%; height: auto; display: block;
+      max-height: 80vh; object-fit: contain;
+      background: #000;
     }
-    @media (max-width: 480px) {
-      .photo-grid { grid-template-columns: 1fr; }
-      .photo-item.wide { grid-column: span 1; }
+    .photo-modal-caption {
+      padding: 1.2rem 2rem 1.8rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .photo-modal-item:last-child .photo-modal-caption { border-bottom: none; }
+    .photo-modal-series {
+      font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--violet); margin-bottom: 0.35rem;
+    }
+    .photo-modal-title {
+      font-size: 1.05rem; font-weight: 700; color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+    .photo-modal-meta {
+      font-size: 0.62rem; letter-spacing: 0.1em; color: var(--muted);
+    }
+    .photo-modal-poem {
+      margin-top: 0.9rem; font-size: 0.82rem; color: var(--muted);
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      line-height: 2; max-width: 520px;
     }
   </style>
 </head>
@@ -1027,112 +1026,21 @@
         <span class="card-hint zh">阅读节选 →</span>
       </div>
 
-      <!-- Photography gallery — full width row -->
-      <div style="grid-column: 1 / -1; margin-top: 0.5rem;">
-        <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:1.2rem;">
-          <span class="creative-icon" style="font-size:1.1rem;">📷</span>
-          <div>
-            <div class="creative-title en" style="margin-bottom:0.2rem;">Photography</div>
-            <div class="creative-title zh" style="margin-bottom:0.2rem;">摄影</div>
-            <div class="creative-note en">Personal series · 2022–2023 · Yunnan</div>
-            <div class="creative-note zh">个人系列 · 2022–2023 · 云南</div>
-          </div>
+      <div class="creative-card card-clickable" onclick="openModal('photo')">
+        <div class="photo-thumb-grid">
+          <img src="photo_zhan_1.jpeg" alt="" loading="lazy" />
+          <img src="photo_ziyou.jpeg"  alt="" loading="lazy" />
+          <img src="photo_danche_1.jpeg" alt="" loading="lazy" />
+          <img src="photo_meng_1.jpeg" alt="" loading="lazy" />
         </div>
-        <div class="photo-gallery">
-          <div class="photo-grid">
-
-            <!-- 《栓》wide hero -->
-            <div class="photo-item wide">
-              <img src="photo_zhan_1.jpeg" alt="《栓》系列 — 2023" loading="lazy" />
-              <div class="photo-caption">
-                <div class="photo-series">Series · 系列</div>
-                <div class="photo-title">《栓》Bound</div>
-                <div class="photo-meta">2023.11.29 · 工映1970神犁文创社园</div>
-              </div>
-            </div>
-
-            <!-- 《栓》second shot -->
-            <div class="photo-item tall">
-              <img src="photo_zhan_2.jpeg" alt="《栓》系列 — 2023" loading="lazy" />
-              <div class="photo-caption">
-                <div class="photo-series">Series · 系列</div>
-                <div class="photo-title">《栓》Bound</div>
-                <div class="photo-meta">2023.11.29 · 工映1970神犁文创社园</div>
-              </div>
-            </div>
-
-            <!-- 《自由》portrait -->
-            <div class="photo-item">
-              <img src="photo_ziyou.jpeg" alt="《自由》— 名为夏天的影子" loading="lazy" />
-              <div class="photo-caption">
-                <div class="photo-series">Portrait · 人像</div>
-                <div class="photo-title">《自由》Freedom</div>
-                <div class="photo-meta">2022.10.22 · 新平彝族傣族自治县</div>
-              </div>
-            </div>
-
-            <!-- 《单车》child -->
-            <div class="photo-item">
-              <img src="photo_danche_1.jpeg" alt="《单车》— 童年" loading="lazy" />
-              <div class="photo-caption">
-                <div class="photo-series">Street · 纪实</div>
-                <div class="photo-title">《单车》Bicycle</div>
-                <div class="photo-meta">2022.10.23 · 新平</div>
-              </div>
-            </div>
-
-            <!-- 《单车》2 -->
-            <div class="photo-item">
-              <img src="photo_danche_2.jpeg" alt="《单车》— 童年 II" loading="lazy" />
-              <div class="photo-caption">
-                <div class="photo-series">Street · 纪实</div>
-                <div class="photo-title">《单车》Bicycle II</div>
-                <div class="photo-meta">2022.10.23 · 新平</div>
-              </div>
-            </div>
-
-            <!-- 《梦》portrait -->
-            <div class="photo-item">
-              <img src="photo_meng_1.jpeg" alt="《梦》— 滇池岸边" loading="lazy" />
-              <div class="photo-caption">
-                <div class="photo-series">Portrait · 人像</div>
-                <div class="photo-title">《梦》Dream</div>
-                <div class="photo-meta">2023.05.02 · 滇池岸边</div>
-              </div>
-            </div>
-
-            <!-- 《梦》portrait 2 -->
-            <div class="photo-item">
-              <img src="photo_meng_2.jpeg" alt="《梦》— 滇池岸边 II" loading="lazy" />
-              <div class="photo-caption">
-                <div class="photo-series">Portrait · 人像</div>
-                <div class="photo-title">《梦》Dream II</div>
-                <div class="photo-meta">2023.05.02 · 滇池岸边</div>
-              </div>
-            </div>
-
-            <!-- 《生命》bird -->
-            <div class="photo-item">
-              <img src="photo_shengming_1.jpeg" alt="《生命》Life" loading="lazy" />
-              <div class="photo-caption">
-                <div class="photo-series">Nature · 自然</div>
-                <div class="photo-title">《生命》Life</div>
-                <div class="photo-meta">季颖秋 摄影</div>
-              </div>
-            </div>
-
-            <!-- 《生命》steam -->
-            <div class="photo-item">
-              <img src="photo_shengming_2.jpeg" alt="《生命》Life II" loading="lazy" />
-              <div class="photo-caption">
-                <div class="photo-series">Nature · 自然</div>
-                <div class="photo-title">《生命》Life II</div>
-                <div class="photo-meta">季颖秋 摄影</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
+        <div class="creative-title en">Photography</div>
+        <div class="creative-title zh">摄影</div>
+        <div class="creative-desc en">Five personal series, 2022–2023. Theater, portraits, street, nature. A record of things others walked past.</div>
+        <div class="creative-desc zh">五个个人系列，2022–2023。戏院、人像、纪实、自然。那些别人走过去、我却停下来的瞬间。</div>
+        <div class="creative-note en">9 photographs · Yunnan</div>
+        <div class="creative-note zh">9张 · 云南</div>
+        <span class="card-hint en">View gallery →</span>
+        <span class="card-hint zh">查看图库 →</span>
       </div>
 
       <div class="creative-card">
@@ -1335,6 +1243,139 @@
   <p class="contact-sub zh">欢迎教学合作、创意项目、国际合作，以及有趣的对话。</p>
   <a href="mailto:qtian904@gmail.com" class="contact-email">qtian904@gmail.com</a>
 </section>
+
+<!-- PHOTO MODAL -->
+<div class="modal-overlay" id="modalPhoto" onclick="closeModalOutside(event)">
+  <div class="modal-box" style="max-width:860px;">
+    <div class="modal-close">
+      <button onclick="closeModal('photo')" class="en">Close</button>
+      <button onclick="closeModal('photo')" class="zh">关闭</button>
+    </div>
+    <div class="modal-body">
+      <div style="padding:0.5rem 2rem 2rem;">
+        <div class="modal-novel-type en">Photography · Personal Series · 2022–2023</div>
+        <div class="modal-novel-type zh">摄影 · 个人系列 · 2022–2023</div>
+        <div class="modal-novel-title" style="font-size:1.6rem;margin:0.4rem 0 0.2rem;">季颖秋 摄影</div>
+        <div style="font-size:0.72rem;color:var(--muted);" class="en">Rachel Ji · Yunnan, China</div>
+        <div style="font-size:0.72rem;color:var(--muted);" class="zh">季颖秋 · 云南，中国</div>
+      </div>
+
+      <div class="photo-modal-gallery">
+
+        <div class="photo-modal-item">
+          <img src="photo_zhan_1.jpeg" alt="《栓》I" loading="lazy" />
+          <div class="photo-modal-caption">
+            <div class="photo-modal-series en">Series · Theater</div>
+            <div class="photo-modal-series zh">系列 · 戏院</div>
+            <div class="photo-modal-title">《栓》Bound — I</div>
+            <div class="photo-modal-meta">2023.11.29 · 工映1970神犁文创社园</div>
+            <div class="photo-modal-poem">
+              天空纵容着鸟的翅膀，<br>
+              远方牵扯着言的眺望，<br>
+              窗框死捉住一方风景，<br>
+              门扉轻闩上半生流浪。<br>
+              <span style="font-size:0.7rem;letter-spacing:0.08em;font-style:normal;">——梁国福《栓》</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="photo-modal-item">
+          <img src="photo_zhan_2.jpeg" alt="《栓》II" loading="lazy" />
+          <div class="photo-modal-caption">
+            <div class="photo-modal-series en">Series · Theater</div>
+            <div class="photo-modal-series zh">系列 · 戏院</div>
+            <div class="photo-modal-title">《栓》Bound — II</div>
+            <div class="photo-modal-meta">2023.11.29 · 工映1970神犁文创社园</div>
+          </div>
+        </div>
+
+        <div class="photo-modal-item">
+          <img src="photo_ziyou.jpeg" alt="《自由》" loading="lazy" />
+          <div class="photo-modal-caption">
+            <div class="photo-modal-series en">Portrait · Freedom</div>
+            <div class="photo-modal-series zh">人像 · 自由</div>
+            <div class="photo-modal-title">《自由》Freedom — 名为夏天的影子</div>
+            <div class="photo-modal-meta">2022.10.22 · 新平彝族傣族自治县 · 肖丹</div>
+            <div class="photo-modal-poem en">
+              Looking at your smile, I almost forgot to press the shutter.<br>
+              <span style="font-size:0.7rem;font-style:normal;letter-spacing:0.05em;">— Rachel Ji</span>
+            </div>
+            <div class="photo-modal-poem zh">
+              看着你的笑，我差点忘记按下快门。<br>
+              <span style="font-size:0.7rem;font-style:normal;letter-spacing:0.05em;">—— 季颖秋</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="photo-modal-item">
+          <img src="photo_danche_1.jpeg" alt="《单车》I" loading="lazy" />
+          <div class="photo-modal-caption">
+            <div class="photo-modal-series en">Street · Childhood</div>
+            <div class="photo-modal-series zh">纪实 · 童年</div>
+            <div class="photo-modal-title">《单车》Bicycle — 童年 I</div>
+            <div class="photo-modal-meta">2022.10.23 · 新平彝族傣族自治县</div>
+          </div>
+        </div>
+
+        <div class="photo-modal-item">
+          <img src="photo_danche_2.jpeg" alt="《单车》II" loading="lazy" />
+          <div class="photo-modal-caption">
+            <div class="photo-modal-series en">Street · Childhood</div>
+            <div class="photo-modal-series zh">纪实 · 童年</div>
+            <div class="photo-modal-title">《单车》Bicycle — 童年 II</div>
+            <div class="photo-modal-meta">2022.10.23 · 新平彝族傣族自治县</div>
+          </div>
+        </div>
+
+        <div class="photo-modal-item">
+          <img src="photo_meng_1.jpeg" alt="《梦》I" loading="lazy" />
+          <div class="photo-modal-caption">
+            <div class="photo-modal-series en">Portrait · Dream</div>
+            <div class="photo-modal-series zh">人像 · 梦</div>
+            <div class="photo-modal-title">《梦》Dream — I</div>
+            <div class="photo-modal-meta">2023.05.02 · 滇池岸边</div>
+            <div class="photo-modal-poem zh">
+              坐着谈也好，走道也好，上街买东西也好。<br>
+              爱是甘草，这苦的世界有了它就好上口了。<br>
+              <span style="font-size:0.7rem;font-style:normal;letter-spacing:0.05em;">—— 季颖秋</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="photo-modal-item">
+          <img src="photo_meng_2.jpeg" alt="《梦》II" loading="lazy" />
+          <div class="photo-modal-caption">
+            <div class="photo-modal-series en">Portrait · Dream</div>
+            <div class="photo-modal-series zh">人像 · 梦</div>
+            <div class="photo-modal-title">《梦》Dream — II</div>
+            <div class="photo-modal-meta">2023.05.02 · 滇池岸边</div>
+          </div>
+        </div>
+
+        <div class="photo-modal-item">
+          <img src="photo_shengming_1.jpeg" alt="《生命》I" loading="lazy" />
+          <div class="photo-modal-caption">
+            <div class="photo-modal-series en">Nature · Life</div>
+            <div class="photo-modal-series zh">自然 · 生命</div>
+            <div class="photo-modal-title">《生命》Life — I</div>
+            <div class="photo-modal-meta">季颖秋 摄影</div>
+          </div>
+        </div>
+
+        <div class="photo-modal-item">
+          <img src="photo_shengming_2.jpeg" alt="《生命》II" loading="lazy" />
+          <div class="photo-modal-caption">
+            <div class="photo-modal-series en">Nature · Life</div>
+            <div class="photo-modal-series zh">自然 · 生命</div>
+            <div class="photo-modal-title">《生命》Life — II</div>
+            <div class="photo-modal-meta">季颖秋 摄影</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- WRITING MODAL -->
 <div class="modal-overlay" id="modalWriting" onclick="closeModalOutside(event)">
