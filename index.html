@@ -870,6 +870,14 @@
       border: 1px solid var(--border);
     }
     .snb-secondary:hover { color: var(--text); border-color: var(--muted); }
+
+    /* ── VIEW SWITCHING ── */
+    html[data-view="creative"] #work,
+    html[data-view="creative"] #work-nav,
+    html[data-view="creative"] #hr-work { display: none; }
+
+    html[data-view="work"] #creative,
+    html[data-view="work"] #creative-nav { display: none; }
   </style>
 </head>
 <body>
@@ -915,7 +923,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-name">
+  <a href="#" class="nav-name" onclick="event.preventDefault(); showGateway();" aria-label="Back to start">
     <!-- Logo mark -->
     <svg width="16" height="34" viewBox="0 0 64 128" aria-hidden="true">
       <text x="32" y="24" font-family="'Playfair Display',serif" font-weight="400"
@@ -1173,20 +1181,20 @@
 </div>
 
 <!-- CREATIVE → SECTION NAV -->
-<div class="section-nav">
+<div class="section-nav" id="creative-nav">
   <div class="section-nav-inner">
     <div class="section-nav-eyebrow en">You've seen the creator.</div>
     <div class="section-nav-eyebrow zh">这是创作者的一面。</div>
     <h3 class="section-nav-title en">Curious about the <em>professional side?</em></h3>
     <h3 class="section-nav-title zh">想了解<em>专业经历</em>吗？</h3>
     <div class="section-nav-btns">
-      <a href="#work" class="snb snb-primary en">See Work Experience →</a>
-      <a href="#work" class="snb snb-primary zh">查看工作经历 →</a>
+      <a href="#work" class="snb snb-primary en" onclick="setView('work')">See Work Experience →</a>
+      <a href="#work" class="snb snb-primary zh" onclick="setView('work')">查看工作经历 →</a>
     </div>
   </div>
 </div>
 
-<hr class="divider" />
+<hr class="divider" id="hr-work" />
 
 <!-- WORK -->
 <div id="work">
@@ -1198,14 +1206,14 @@
 
     <div class="work-accordion fade-in">
 
-      <!-- English Teacher (Independent) -->
+      <!-- Language Teacher -->
       <div class="work-card" onclick="toggleWork(this)">
         <div class="work-card-header">
           <div class="work-card-left">
-            <div class="work-card-role en">Current · Independent</div>
-            <div class="work-card-role zh">现任 · 独立</div>
-            <div class="work-card-name en">English Teacher</div>
-            <div class="work-card-name zh">英语老师</div>
+            <div class="work-card-role en">Current</div>
+            <div class="work-card-role zh">现任</div>
+            <div class="work-card-name en">Language Teacher</div>
+            <div class="work-card-name zh">语言老师</div>
             <div class="work-card-period en">2025 — Present</div>
             <div class="work-card-period zh">2025 — 至今</div>
           </div>
@@ -1215,40 +1223,24 @@
         </div>
         <div class="work-card-body">
           <div class="work-card-body-inner">
-            <div class="work-body en">Independent 1-on-1 English instruction for learners worldwide. Built a growing student base from zero — income rising month-over-month. Curriculum design, phonetics coaching, and conversation training informed by my own language-learning journey.</div>
-            <div class="work-body zh">独立提供全球学员一对一英语教学，从零积累学生群体，收入持续增长。课程设计、发音训练与口语指导均建立在自身语言学习经历的深刻理解之上。</div>
-            <div class="work-tags">
-              <span class="tag en">Independent</span><span class="tag zh">独立</span>
-              <span class="tag en">1-on-1</span><span class="tag zh">一对一</span>
-              <span class="tag en">Phonetics</span><span class="tag zh">发音</span>
+            <div style="display:flex;flex-direction:column;gap:1.2rem;">
+              <div>
+                <div style="font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--violet);margin-bottom:0.4rem;" class="en">English · Independent</div>
+                <div style="font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--violet);margin-bottom:0.4rem;" class="zh">英语 · 独立授课</div>
+                <div class="work-body en">1-on-1 online instruction for learners worldwide. Growing student base built from scratch — income rising month-over-month. Curriculum design, phonetics coaching, and conversation training.</div>
+                <div class="work-body zh">面向全球学员一对一线上教学，从零积累学生群体，收入持续上涨。课程设计、发音训练与口语指导。</div>
+              </div>
+              <div style="border-top:1px solid var(--border);padding-top:1.2rem;">
+                <div style="font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--violet);margin-bottom:0.4rem;" class="en">Chinese · Preply · In preparation</div>
+                <div style="font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--violet);margin-bottom:0.4rem;" class="zh">中文 · Preply · 筹备中</div>
+                <div class="work-body en">Registered on Preply as a Mandarin teacher. Course structure in development. Native speaker with a precise ear for tone, rhythm, and the texture of everyday speech.</div>
+                <div class="work-body zh">已在Preply注册中文老师，课程体系搭建中。母语者视角，对声调、节奏与日常语感有精准把握。</div>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Chinese Teacher (Preply) -->
-      <div class="work-card" onclick="toggleWork(this)">
-        <div class="work-card-header">
-          <div class="work-card-left">
-            <div class="work-card-role en">In Preparation · Preply</div>
-            <div class="work-card-role zh">筹备中 · Preply</div>
-            <div class="work-card-name en">Chinese Teacher</div>
-            <div class="work-card-name zh">中文老师</div>
-            <div class="work-card-period en">2025 — Present</div>
-            <div class="work-card-period zh">2025 — 至今</div>
-          </div>
-          <span class="work-card-hint en">See more →</span>
-          <span class="work-card-hint zh">点击查看 →</span>
-          <span class="work-card-arrow">→</span>
-        </div>
-        <div class="work-card-body">
-          <div class="work-card-body-inner">
-            <div class="work-body en">Registered as a Mandarin Chinese teacher on Preply. Profile in development — building course structure for international learners. Native speaker with strong instinct for tone, rhythm, and how language actually sounds in daily life.</div>
-            <div class="work-body zh">已在Preply注册中文老师，课程体系搭建中。以母语者视角帮助国际学员感受中文的声调、节奏与日常语感。</div>
-            <div class="work-tags">
-              <span class="tag">Preply</span>
-              <span class="tag en">Mandarin</span><span class="tag zh">普通话</span>
-              <span class="tag en">In prep</span><span class="tag zh">筹备中</span>
+            <div class="work-tags" style="margin-top:1.2rem;">
+              <span class="tag en">English · Independent</span><span class="tag zh">英语 · 独立</span>
+              <span class="tag en">Chinese · Preply</span><span class="tag zh">中文 · Preply</span>
+              <span class="tag en">1-on-1</span><span class="tag zh">一对一</span>
             </div>
           </div>
         </div>
@@ -1469,15 +1461,15 @@
 </div>
 
 <!-- WORK → SECTION NAV -->
-<div class="section-nav">
+<div class="section-nav" id="work-nav">
   <div class="section-nav-inner">
     <div class="section-nav-eyebrow en">You've seen the builder.</div>
     <div class="section-nav-eyebrow zh">这是建造者的一面。</div>
     <h3 class="section-nav-title en">Want to meet the <em>creator?</em></h3>
     <h3 class="section-nav-title zh">想认识<em>创作者</em>吗？</h3>
     <div class="section-nav-btns">
-      <a href="#creative" class="snb snb-primary en">See Creative Work →</a>
-      <a href="#creative" class="snb snb-primary zh">查看创作作品 →</a>
+      <a href="#creative" class="snb snb-primary en" onclick="setView('creative')">See Creative Work →</a>
+      <a href="#creative" class="snb snb-primary zh" onclick="setView('creative')">查看创作作品 →</a>
     </div>
   </div>
 </div>
@@ -1722,13 +1714,20 @@
     sessionStorage.setItem('rj-visited', '1');
   }
   function chooseGateway(section) {
+    setView(section);
     dismissGateway();
     setTimeout(() => {
       const el = document.getElementById(section);
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     }, 400);
   }
-  function skipGateway() { dismissGateway(); }
+  function skipGateway() {
+    setView('all');
+    dismissGateway();
+  }
+  function setView(v) {
+    document.documentElement.setAttribute('data-view', v);
+  }
   // ── Work accordion ──
   function toggleWork(el) {
     const card = el.closest('.work-card');
