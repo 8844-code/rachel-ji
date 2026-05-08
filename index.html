@@ -635,9 +635,179 @@
 
     [data-lang="en"] .zh { display: none; }
     [data-lang="zh"] .en { display: none; }
+
+    /* ── GATEWAY OVERLAY ── */
+    #gateway {
+      position: fixed; inset: 0; z-index: 300;
+      display: flex; flex-direction: column;
+      background: var(--bg);
+      transition: opacity 0.7s ease, visibility 0.7s ease;
+    }
+    #gateway.leaving { opacity: 0; pointer-events: none; }
+    #gateway.gone { display: none; }
+
+    .gw-top {
+      padding: 3.5rem 2rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+    .gw-eyebrow {
+      font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 1rem;
+    }
+    .gw-question {
+      font-size: clamp(1.5rem, 4vw, 2.8rem);
+      font-weight: 700; line-height: 1.15;
+      letter-spacing: -0.02em; color: var(--text);
+    }
+    .gw-question em { font-style: italic; color: var(--violet); }
+
+    .gw-panels {
+      flex: 1; display: grid; grid-template-columns: 1fr 1fr;
+      min-height: 0;
+    }
+    .gw-panel {
+      cursor: pointer; border: none; background: transparent;
+      color: var(--text); font-family: inherit;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 1.2rem; padding: 2.5rem 2rem;
+      position: relative; overflow: hidden;
+      transition: background 0.35s;
+    }
+    .gw-panel::before {
+      content: ''; position: absolute; inset: 0;
+      opacity: 0; transition: opacity 0.35s;
+    }
+    .gw-panel.gw-personal::before { background: radial-gradient(ellipse at 50% 60%, var(--glow-v), transparent 70%); }
+    .gw-panel.gw-professional::before { background: radial-gradient(ellipse at 50% 60%, rgba(232,184,122,0.12), transparent 70%); }
+    .gw-panel:hover::before { opacity: 1; }
+    .gw-divider {
+      position: absolute; left: 50%; top: 8%; bottom: 8%;
+      width: 1px; background: var(--border); z-index: 1;
+    }
+    .gw-panel-inner { position: relative; z-index: 2; text-align: center; }
+    .gw-label {
+      display: block; font-size: 0.6rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 0.8rem;
+    }
+    .gw-title {
+      display: block; font-size: clamp(2.5rem, 7vw, 5rem);
+      font-weight: 700; line-height: 1; letter-spacing: -0.03em;
+      margin-bottom: 1rem; transition: color 0.25s;
+    }
+    .gw-panel.gw-personal .gw-title { color: var(--violet); }
+    .gw-panel.gw-professional .gw-title { color: var(--amber); }
+    .gw-sub {
+      display: block; font-size: 0.72rem; color: var(--muted);
+      letter-spacing: 0.08em; line-height: 1.8;
+    }
+    .gw-arrow {
+      display: block; margin-top: 1.5rem; font-size: 1.2rem;
+      color: var(--muted); opacity: 0;
+      transform: translateY(-6px); transition: opacity 0.25s, transform 0.25s;
+    }
+    .gw-panel:hover .gw-arrow { opacity: 0.6; transform: translateY(0); }
+
+    .gw-skip {
+      text-align: center; padding: 1.2rem 2rem;
+      font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--muted); cursor: pointer; background: none; border: none;
+      font-family: inherit; transition: color 0.2s; border-top: 1px solid var(--border);
+    }
+    .gw-skip:hover { color: var(--text); }
+
+    @media (max-width: 600px) {
+      .gw-panels { grid-template-columns: 1fr; }
+      .gw-divider { display: none; }
+      .gw-panel { min-height: 200px; }
+      .gw-title { font-size: 3rem; }
+    }
+
+    /* ── PHOTO GALLERY ── */
+    .photo-gallery { margin-top: 2.5rem; }
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      gap: 0.5rem;
+    }
+    .photo-item {
+      position: relative; overflow: hidden; cursor: pointer;
+      background: var(--surface);
+      aspect-ratio: 3/2;
+    }
+    .photo-item.tall { aspect-ratio: 2/3; }
+    .photo-item.wide { grid-column: span 2; aspect-ratio: 16/9; }
+    .photo-item img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.5s ease, filter 0.4s ease;
+      filter: brightness(0.88) saturate(0.9);
+    }
+    .photo-item:hover img { transform: scale(1.04); filter: brightness(1) saturate(1); }
+    .photo-caption {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 1.2rem 1rem 0.9rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
+      opacity: 0; transform: translateY(4px);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .photo-item:hover .photo-caption { opacity: 1; transform: translateY(0); }
+    .photo-series { font-size: 0.7rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.6); }
+    .photo-title { font-size: 1rem; font-weight: 700; color: #fff; margin-top: 0.2rem; }
+    .photo-meta { font-size: 0.6rem; color: rgba(255,255,255,0.45); margin-top: 0.2rem; letter-spacing: 0.1em; }
+    [data-theme="light"] .photo-caption { background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 100%); }
+
+    @media (max-width: 760px) {
+      .photo-grid { grid-template-columns: repeat(2, 1fr); }
+      .photo-item.wide { grid-column: span 2; }
+      .photo-item.tall { aspect-ratio: 3/4; }
+    }
+    @media (max-width: 480px) {
+      .photo-grid { grid-template-columns: 1fr; }
+      .photo-item.wide { grid-column: span 1; }
+    }
   </style>
 </head>
 <body>
+
+<!-- GATEWAY -->
+<div id="gateway" role="dialog" aria-modal="true">
+  <div class="gw-top">
+    <div class="gw-eyebrow en">Welcome</div>
+    <div class="gw-eyebrow zh">欢迎</div>
+    <h1 class="gw-question en">How would you like to <em>know me?</em></h1>
+    <h1 class="gw-question zh">你想怎样<em>认识我？</em></h1>
+  </div>
+  <div class="gw-panels">
+    <div class="gw-divider" aria-hidden="true"></div>
+    <button class="gw-panel gw-personal" onclick="chooseGateway('creative')">
+      <div class="gw-panel-inner">
+        <span class="gw-label en">Personal</span>
+        <span class="gw-label zh">个人</span>
+        <span class="gw-title en">The<br>Creator</span>
+        <span class="gw-title zh">创作者</span>
+        <span class="gw-sub en">Film · Photography<br>Writing · Music</span>
+        <span class="gw-sub zh">影视 · 摄影<br>写作 · 音乐</span>
+        <span class="gw-arrow">↓</span>
+      </div>
+    </button>
+    <button class="gw-panel gw-professional" onclick="chooseGateway('work')">
+      <div class="gw-panel-inner">
+        <span class="gw-label en">Professional</span>
+        <span class="gw-label zh">专业</span>
+        <span class="gw-title en">The<br>Builder</span>
+        <span class="gw-title zh">建造者</span>
+        <span class="gw-sub en">Teaching · Media<br>ScriptBridge · AI</span>
+        <span class="gw-sub zh">教学 · 媒体<br>ScriptBridge · AI</span>
+        <span class="gw-arrow">↓</span>
+      </div>
+    </button>
+  </div>
+  <button class="gw-skip" onclick="skipGateway()">
+    <span class="en">or explore everything ↓</span>
+    <span class="zh">或者随意浏览 ↓</span>
+  </button>
+</div>
 
 <!-- NAV -->
 <nav>
@@ -857,14 +1027,112 @@
         <span class="card-hint zh">阅读节选 →</span>
       </div>
 
-      <div class="creative-card">
-        <span class="creative-icon">📷</span>
-        <div class="creative-title en">Photography</div>
-        <div class="creative-title zh">摄影</div>
-        <div class="creative-desc en">Series include 《栓》《单车》《自由》《梦》《生命》. Drawn to the overlooked: light through leaves, a duck in a puddle, a child on a bike. The world in the margin.</div>
-        <div class="creative-desc zh">作品系列：《栓》《单车》《自由》《梦》《生命》。偏爱被忽视的：光透过叶片、水坑里的鸭子、骑车的孩子。边缘处的世界。</div>
-        <div class="creative-note en">Nature · Portrait · Documentary</div>
-        <div class="creative-note zh">自然 · 人像 · 纪实</div>
+      <!-- Photography gallery — full width row -->
+      <div style="grid-column: 1 / -1; margin-top: 0.5rem;">
+        <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:1.2rem;">
+          <span class="creative-icon" style="font-size:1.1rem;">📷</span>
+          <div>
+            <div class="creative-title en" style="margin-bottom:0.2rem;">Photography</div>
+            <div class="creative-title zh" style="margin-bottom:0.2rem;">摄影</div>
+            <div class="creative-note en">Personal series · 2022–2023 · Yunnan</div>
+            <div class="creative-note zh">个人系列 · 2022–2023 · 云南</div>
+          </div>
+        </div>
+        <div class="photo-gallery">
+          <div class="photo-grid">
+
+            <!-- 《栓》wide hero -->
+            <div class="photo-item wide">
+              <img src="photo_zhan_1.jpeg" alt="《栓》系列 — 2023" loading="lazy" />
+              <div class="photo-caption">
+                <div class="photo-series">Series · 系列</div>
+                <div class="photo-title">《栓》Bound</div>
+                <div class="photo-meta">2023.11.29 · 工映1970神犁文创社园</div>
+              </div>
+            </div>
+
+            <!-- 《栓》second shot -->
+            <div class="photo-item tall">
+              <img src="photo_zhan_2.jpeg" alt="《栓》系列 — 2023" loading="lazy" />
+              <div class="photo-caption">
+                <div class="photo-series">Series · 系列</div>
+                <div class="photo-title">《栓》Bound</div>
+                <div class="photo-meta">2023.11.29 · 工映1970神犁文创社园</div>
+              </div>
+            </div>
+
+            <!-- 《自由》portrait -->
+            <div class="photo-item">
+              <img src="photo_ziyou.jpeg" alt="《自由》— 名为夏天的影子" loading="lazy" />
+              <div class="photo-caption">
+                <div class="photo-series">Portrait · 人像</div>
+                <div class="photo-title">《自由》Freedom</div>
+                <div class="photo-meta">2022.10.22 · 新平彝族傣族自治县</div>
+              </div>
+            </div>
+
+            <!-- 《单车》child -->
+            <div class="photo-item">
+              <img src="photo_danche_1.jpeg" alt="《单车》— 童年" loading="lazy" />
+              <div class="photo-caption">
+                <div class="photo-series">Street · 纪实</div>
+                <div class="photo-title">《单车》Bicycle</div>
+                <div class="photo-meta">2022.10.23 · 新平</div>
+              </div>
+            </div>
+
+            <!-- 《单车》2 -->
+            <div class="photo-item">
+              <img src="photo_danche_2.jpeg" alt="《单车》— 童年 II" loading="lazy" />
+              <div class="photo-caption">
+                <div class="photo-series">Street · 纪实</div>
+                <div class="photo-title">《单车》Bicycle II</div>
+                <div class="photo-meta">2022.10.23 · 新平</div>
+              </div>
+            </div>
+
+            <!-- 《梦》portrait -->
+            <div class="photo-item">
+              <img src="photo_meng_1.jpeg" alt="《梦》— 滇池岸边" loading="lazy" />
+              <div class="photo-caption">
+                <div class="photo-series">Portrait · 人像</div>
+                <div class="photo-title">《梦》Dream</div>
+                <div class="photo-meta">2023.05.02 · 滇池岸边</div>
+              </div>
+            </div>
+
+            <!-- 《梦》portrait 2 -->
+            <div class="photo-item">
+              <img src="photo_meng_2.jpeg" alt="《梦》— 滇池岸边 II" loading="lazy" />
+              <div class="photo-caption">
+                <div class="photo-series">Portrait · 人像</div>
+                <div class="photo-title">《梦》Dream II</div>
+                <div class="photo-meta">2023.05.02 · 滇池岸边</div>
+              </div>
+            </div>
+
+            <!-- 《生命》bird -->
+            <div class="photo-item">
+              <img src="photo_shengming_1.jpeg" alt="《生命》Life" loading="lazy" />
+              <div class="photo-caption">
+                <div class="photo-series">Nature · 自然</div>
+                <div class="photo-title">《生命》Life</div>
+                <div class="photo-meta">季颖秋 摄影</div>
+              </div>
+            </div>
+
+            <!-- 《生命》steam -->
+            <div class="photo-item">
+              <img src="photo_shengming_2.jpeg" alt="《生命》Life II" loading="lazy" />
+              <div class="photo-caption">
+                <div class="photo-series">Nature · 自然</div>
+                <div class="photo-title">《生命》Life II</div>
+                <div class="photo-meta">季颖秋 摄影</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
 
       <div class="creative-card">
@@ -892,27 +1160,31 @@
     <h2 class="section-title zh">我的<em>工作。</em></h2>
 
     <div class="work-list fade-in">
+
+      <!-- 1. English Teacher (Current) -->
       <div class="work-item">
         <div class="work-meta">
-          <div class="work-role en">Current</div>
-          <div class="work-role zh">现在</div>
-          <div class="work-org en">Independent English Teacher</div>
-          <div class="work-org zh">独立英语老师</div>
-          <div class="work-period en">Online · 1-on-1</div>
-          <div class="work-period zh">线上 · 一对一</div>
+          <div class="work-role en">Current · Preply</div>
+          <div class="work-role zh">现任 · Preply</div>
+          <div class="work-org en">Online English Teacher</div>
+          <div class="work-org zh">线上英语老师</div>
+          <div class="work-period en">2025 — Present</div>
+          <div class="work-period zh">2025 — 至今</div>
         </div>
         <div class="work-body en">
-          1-on-1 English lessons with learners worldwide. <strong>Strong instinct for accent and phonetics</strong> — I pick up sounds fast and teach others to do the same. My own language-learning experience informs how I teach.
+          1-on-1 English instruction for learners worldwide via Preply. Built a growing student base from zero — income rising month-over-month. Curriculum design, phonetics coaching, and progress tracking informed by my own language-learning journey.
         </div>
         <div class="work-body zh">
-          全球学员一对一英语教学。<strong>对发音和音标有强烈的直觉</strong>——快速掌握音调，也教别人这样做。自身的语言学习经历让我更理解学生。
+          通过Preply平台为全球学员提供一对一英语教学，从零积累学生群体，收入持续增长。课程设计、发音训练与学习进度追踪均建立在自身语言学习经历的深刻理解之上。
         </div>
         <div class="work-tags">
-          <span class="tag en">Independent</span><span class="tag zh">独立</span>
+          <span class="tag">Preply</span>
+          <span class="tag en">1-on-1</span><span class="tag zh">一对一</span>
           <span class="tag en">Phonetics</span><span class="tag zh">发音</span>
         </div>
       </div>
 
+      <!-- 2. ScriptBridge Founder -->
       <div class="work-item">
         <div class="work-meta">
           <div class="work-role en">Founder</div>
@@ -922,39 +1194,133 @@
           <div class="work-period zh">2026 — 至今</div>
         </div>
         <div class="work-body en">
-          Building the <strong>first legitimate marketplace for Chinese screenplay rights</strong> — copyright on upload, escrow payments, standard contracts. Currently in beta, collecting first users via Xiaohongshu.
+          Building the <strong>first legitimate marketplace for Chinese screenplay rights</strong> — copyright registration on upload, escrow payments, standardized contracts. Designed and deployed the full platform with AI tools. Currently in beta, acquiring first users via Xiaohongshu.
         </div>
         <div class="work-body zh">
-          构建<strong>第一个正规的中文剧本版权交易平台</strong>——上传即版权存证、资金托管、标准合同。目前内测阶段，通过小红书收集首批用户。
+          构建<strong>第一个正规的中文剧本版权交易平台</strong>——上传即版权存证、资金托管、标准合同。借助AI工具独立完成完整平台的设计与部署。目前处于内测阶段，通过小红书获取首批用户。
         </div>
         <div class="work-tags">
           <span class="tag">Founder</span>
           <span class="tag">AI</span>
           <span class="tag en">Beta</span><span class="tag zh">内测</span>
+          <span class="tag">GitHub Pages</span>
         </div>
       </div>
 
+      <!-- 3. Yunnan Net -->
       <div class="work-item">
         <div class="work-meta">
-          <div class="work-role en">Previous</div>
-          <div class="work-role zh">过去</div>
-          <div class="work-org en">Media & TV</div>
-          <div class="work-org zh">媒体与电视</div>
-          <div class="work-period en">2023 — 2025</div>
-          <div class="work-period zh">2023 — 2025</div>
+          <div class="work-role en">Content Producer</div>
+          <div class="work-role zh">内容制作</div>
+          <div class="work-org en">Yunnan Net · State Media</div>
+          <div class="work-org zh">云南网 · 国家媒体</div>
+          <div class="work-period en">2025</div>
+          <div class="work-period zh">2025</div>
         </div>
         <div class="work-body en">
-          Field reporter and camera operator at <strong>Kunming TV</strong>. Content production at <strong>Yunnan Net</strong> (state media). End-to-end: shooting, editing, copywriting, social media management.
+          Full-cycle content production for one of Yunnan's official state media platforms — field shooting, editing, copywriting, and social media account management. End-to-end ownership from location to final output.
         </div>
         <div class="work-body zh">
-          <strong>昆明电视台</strong>外采记者兼摄像。<strong>云南网</strong>（国家媒体）内容制作。全流程：拍摄、剪辑、文案、账号运营。
+          为云南省官方媒体平台负责完整的内容制作流程——外拍、剪辑、文案撰写及社交媒体账号运营，独立掌控从现场到成片的全链条。
         </div>
         <div class="work-tags">
-          <span class="tag en">TV</span><span class="tag zh">电视台</span>
-          <span class="tag en">Documentary</span><span class="tag zh">纪录片</span>
+          <span class="tag en">State Media</span><span class="tag zh">国家媒体</span>
           <span class="tag en">Editing</span><span class="tag zh">剪辑</span>
+          <span class="tag en">Social Media</span><span class="tag zh">账号运营</span>
         </div>
       </div>
+
+      <!-- 4. Apple Authorized Reseller -->
+      <div class="work-item">
+        <div class="work-meta">
+          <div class="work-role en">Sales & Content Creator</div>
+          <div class="work-role zh">销售 & 内容创作</div>
+          <div class="work-org en">Apple Authorized Reseller</div>
+          <div class="work-org zh">Apple授权专卖店</div>
+          <div class="work-period en">2024 — 2025</div>
+          <div class="work-period zh">2024 — 2025</div>
+        </div>
+        <div class="work-body en">
+          In-store customer service, product education, and sales. Simultaneously managed the store's short-video content — scripting, shooting, editing, and growing the brand's social media presence from the ground up.
+        </div>
+        <div class="work-body zh">
+          门店客户接待、产品讲解与销售。同时主导门店短视频账号的从零搭建——策划、拍摄、剪辑，持续扩大品牌的社交媒体影响力。
+        </div>
+        <div class="work-tags">
+          <span class="tag">Apple</span>
+          <span class="tag en">Short Video</span><span class="tag zh">短视频</span>
+          <span class="tag en">Social Media</span><span class="tag zh">账号运营</span>
+        </div>
+      </div>
+
+      <!-- 5. Dayao County Media Center -->
+      <div class="work-item">
+        <div class="work-meta">
+          <div class="work-role en">Media Reporter</div>
+          <div class="work-role zh">媒体记者</div>
+          <div class="work-org en">Dayao County Convergence Media Center</div>
+          <div class="work-org zh">大姚县融媒体中心</div>
+          <div class="work-period en">2024</div>
+          <div class="work-period zh">2024</div>
+        </div>
+        <div class="work-body en">
+          News gathering, reporting, and production at a county-level convergence media organization — covering local stories across text, video, and social platforms.
+        </div>
+        <div class="work-body zh">
+          县级融媒体机构新闻采集与制作——跨文字、视频与社交平台报道本地新闻事件。
+        </div>
+        <div class="work-tags">
+          <span class="tag en">News</span><span class="tag zh">新闻</span>
+          <span class="tag en">Convergence Media</span><span class="tag zh">融媒体</span>
+        </div>
+      </div>
+
+      <!-- 6. Cangshan Nature Museum, Dali -->
+      <div class="work-item">
+        <div class="work-meta">
+          <div class="work-role en">Communications & Interpretation</div>
+          <div class="work-role zh">传播与讲解</div>
+          <div class="work-org en">Cangshan Nature Photo Museum · Dali</div>
+          <div class="work-org zh">大理苍山自然影像博物馆</div>
+          <div class="work-period en">2024</div>
+          <div class="work-period zh">2024</div>
+        </div>
+        <div class="work-body en">
+          Visitor reception and guided interpretation at a natural-history photography museum. Curated and archived exhibition documentation, produced editorial content for WeChat, and designed recruitment materials.
+        </div>
+        <div class="work-body zh">
+          自然影像博物馆参观接待与专业讲解。整理归档展出作品文书，撰写微信推文内容，制作招聘海报。
+        </div>
+        <div class="work-tags">
+          <span class="tag en">Museum</span><span class="tag zh">博物馆</span>
+          <span class="tag en">Interpretation</span><span class="tag zh">讲解</span>
+          <span class="tag en">Editorial</span><span class="tag zh">编辑写作</span>
+        </div>
+      </div>
+
+      <!-- 7. Kunming TV -->
+      <div class="work-item">
+        <div class="work-meta">
+          <div class="work-role en">Field Reporter & Cameraman</div>
+          <div class="work-role zh">外采记者 & 摄像</div>
+          <div class="work-org en">Kunming TV · Urban Barcode</div>
+          <div class="work-org zh">昆明电视台 · 都市条形码</div>
+          <div class="work-period en">2023 — 2024</div>
+          <div class="work-period zh">2023 — 2024</div>
+        </div>
+        <div class="work-body en">
+          Sole field journalist on a civil-affairs news program. Handled the full pipeline solo — on-location shooting with professional broadcast cameras, subject interviews, and news-script writing, from departure to broadcast.
+        </div>
+        <div class="work-body zh">
+          民生新闻节目外采记者，全流程独立负责——专业摄像机现场拍摄、采访受访者、新闻稿写作，从出发到播出一人完成。
+        </div>
+        <div class="work-tags">
+          <span class="tag en">Broadcast TV</span><span class="tag zh">电视台</span>
+          <span class="tag en">Field Journalism</span><span class="tag zh">外采</span>
+          <span class="tag en">Scriptwriting</span><span class="tag zh">新闻稿</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
@@ -1057,6 +1423,24 @@
 
 <script>
   const html = document.documentElement;
+
+  // ── Gateway ──
+  const gw = document.getElementById('gateway');
+  function dismissGateway() {
+    gw.classList.add('leaving');
+    setTimeout(() => gw.classList.add('gone'), 750);
+    sessionStorage.setItem('rj-visited', '1');
+  }
+  function chooseGateway(section) {
+    dismissGateway();
+    setTimeout(() => {
+      const el = document.getElementById(section);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 400);
+  }
+  function skipGateway() { dismissGateway(); }
+  // Only show once per session
+  if (sessionStorage.getItem('rj-visited')) gw.classList.add('gone');
 
   // ── Theme toggle ──
   const themeBtn = document.getElementById('themeBtn');
