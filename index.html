@@ -34,6 +34,7 @@
       --logo-r:    #5DAA88;
       --logo-j:    #D46058;
       --logo-line: rgba(212,96,88,0.38);
+      --focus-ring: rgba(157,127,232,0.55);
     }
 
     /* ── 浅色主题 ── */
@@ -104,6 +105,7 @@
       letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--violet); }
     .lang-toggle {
       background: none; border: 1px solid var(--border);
       color: var(--muted); font-family: inherit;
@@ -119,6 +121,18 @@
       transition: all 0.2s; line-height: 1;
     }
     .theme-toggle:hover { border-color: var(--amber); color: var(--amber); }
+
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      width: 0;
+      background: linear-gradient(90deg, var(--violet), var(--amber));
+      z-index: 220;
+      pointer-events: none;
+      transition: width 0.08s linear;
+    }
 
     /* ── HERO ── */
     #hero {
@@ -553,6 +567,19 @@
       color: var(--violet); opacity: 0.7;
     }
     .card-clickable:hover .card-hint { opacity: 1; }
+    .card-clickable:focus-visible,
+    .work-card-header:focus-visible,
+    .gw-panel:focus-visible,
+    .lang-toggle:focus-visible,
+    .theme-toggle:focus-visible,
+    .snb:focus-visible,
+    .contact-email:focus-visible,
+    .modal-close button:focus-visible,
+    .tastes-close-btn:focus-visible,
+    .taste-back:focus-visible {
+      outline: 2px solid var(--focus-ring);
+      outline-offset: 2px;
+    }
 
     /* ── FADE ── */
     .fade-in {
@@ -871,6 +898,32 @@
     }
     .snb-secondary:hover { color: var(--text); border-color: var(--muted); }
 
+    .back-to-top {
+      position: fixed;
+      right: 1.2rem;
+      bottom: 1.2rem;
+      z-index: 120;
+      opacity: 0;
+      transform: translateY(8px);
+      pointer-events: none;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      padding: 0.5rem 0.8rem;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: opacity 0.25s ease, transform 0.25s ease, border-color 0.2s ease;
+    }
+    .back-to-top:hover { border-color: var(--violet); color: var(--violet); }
+    .back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
     /* ── VIEW SWITCHING ── */
     html[data-view="creative"] #work,
     html[data-view="creative"] #work-nav,
@@ -1099,9 +1152,19 @@
       font-family: 'Cormorant Garamond', serif;
       border-left: 2px solid var(--border); padding-left: 0.9rem;
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
 <body>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
 <!-- GATEWAY -->
 <div id="gateway" role="dialog" aria-modal="true">
@@ -1691,6 +1754,11 @@
   <a href="mailto:qtian904@gmail.com" class="contact-email">qtian904@gmail.com</a>
 </section>
 
+<button class="back-to-top" id="backToTop" type="button">
+  <span class="en">Top ↑</span>
+  <span class="zh">回到顶部 ↑</span>
+</button>
+
 <!-- PHOTO MODAL -->
 <div class="modal-overlay" id="modalPhoto" onclick="closeModalOutside(event)">
   <div class="modal-box" style="max-width:860px;">
@@ -2120,6 +2188,27 @@
 
 <script>
   const html = document.documentElement;
+  let lastFocusedElement = null;
+
+  function updateBodyLock() {
+    const anyModalOpen = document.querySelector('.modal-overlay.open');
+    document.body.style.overflow = anyModalOpen ? 'hidden' : '';
+  }
+
+  function setupAccessibility() {
+    document.querySelectorAll('.work-card').forEach(card => {
+      const header = card.querySelector('.work-card-header');
+      if (!header) return;
+      header.setAttribute('tabindex', '0');
+      header.setAttribute('role', 'button');
+      header.setAttribute('aria-expanded', 'false');
+    });
+    document.querySelectorAll('.card-clickable').forEach(card => {
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('role', 'button');
+      card.setAttribute('aria-haspopup', 'dialog');
+    });
+  }
 
   // ── Gateway ──
   const gw = document.getElementById('gateway');
@@ -2147,8 +2236,20 @@
   function toggleWork(el) {
     const card = el.closest('.work-card');
     const wasOpen = card.classList.contains('open');
-    document.querySelectorAll('.work-card.open').forEach(c => c.classList.remove('open'));
-    if (!wasOpen) card.classList.add('open');
+    document.querySelectorAll('.work-card.open').forEach(c => {
+      c.classList.remove('open');
+      const body = c.querySelector('.work-card-body');
+      const header = c.querySelector('.work-card-header');
+      if (body) body.style.maxHeight = '';
+      if (header) header.setAttribute('aria-expanded', 'false');
+    });
+    if (!wasOpen) {
+      card.classList.add('open');
+      const body = card.querySelector('.work-card-body');
+      const header = card.querySelector('.work-card-header');
+      if (body) body.style.maxHeight = body.scrollHeight + 'px';
+      if (header) header.setAttribute('aria-expanded', 'true');
+    }
   }
 
   function showGateway() {
@@ -2204,18 +2305,29 @@
   // Modal
   function openModal(id) {
     const key = id.charAt(0).toUpperCase() + id.slice(1);
-    document.getElementById('modal' + key).classList.add('open');
-    document.body.style.overflow = 'hidden';
+    const modal = document.getElementById('modal' + key);
+    lastFocusedElement = document.activeElement;
+    modal.classList.add('open');
+    const targetBtn = modal.querySelector('.modal-close button, .tastes-close-btn, .taste-back');
+    if (targetBtn) targetBtn.focus();
+    updateBodyLock();
   }
   function closeModal(id) {
     const key = id.charAt(0).toUpperCase() + id.slice(1);
-    document.getElementById('modal' + key).classList.remove('open');
-    document.body.style.overflow = '';
+    const modal = document.getElementById('modal' + key);
+    modal.classList.remove('open');
+    updateBodyLock();
+    if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+      lastFocusedElement.focus();
+    }
   }
   function closeModalOutside(e) {
     if (e.target.classList.contains('modal-overlay')) {
       e.target.classList.remove('open');
-      document.body.style.overflow = '';
+      updateBodyLock();
+      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+        lastFocusedElement.focus();
+      }
     }
   }
   function switchTab(modalId, panelIdx, btn) {
@@ -2231,9 +2343,61 @@
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
       document.querySelectorAll('.modal-overlay.open').forEach(m => {
-        m.classList.remove('open'); document.body.style.overflow = '';
+        m.classList.remove('open');
       });
+      updateBodyLock();
     }
+    if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('work-card-header')) {
+      e.preventDefault();
+      toggleWork(e.target);
+    }
+    if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('card-clickable')) {
+      e.preventDefault();
+      e.target.click();
+    }
+  });
+
+  // Scroll progress + back-to-top + nav active link
+  const progressBar = document.getElementById('scrollProgress');
+  const backToTop = document.getElementById('backToTop');
+  let ticking = false;
+
+  function updateScrollUI() {
+    const doc = document.documentElement;
+    const maxScroll = doc.scrollHeight - window.innerHeight;
+    const ratio = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
+    progressBar.style.width = ratio + '%';
+    backToTop.classList.toggle('visible', window.scrollY > 520);
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(updateScrollUI);
+  }, { passive: true });
+  updateScrollUI();
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  const navTargets = ['about', 'creative', 'work', 'contact'];
+  const navAnchorMap = {};
+  navTargets.forEach(id => {
+    navAnchorMap[id] = document.querySelectorAll(`.nav-links a[href="#${id}"]`);
+  });
+
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      navTargets.forEach(id => navAnchorMap[id].forEach(a => a.classList.remove('active')));
+      const activeId = entry.target.id;
+      if (navAnchorMap[activeId]) navAnchorMap[activeId].forEach(a => a.classList.add('active'));
+    });
+  }, { rootMargin: '-45% 0px -45% 0px', threshold: 0.01 });
+  navTargets.forEach(id => {
+    const section = document.getElementById(id);
+    if (section) sectionObserver.observe(section);
   });
 
   const faders = document.querySelectorAll('.fade-in');
@@ -2260,6 +2424,8 @@
     document.querySelectorAll('.vinyl-item.playing').forEach(v => v.classList.remove('playing'));
     if (!wasPlaying) el.classList.add('playing');
   }
+
+  setupAccessibility();
 </script>
 </body>
 </html>
