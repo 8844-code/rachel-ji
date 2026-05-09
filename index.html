@@ -1089,19 +1089,20 @@
       transition: transform 0.3s ease, border-color 0.2s, background 0.2s;
       transform: rotate(var(--br));
       font-family: 'Space Grotesk', sans-serif;
-      animation: bubbleFloat 4.8s ease-in-out infinite;
+      animation: bubbleFloat 3.8s cubic-bezier(0.42, 0, 0.28, 1) infinite;
       will-change: transform;
-      box-shadow: 0 10px 26px rgba(0,0,0,0.18);
+      box-shadow: 0 14px 32px rgba(0,0,0,0.24);
     }
     .taste-bubble:hover {
-      transform: rotate(0deg) scale(1.12);
+      transform: rotate(0deg) scale(1.16);
       border-color: var(--violet);
-      background: rgba(157,127,232,0.16);
-      animation: bubbleHoverDance 1.15s ease-in-out infinite;
-      box-shadow: 0 14px 34px rgba(0,0,0,0.24), 0 0 0 1px rgba(157,127,232,0.22) inset;
+      background: rgba(157,127,232,0.22);
+      animation: bubbleHoverDance 0.88s ease-in-out infinite;
+      box-shadow: 0 18px 42px rgba(0,0,0,0.3), 0 0 0 1px rgba(157,127,232,0.28) inset;
     }
-    .taste-bubble:nth-child(2) { animation-delay: -1.8s; }
-    .taste-bubble:nth-child(3) { animation-delay: -3.1s; }
+    .taste-bubble:nth-child(1) { animation-delay: -0.6s; }
+    .taste-bubble:nth-child(2) { animation-delay: -1.9s; }
+    .taste-bubble:nth-child(3) { animation-delay: -3.3s; }
     .taste-bubble-icon { font-size: 1.5rem; line-height: 1; }
     .taste-bubble-label {
       font-size: 0.68rem; letter-spacing: 0.18em;
@@ -1109,14 +1110,15 @@
     }
     .taste-bubble:hover .taste-bubble-label { color: var(--violet); }
     @keyframes bubbleFloat {
-      0%, 100% { transform: translateY(0) rotate(var(--br)); }
-      25% { transform: translateY(-9px) translateX(4px) rotate(calc(var(--br) + 2deg)); }
-      50% { transform: translateY(-18px) translateX(-3px) rotate(calc(var(--br) - 1deg)); }
-      75% { transform: translateY(-8px) translateX(5px) rotate(calc(var(--br) + 2.5deg)); }
+      0%, 100% { transform: translateY(0) translateX(0) rotate(var(--br)) scale(1); }
+      20% { transform: translateY(-14px) translateX(7px) rotate(calc(var(--br) + 3deg)) scale(1.02); }
+      45% { transform: translateY(-30px) translateX(-6px) rotate(calc(var(--br) - 2deg)) scale(1.035); }
+      70% { transform: translateY(-18px) translateX(9px) rotate(calc(var(--br) + 4deg)) scale(1.02); }
+      85% { transform: translateY(-8px) translateX(-4px) rotate(calc(var(--br) + 1deg)) scale(1.01); }
     }
     @keyframes bubbleHoverDance {
-      0%, 100% { transform: translateY(-2px) rotate(-0.8deg) scale(1.12); }
-      50% { transform: translateY(-9px) rotate(0.8deg) scale(1.13); }
+      0%, 100% { transform: translateY(-4px) rotate(-1.4deg) scale(1.16); }
+      50% { transform: translateY(-14px) rotate(1.6deg) scale(1.18); }
     }
 
     /* Category views */
