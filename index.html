@@ -952,6 +952,15 @@
       position: relative;
       padding: 0;
     }
+    .tastes-box::before {
+      content: '';
+      position: absolute;
+      inset: -20% -10% auto;
+      height: 60%;
+      background: radial-gradient(circle at 50% 40%, rgba(157,127,232,0.18), transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
     /* Scatter screen */
     .tastes-scatter {
       position: absolute; inset: 0;
@@ -991,18 +1000,27 @@
       transition: transform 0.3s ease, border-color 0.2s, background 0.2s;
       transform: rotate(var(--br));
       font-family: 'Space Grotesk', sans-serif;
+      animation: bubbleFloat 5.8s ease-in-out infinite;
+      will-change: transform;
     }
     .taste-bubble:hover {
       transform: rotate(0deg) scale(1.07);
       border-color: var(--violet);
       background: rgba(157,127,232,0.06);
+      animation-play-state: paused;
     }
+    .taste-bubble:nth-child(2) { animation-delay: -1.8s; }
+    .taste-bubble:nth-child(3) { animation-delay: -3.1s; }
     .taste-bubble-icon { font-size: 1.5rem; line-height: 1; }
     .taste-bubble-label {
       font-size: 0.68rem; letter-spacing: 0.18em;
       text-transform: uppercase; color: var(--muted);
     }
     .taste-bubble:hover .taste-bubble-label { color: var(--violet); }
+    @keyframes bubbleFloat {
+      0%, 100% { transform: translateY(0) rotate(var(--br)); }
+      50% { transform: translateY(-10px) rotate(calc(var(--br) + 1.5deg)); }
+    }
 
     /* Category views */
     .taste-view {
@@ -1095,21 +1113,104 @@
       font-size: 0.6rem; letter-spacing: 0.12em;
       padding: 0.3rem 1rem 1.2rem; flex-shrink: 0;
     }
+    .music-detail {
+      margin: 0 2rem 1.4rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1rem 1.1rem;
+      background: var(--surface2);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.8rem 1.2rem;
+      align-items: center;
+    }
+    .music-meta-label {
+      font-size: 0.58rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--violet);
+      margin-bottom: 0.25rem;
+    }
+    .music-meta-title {
+      font-size: 1rem;
+      color: var(--text);
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    .music-meta-sub {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      margin-top: 0.2rem;
+    }
+    .music-meta-note {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+      line-height: 1.6;
+    }
+    .music-preview-btn {
+      border: 1px solid var(--violet-dim);
+      background: transparent;
+      color: var(--violet);
+      font-family: inherit;
+      font-size: 0.64rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      padding: 0.45rem 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      justify-self: end;
+    }
+    .music-preview-btn:hover:not(:disabled) { background: var(--violet); color: #fff; }
+    .music-preview-btn:disabled {
+      color: var(--muted);
+      border-color: var(--border);
+      cursor: not-allowed;
+    }
+    .music-preview-track {
+      grid-column: 1 / -1;
+      height: 4px;
+      border-radius: 999px;
+      background: rgba(157,127,232,0.14);
+      overflow: hidden;
+    }
+    .music-preview-fill {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--violet), var(--amber));
+      transition: width 0.18s linear;
+    }
 
     /* ── FILM GRID ── */
     .film-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 1.2rem; padding: 1.8rem 2rem;
-      overflow-y: auto; flex: 1;
+      display: flex;
+      gap: 1.1rem;
+      padding: 1.8rem 2rem 2rem;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      flex: 1;
+      align-items: stretch;
     }
-    .film-card { display: flex; flex-direction: column; gap: 0.55rem; }
+    .film-grid::-webkit-scrollbar { height: 3px; }
+    .film-grid::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+    .film-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      min-width: 155px;
+      scroll-snap-align: center;
+      flex-shrink: 0;
+    }
     .film-poster {
       aspect-ratio: 2/3; border-radius: 3px;
       border: 1px solid var(--border); overflow: hidden;
-      transition: transform 0.25s ease;
+      transition: transform 0.25s ease, border-color 0.25s ease;
     }
-    .film-card:hover .film-poster { transform: scale(1.03); }
+    .film-card:hover .film-poster { transform: translateY(-4px) scale(1.03); border-color: var(--violet-dim); }
     .film-poster img { width: 100%; height: 100%; object-fit: cover; }
     .film-title {
       font-size: 0.7rem; color: var(--text);
@@ -1160,6 +1261,7 @@
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
       }
+      .taste-bubble { transform: rotate(var(--br)); }
     }
   </style>
 </head>
@@ -2019,7 +2121,7 @@
         <button class="taste-bubble" style="--bx:22%;--by:62%;--br:-5deg" onclick="showTasteView('books')">
           <span class="taste-bubble-icon">✦</span>
           <span class="taste-bubble-label en">Books</span>
-          <span class="taste-bubble-label zh">书</span>
+          <span class="taste-bubble-label zh">书籍</span>
         </button>
       </div>
     </div>
@@ -2034,47 +2136,62 @@
         <div class="taste-view-title zh">音乐</div>
         <button class="tastes-close-btn" onclick="closeModal('tastes')">×</button>
       </div>
-      <div class="vinyl-carousel">
-        <div class="vinyl-item" onclick="toggleVinyl(this)">
+      <div class="vinyl-carousel" id="vinylCarousel">
+        <div class="vinyl-item" data-title-en="The Rippling Night" data-title-zh="涟漪夜色" data-artist="R. Ji Curated" data-note-en="Ambient textures for writing sessions." data-note-zh="写作时循环的氛围层。" data-preview-url="" onclick="toggleVinyl(this)">
           <div class="vinyl-disc">
             <div class="vinyl-cover" style="background:linear-gradient(135deg,#2a1a3e,#5a2d82);"></div>
             <div class="vinyl-hole"></div>
           </div>
-          <div class="vinyl-label en">Album · Artist</div>
-          <div class="vinyl-label zh">专辑 · 艺人</div>
+          <div class="vinyl-label en">The Rippling Night · R. Ji Curated</div>
+          <div class="vinyl-label zh">《涟漪夜色》· RJ精选</div>
         </div>
-        <div class="vinyl-item" onclick="toggleVinyl(this)">
+        <div class="vinyl-item" data-title-en="Skyline Pulse" data-title-zh="天际脉冲" data-artist="R. Ji Curated" data-note-en="Minimal beats for momentum." data-note-zh="保持节奏感的极简律动。" data-preview-url="" onclick="toggleVinyl(this)">
           <div class="vinyl-disc">
             <div class="vinyl-cover" style="background:linear-gradient(135deg,#1a2e20,#2a5a3a);"></div>
             <div class="vinyl-hole"></div>
           </div>
-          <div class="vinyl-label en">Album · Artist</div>
-          <div class="vinyl-label zh">专辑 · 艺人</div>
+          <div class="vinyl-label en">Skyline Pulse · R. Ji Curated</div>
+          <div class="vinyl-label zh">《天际脉冲》· RJ精选</div>
         </div>
-        <div class="vinyl-item" onclick="toggleVinyl(this)">
+        <div class="vinyl-item" data-title-en="Fire and Earth" data-title-zh="火与土地" data-artist="R. Ji Curated" data-note-en="Rooted tones with emotional lift." data-note-zh="有土地感的情绪张力。" data-preview-url="" onclick="toggleVinyl(this)">
           <div class="vinyl-disc">
             <div class="vinyl-cover" style="background:linear-gradient(135deg,#2e1a14,#5a2a1e);"></div>
             <div class="vinyl-hole"></div>
           </div>
-          <div class="vinyl-label en">Album · Artist</div>
-          <div class="vinyl-label zh">专辑 · 艺人</div>
+          <div class="vinyl-label en">Fire and Earth · R. Ji Curated</div>
+          <div class="vinyl-label zh">《火与土地》· RJ精选</div>
         </div>
-        <div class="vinyl-item" onclick="toggleVinyl(this)">
+        <div class="vinyl-item" data-title-en="Rainline" data-title-zh="雨线" data-artist="R. Ji Curated" data-note-en="Late-night headphones material." data-note-zh="深夜耳机专用音色。" data-preview-url="" onclick="toggleVinyl(this)">
           <div class="vinyl-disc">
             <div class="vinyl-cover" style="background:linear-gradient(135deg,#141a2e,#1e2a5a);"></div>
             <div class="vinyl-hole"></div>
           </div>
-          <div class="vinyl-label en">Album · Artist</div>
-          <div class="vinyl-label zh">专辑 · 艺人</div>
+          <div class="vinyl-label en">Rainline · R. Ji Curated</div>
+          <div class="vinyl-label zh">《雨线》· RJ精选</div>
         </div>
-        <div class="vinyl-item" onclick="toggleVinyl(this)">
+        <div class="vinyl-item" data-title-en="Golden Dust" data-title-zh="金色尘埃" data-artist="R. Ji Curated" data-note-en="Warm vocals and open roads." data-note-zh="温暖人声与公路感。" data-preview-url="" onclick="toggleVinyl(this)">
           <div class="vinyl-disc">
             <div class="vinyl-cover" style="background:linear-gradient(135deg,#2e2a14,#5a501e);"></div>
             <div class="vinyl-hole"></div>
           </div>
-          <div class="vinyl-label en">Album · Artist</div>
-          <div class="vinyl-label zh">专辑 · 艺人</div>
+          <div class="vinyl-label en">Golden Dust · R. Ji Curated</div>
+          <div class="vinyl-label zh">《金色尘埃》· RJ精选</div>
         </div>
+      </div>
+      <div class="music-detail">
+        <div>
+          <div class="music-meta-label en">Now selected</div>
+          <div class="music-meta-label zh">当前选择</div>
+          <div class="music-meta-title" id="musicTitle">—</div>
+          <div class="music-meta-sub" id="musicArtist">—</div>
+          <div class="music-meta-note en" id="musicNoteEn">Choose an album to preview interaction. Real audio links can be connected later.</div>
+          <div class="music-meta-note zh" id="musicNoteZh">选择专辑可预览交互。后续可直接接入真实音频链接。</div>
+        </div>
+        <button class="music-preview-btn" id="musicPreviewBtn" type="button" disabled>
+          <span class="en">Preview 30s</span>
+          <span class="zh">试听30秒</span>
+        </button>
+        <div class="music-preview-track"><div class="music-preview-fill" id="musicPreviewFill"></div></div>
       </div>
       <div class="vinyl-hint en">← drag to browse &nbsp;·&nbsp; click to spin →</div>
       <div class="vinyl-hint zh">← 拖动浏览 &nbsp;·&nbsp; 点击旋转 →</div>
@@ -2090,7 +2207,7 @@
         <div class="taste-view-title zh">电影</div>
         <button class="tastes-close-btn" onclick="closeModal('tastes')">×</button>
       </div>
-      <div class="film-grid">
+      <div class="film-grid" id="filmGrid">
         <div class="film-card">
           <div class="film-poster" style="background:linear-gradient(160deg,#0f0f1e,#1a1240);"></div>
           <div class="film-title en">Title</div>
@@ -2189,6 +2306,7 @@
 <script>
   const html = document.documentElement;
   let lastFocusedElement = null;
+  let previewTimer = null;
 
   function updateBodyLock() {
     const anyModalOpen = document.querySelector('.modal-overlay.open');
@@ -2418,12 +2536,77 @@
     document.getElementById('tastesScatter').classList.remove('hidden');
     document.querySelectorAll('.taste-view').forEach(v => v.classList.remove('active'));
     document.querySelectorAll('.vinyl-item.playing').forEach(v => v.classList.remove('playing'));
+    resetPreviewFill();
   }
   function toggleVinyl(el) {
     const wasPlaying = el.classList.contains('playing');
     document.querySelectorAll('.vinyl-item.playing').forEach(v => v.classList.remove('playing'));
-    if (!wasPlaying) el.classList.add('playing');
+    if (!wasPlaying) {
+      el.classList.add('playing');
+      syncMusicDetail(el);
+    } else {
+      syncMusicDetail(null);
+    }
   }
+
+  const musicTitle = document.getElementById('musicTitle');
+  const musicArtist = document.getElementById('musicArtist');
+  const musicNoteEn = document.getElementById('musicNoteEn');
+  const musicNoteZh = document.getElementById('musicNoteZh');
+  const musicPreviewBtn = document.getElementById('musicPreviewBtn');
+  const musicPreviewFill = document.getElementById('musicPreviewFill');
+
+  function syncMusicDetail(item) {
+    if (!item) {
+      musicTitle.textContent = '—';
+      musicArtist.textContent = '—';
+      musicPreviewBtn.disabled = true;
+      musicPreviewBtn.removeAttribute('data-preview-url');
+      return;
+    }
+    musicTitle.textContent = html.getAttribute('data-lang') === 'zh'
+      ? (item.dataset.titleZh || item.dataset.titleEn || '—')
+      : (item.dataset.titleEn || item.dataset.titleZh || '—');
+    musicArtist.textContent = item.dataset.artist || '—';
+    musicNoteEn.textContent = item.dataset.noteEn || 'Preview description coming soon.';
+    musicNoteZh.textContent = item.dataset.noteZh || '试听说明稍后补充。';
+    const previewUrl = item.dataset.previewUrl || '';
+    musicPreviewBtn.setAttribute('data-preview-url', previewUrl);
+    musicPreviewBtn.disabled = !previewUrl;
+  }
+
+  function resetPreviewFill() {
+    if (previewTimer) {
+      clearInterval(previewTimer);
+      previewTimer = null;
+    }
+    musicPreviewFill.style.width = '0%';
+  }
+
+  musicPreviewBtn.addEventListener('click', () => {
+    const url = musicPreviewBtn.getAttribute('data-preview-url');
+    if (!url) return;
+    resetPreviewFill();
+    let p = 0;
+    previewTimer = setInterval(() => {
+      p += 2;
+      musicPreviewFill.style.width = p + '%';
+      if (p >= 100) resetPreviewFill();
+    }, 120);
+  });
+
+  const filmGrid = document.getElementById('filmGrid');
+  if (filmGrid) {
+    filmGrid.addEventListener('wheel', e => {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        e.preventDefault();
+        filmGrid.scrollBy({ left: e.deltaY, behavior: 'smooth' });
+      }
+    }, { passive: false });
+  }
+
+  const firstVinyl = document.querySelector('.vinyl-item');
+  if (firstVinyl) syncMusicDetail(firstVinyl);
 
   setupAccessibility();
 </script>
