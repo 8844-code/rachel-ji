@@ -1,0 +1,2 @@
+中文：请将黑胶试听用的 mp3 文件名与 index.html 里对应唱片的 data-preview-src 一致（当前示例：Goodbye Henry. (feat. Al Green).mp3、RAYE - Genesis..mp3）；若改用简短英文名如 raye_goodbye_henry_30s.mp3，请同步修改 HTML。
+English: Keep preview mp3 filenames in sync with each vinyl item’s data-preview-src in index.html (current examples: Goodbye Henry. (feat. Al Green).mp3, RAYE - Genesis..mp3); if you switch to short names like raye_goodbye_henry_30s.mp3, update the HTML too.

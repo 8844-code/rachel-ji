@@ -837,19 +837,33 @@
     }
     .card-clickable:hover .photo-thumb-grid img { filter: brightness(0.88) saturate(1); }
 
-    /* ── PHOTO MODAL GALLERY ── */
-    .photo-modal-gallery { display: flex; flex-direction: column; }
-    .photo-modal-item { display: flex; flex-direction: column; }
-    .photo-modal-item img {
+    /* ── PHOTO MODAL GALLERY (series groups) ── */
+    .photo-modal-gallery { display: flex; flex-direction: column; gap: 0; }
+    .photo-series-block { margin: 0; }
+    .photo-series-header.photo-modal-caption {
+      padding-top: 0.5rem;
+      border-bottom: none;
+      padding-bottom: 0.35rem;
+    }
+    .photo-series-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 0.5rem;
+      padding: 0 2rem 0.85rem;
+      align-items: start;
+    }
+    .photo-series-grid img {
       width: 100%; height: auto; display: block;
-      max-height: 80vh; object-fit: contain;
+      max-height: min(40vh, 380px);
+      object-fit: cover;
+      border-radius: 6px; border: 1px solid var(--border);
       background: #000;
     }
     .photo-modal-caption {
-      padding: 1.2rem 2rem 1.8rem;
+      padding: 0 2rem 1.5rem;
       border-bottom: 1px solid var(--border);
     }
-    .photo-modal-item:last-child .photo-modal-caption { border-bottom: none; }
+    .photo-series-block:last-child .photo-modal-caption { border-bottom: none; }
     .photo-modal-series {
       font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
       color: var(--violet); margin-bottom: 0.35rem;
@@ -866,62 +880,33 @@
       font-family: 'Cormorant Garamond', serif; font-style: italic;
       line-height: 2; max-width: 520px;
     }
+    .photo-series-details { margin-top: 0.75rem; }
+    .photo-series-details summary {
+      cursor: pointer;
+      font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--violet); user-select: none; list-style: none;
+    }
+    .photo-series-details summary::-webkit-details-marker { display: none; }
+    .photo-series-details .pisces-poem {
+      margin-top: 0.75rem; padding-top: 0.65rem;
+      max-height: min(52vh, 480px); overflow-y: auto;
+      border-top: 1px solid var(--border);
+    }
 
-    /* ── PISCES GIRL · AQUARIUM POEM ── */
-    .pisces-hero {
-      position: relative;
-      border-radius: var(--radius-md, 14px);
-      overflow: hidden;
-      margin-bottom: 2rem;
-      border: 1px solid var(--border);
-      background: linear-gradient(145deg, rgba(30,55,90,0.35), rgba(8,12,24,0.9));
-    }
-    .pisces-hero img {
-      width: 100%;
-      height: clamp(160px, 28vh, 260px);
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      filter: saturate(1.05) brightness(0.88);
-    }
-    .pisces-hero::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(180deg, transparent 40%, rgba(8,8,18,0.75) 100%);
-      pointer-events: none;
-    }
-    .pisces-hero-cap {
-      position: absolute; left: 1.2rem; bottom: 1rem; z-index: 2;
-      font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
-      color: rgba(180,210,255,0.95);
-    }
-    .pisces-hero-cap .en, .pisces-hero-cap .zh { display: block; }
-    .pisces-intro {
-      font-size: 0.88rem; color: var(--muted); line-height: 1.85;
-      margin-bottom: 1.75rem; max-width: 36em;
-    }
+    /* Pisces poem (embedded in photography modal) */
     .pisces-poem {
       font-family: 'Noto Serif SC', serif;
-      font-size: 1.02rem;
-      line-height: 2.15;
+      font-size: 0.95rem;
+      line-height: 2.1;
       color: var(--text);
       font-weight: 400;
-      max-width: 32em;
+      max-width: 36em;
     }
     .pisces-stanza {
-      margin-bottom: 1.6rem;
+      margin-bottom: 1.35rem;
       white-space: pre-line;
     }
     .pisces-stanza:last-child { margin-bottom: 0; }
-    .pisces-strip {
-      display: flex; gap: 0.45rem; margin: 1rem 0 0.25rem;
-      overflow-x: auto; -webkit-overflow-scrolling: touch;
-      padding-bottom: 0.15rem;
-    }
-    .pisces-strip img {
-      flex: 0 0 32%; min-width: 132px; height: 96px;
-      object-fit: cover; border-radius: 6px; border: 1px solid var(--border);
-    }
     .doc-no-poster {
       height: 160px; margin: -2rem -1.8rem 1.5rem;
       display: flex; align-items: center; justify-content: center;
@@ -1817,34 +1802,19 @@
         <span class="card-hint zh">阅读节选 →</span>
       </div>
 
-      <div class="creative-card card-clickable" onclick="openModal('pisces')">
-        <div style="height:160px;overflow:hidden;margin:-2rem -1.8rem 1.5rem;position:relative;">
-          <img src="ph_aqua_1.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(1.08) brightness(0.74) hue-rotate(-6deg);" />
-          <div style="position:absolute;bottom:0.75rem;left:1rem;font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(180,210,255,0.95);">Poem · 小诗</div>
-        </div>
-        <div class="creative-title en">Pisces Girl</div>
-        <div class="creative-title zh">双鱼座女孩</div>
-        <div class="creative-desc en">Same aquarium frames as in Photography (sourced from the desktop “first pass” folder) — a short poem for a friend, blue glass and distance.</div>
-        <div class="creative-desc zh">与「摄影」里的水族馆条目同源：桌面「最初筛选」里那组蓝色水族馆照片，配这首写给朋友的小诗。</div>
-        <div class="creative-note en">Aquarium series · Chinese</div>
-        <div class="creative-note zh">水族馆系列 · 中文</div>
-        <span class="card-hint en">Read poem →</span>
-        <span class="card-hint zh">阅读全诗 →</span>
-      </div>
-
       <div class="creative-card card-clickable" onclick="openModal('photo')">
         <div class="photo-thumb-grid">
-          <img src="ph_aqua_1.jpg" alt="" loading="lazy" />
-          <img src="ph_freedom.jpg" alt="" loading="lazy" />
-          <img src="ph_bicycle.jpg" alt="" loading="lazy" />
-          <img src="ph_life.jpg" alt="" loading="lazy" />
+          <img src="ph_pisces_1.jpg" alt="" loading="lazy" />
+          <img src="photo_ziyou.jpeg" alt="" loading="lazy" />
+          <img src="photo_meng_1.jpeg" alt="" loading="lazy" />
+          <img src="photo_danche_1.jpeg" alt="" loading="lazy" />
         </div>
         <div class="creative-title en">Photography</div>
         <div class="creative-title zh">摄影</div>
-        <div class="creative-desc en">Sorted from the desktop “first pass” folder: aquarium blues, portraits, street color, nature. Same aquarium set as <em>Pisces Girl.</em></div>
-        <div class="creative-desc zh">按桌面「最初筛选」里的个人作品归类：水族馆、人像、街景色彩、自然与现场。水族馆与《双鱼座女孩》同源。</div>
-        <div class="creative-note en">9 photographs · Yunnan</div>
-        <div class="creative-note zh">9张 · 云南</div>
+        <div class="creative-desc en">Personal series from Yunnan: aquarium blues (Pisces set), portraits, street color, nature, and field notes — grouped in the gallery.</div>
+        <div class="creative-desc zh">云南个人系列：水族馆《双鱼座女孩》、人像、街景、自然与现场笔记——在图库里按组展示。</div>
+        <div class="creative-note en">16 frames · Series grids</div>
+        <div class="creative-note zh">16张 · 分组栅格</div>
         <span class="card-hint en">View gallery →</span>
         <span class="card-hint zh">查看图库 →</span>
       </div>
@@ -2310,149 +2280,28 @@
 
       <div class="photo-modal-gallery">
 
-        <div class="photo-modal-item">
-          <img src="photo_zhan_1.jpeg" alt="《栓》I" loading="lazy" />
-          <div class="photo-modal-caption">
-            <div class="photo-modal-series en">Series · Theater</div>
-            <div class="photo-modal-series zh">系列 · 戏院</div>
-            <div class="photo-modal-title">《栓》Bound — I</div>
-            <div class="photo-modal-meta">2023.11.29 · 工映1970神犁文创社园</div>
-            <div class="photo-modal-poem">
-              天空纵容着鸟的翅膀，<br>
-              远方牵扯着言的眺望，<br>
-              窗框死捉住一方风景，<br>
-              门扉轻闩上半生流浪。<br>
-              <span style="font-size:0.7rem;letter-spacing:0.08em;font-style:normal;">——梁国福《栓》</span>
-            </div>
+        <div class="photo-series-block">
+          <div class="photo-series-header photo-modal-caption">
+            <div class="photo-modal-series en">Aquarium · Pisces Girl</div>
+            <div class="photo-modal-series zh">水族馆 · 双鱼座女孩</div>
+            <div class="photo-modal-title en">Pisces Girl — aquarium frames</div>
+            <div class="photo-modal-title zh">双鱼座女孩 — 水族馆组照</div>
+            <div class="photo-modal-meta en">Kunming · frames from desktop “first pass”</div>
+            <div class="photo-modal-meta zh">昆明 · 源文件来自桌面「最初筛选/双鱼座女孩儿」</div>
           </div>
-        </div>
-
-        <div class="photo-modal-item">
-          <img src="photo_zhan_2.jpeg" alt="《栓》II" loading="lazy" />
-          <div class="photo-modal-caption">
-            <div class="photo-modal-series en">Series · Theater</div>
-            <div class="photo-modal-series zh">系列 · 戏院</div>
-            <div class="photo-modal-title">《栓》Bound — II</div>
-            <div class="photo-modal-meta">2023.11.29 · 工映1970神犁文创社园</div>
+          <div class="photo-series-grid">
+            <img src="ph_pisces_1.jpg" alt="" loading="lazy" />
+            <img src="ph_pisces_2.jpg" alt="" loading="lazy" />
+            <img src="ph_pisces_3.jpg" alt="" loading="lazy" />
+            <img src="ph_pisces_4.jpg" alt="" loading="lazy" />
           </div>
-        </div>
-
-        <div class="photo-modal-item">
-          <img src="photo_ziyou.jpeg" alt="《自由》" loading="lazy" />
           <div class="photo-modal-caption">
-            <div class="photo-modal-series en">Portrait · Freedom</div>
-            <div class="photo-modal-series zh">人像 · 自由</div>
-            <div class="photo-modal-title">《自由》Freedom — 名为夏天的影子</div>
-            <div class="photo-modal-meta">2022.10.22 · 新平彝族傣族自治县 · 肖丹</div>
-            <div class="photo-modal-poem en">
-              Looking at your smile, I almost forgot to press the shutter.<br>
-              <span style="font-size:0.7rem;font-style:normal;letter-spacing:0.05em;">— Rachel Ji</span>
-            </div>
-            <div class="photo-modal-poem zh">
-              看着你的笑，我差点忘记按下快门。<br>
-              <span style="font-size:0.7rem;font-style:normal;letter-spacing:0.05em;">—— 季颖秋</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="photo-modal-item">
-          <img src="photo_danche_1.jpeg" alt="《单车》I" loading="lazy" />
-          <div class="photo-modal-caption">
-            <div class="photo-modal-series en">Street · Childhood</div>
-            <div class="photo-modal-series zh">纪实 · 童年</div>
-            <div class="photo-modal-title">《单车》Bicycle — 童年 I</div>
-            <div class="photo-modal-meta">2022.10.23 · 新平彝族傣族自治县</div>
-          </div>
-        </div>
-
-        <div class="photo-modal-item">
-          <img src="photo_danche_2.jpeg" alt="《单车》II" loading="lazy" />
-          <div class="photo-modal-caption">
-            <div class="photo-modal-series en">Street · Childhood</div>
-            <div class="photo-modal-series zh">纪实 · 童年</div>
-            <div class="photo-modal-title">《单车》Bicycle — 童年 II</div>
-            <div class="photo-modal-meta">2022.10.23 · 新平彝族傣族自治县</div>
-          </div>
-        </div>
-
-        <div class="photo-modal-item">
-          <img src="photo_meng_1.jpeg" alt="《梦》I" loading="lazy" />
-          <div class="photo-modal-caption">
-            <div class="photo-modal-series en">Portrait · Dream</div>
-            <div class="photo-modal-series zh">人像 · 梦</div>
-            <div class="photo-modal-title">《梦》Dream — I</div>
-            <div class="photo-modal-meta">2023.05.02 · 滇池岸边</div>
-            <div class="photo-modal-poem zh">
-              坐着谈也好，走道也好，上街买东西也好。<br>
-              爱是甘草，这苦的世界有了它就好上口了。<br>
-              <span style="font-size:0.7rem;font-style:normal;letter-spacing:0.05em;">—— 季颖秋</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="photo-modal-item">
-          <img src="photo_meng_2.jpeg" alt="《梦》II" loading="lazy" />
-          <div class="photo-modal-caption">
-            <div class="photo-modal-series en">Portrait · Dream</div>
-            <div class="photo-modal-series zh">人像 · 梦</div>
-            <div class="photo-modal-title">《梦》Dream — II</div>
-            <div class="photo-modal-meta">2023.05.02 · 滇池岸边</div>
-          </div>
-        </div>
-
-        <div class="photo-modal-item">
-          <img src="photo_shengming_1.jpeg" alt="《生命》I" loading="lazy" />
-          <div class="photo-modal-caption">
-            <div class="photo-modal-series en">Nature · Life</div>
-            <div class="photo-modal-series zh">自然 · 生命</div>
-            <div class="photo-modal-title">《生命》Life — I</div>
-            <div class="photo-modal-meta">季颖秋 摄影</div>
-          </div>
-        </div>
-
-        <div class="photo-modal-item">
-          <img src="photo_shengming_2.jpeg" alt="《生命》II" loading="lazy" />
-          <div class="photo-modal-caption">
-            <div class="photo-modal-series en">Nature · Life</div>
-            <div class="photo-modal-series zh">自然 · 生命</div>
-            <div class="photo-modal-title">《生命》Life — II</div>
-            <div class="photo-modal-meta">季颖秋 摄影</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- PISCES GIRL · AQUARIUM POEM MODAL -->
-<div class="modal-overlay" id="modalPisces" onclick="closeModalOutside(event)">
-  <div class="modal-box" style="max-width:720px;">
-    <div class="modal-close">
-      <button onclick="closeModal('pisces')" class="en">Close</button>
-      <button onclick="closeModal('pisces')" class="zh">关闭</button>
-    </div>
-    <div class="modal-body">
-      <div class="modal-novel-type en">Poem · Photography</div>
-      <div class="modal-novel-type zh">小诗 · 摄影</div>
-      <div class="modal-novel-title zh">双鱼座女孩</div>
-      <div class="modal-novel-title en">Pisces Girl</div>
-      <div class="modal-novel-title-sub zh">水族馆系列</div>
-      <div class="modal-novel-title-sub en">Aquarium series</div>
-
-      <div class="pisces-hero">
-        <img src="dsc_aquarium.jpg" alt="水族馆 · 蓝色调" loading="lazy" />
-        <div class="pisces-hero-cap">
-          <span class="en">Aquarium · blue series</span>
-          <span class="zh">水族馆 · 蓝色系列</span>
-        </div>
-      </div>
-
-      <p class="pisces-intro en">The poem below is in Chinese. It was written for a friend and belongs with these quiet, blue-lit aquarium frames.</p>
-      <p class="pisces-intro zh">以下为完整正文。若还有同系列水族馆照片，放进「01 开发」文件夹后告诉我文件名，我可以帮你排成横向图带一起展示。</p>
-
-      <div class="pisces-poem">
-        <div class="pisces-stanza">嘿，我的朋友
+            <p class="en" style="font-size:0.82rem;color:var(--muted);line-height:1.75;margin:0 0 0.5rem;max-width:36em;">Chinese poem for a friend — written to sit with these blue-lit frames. Open below for the full text.</p>
+            <p class="zh" style="font-size:0.82rem;color:var(--muted);line-height:1.75;margin:0 0 0.5rem;max-width:36em;">写给朋友的中文小诗，与这组蓝色水族馆画面放在一起。点击下方展开阅读全诗。</p>
+            <details class="photo-series-details">
+              <summary><span class="en">Full poem (中文正文)</span><span class="zh">展开阅读全诗</span></summary>
+              <div class="pisces-poem">
+                <div class="pisces-stanza">嘿，我的朋友
 
 一个善良美丽的女孩儿，
 一个总说自己很坏的善良女孩儿
@@ -2465,23 +2314,140 @@
 可我觉得这是宝贵的纯真。
 虽然光有时也以混乱自拟。</div>
 
-        <div class="pisces-stanza">嘿，女孩儿。
+                <div class="pisces-stanza">嘿，女孩儿。
 
 我的双鱼座女孩儿。</div>
 
-        <div class="pisces-stanza">昏暗的水族馆里
+                <div class="pisces-stanza">昏暗的水族馆里
 吵闹孩子们的声音
 水母在背后游来游去
 我已忘了
 究竟是谁先靠到对方肩上
 睡着了</div>
 
-        <div class="pisces-stanza">嘿，女孩儿。
+                <div class="pisces-stanza">嘿，女孩儿。
 五彩斑斓的世界里，你也努力合群。
 但我知道，那不是你。</div>
 
-        <div class="pisces-stanza">嘿，女孩儿。
+                <div class="pisces-stanza">嘿，女孩儿。
 安静、脆弱、包容的女孩儿。</div>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="photo-series-block">
+          <div class="photo-series-header photo-modal-caption">
+            <div class="photo-modal-series en">Series · Theater</div>
+            <div class="photo-modal-series zh">系列 · 戏院</div>
+            <div class="photo-modal-title en">《栓》Bound — I &amp; II</div>
+            <div class="photo-modal-title zh">《栓》— 两帧</div>
+            <div class="photo-modal-meta">2023.11.29 · 工映1970神犁文创社园</div>
+          </div>
+          <div class="photo-series-grid">
+            <img src="photo_zhan_1.jpeg" alt="《栓》I" loading="lazy" />
+            <img src="photo_zhan_2.jpeg" alt="《栓》II" loading="lazy" />
+          </div>
+          <div class="photo-modal-caption">
+            <div class="photo-modal-poem" style="font-style:normal;font-family:'Noto Serif SC',serif;">
+              天空纵容着鸟的翅膀，<br>
+              远方牵扯着言的眺望，<br>
+              窗框死捉住一方风景，<br>
+              门扉轻闩上半生流浪。<br>
+              <span style="font-size:0.7rem;letter-spacing:0.08em;">——梁国福《栓》</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="photo-series-block">
+          <div class="photo-series-header photo-modal-caption">
+            <div class="photo-modal-series en">Portrait · Freedom</div>
+            <div class="photo-modal-series zh">人像 · 自由</div>
+            <div class="photo-modal-title en">《自由》Freedom — shadow named summer</div>
+            <div class="photo-modal-title zh">《自由》— 名为夏天的影子</div>
+            <div class="photo-modal-meta">2022.10.22 · 新平彝族傣族自治县 · 肖丹</div>
+          </div>
+          <div class="photo-series-grid">
+            <img src="photo_ziyou.jpeg" alt="《自由》" loading="lazy" />
+          </div>
+          <div class="photo-modal-caption">
+            <div class="photo-modal-poem en">
+              Looking at your smile, I almost forgot to press the shutter.<br>
+              <span style="font-size:0.7rem;font-style:normal;letter-spacing:0.05em;">— Rachel Ji</span>
+            </div>
+            <div class="photo-modal-poem zh">
+              看着你的笑，我差点忘记按下快门。<br>
+              <span style="font-size:0.7rem;font-style:normal;letter-spacing:0.05em;">—— 季颖秋</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="photo-series-block">
+          <div class="photo-series-header photo-modal-caption">
+            <div class="photo-modal-series en">Street · Childhood</div>
+            <div class="photo-modal-series zh">纪实 · 童年</div>
+            <div class="photo-modal-title en">《单车》Bicycle — I &amp; II</div>
+            <div class="photo-modal-title zh">《单车》— 两帧</div>
+            <div class="photo-modal-meta">2022.10.23 · 新平彝族傣族自治县</div>
+          </div>
+          <div class="photo-series-grid">
+            <img src="photo_danche_1.jpeg" alt="《单车》I" loading="lazy" />
+            <img src="photo_danche_2.jpeg" alt="《单车》II" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="photo-series-block">
+          <div class="photo-series-header photo-modal-caption">
+            <div class="photo-modal-series en">Portrait · Dream</div>
+            <div class="photo-modal-series zh">人像 · 梦</div>
+            <div class="photo-modal-title en">《梦》Dream — I &amp; II</div>
+            <div class="photo-modal-title zh">《梦》— 两帧</div>
+            <div class="photo-modal-meta">2023.05.02 · 滇池岸边</div>
+          </div>
+          <div class="photo-series-grid">
+            <img src="photo_meng_1.jpeg" alt="《梦》I" loading="lazy" />
+            <img src="photo_meng_2.jpeg" alt="《梦》II" loading="lazy" />
+          </div>
+          <div class="photo-modal-caption">
+            <div class="photo-modal-poem zh" style="font-style:normal;font-family:'Noto Serif SC',serif;">
+              坐着谈也好，走道也好，上街买东西也好。<br>
+              爱是甘草，这苦的世界有了它就好上口了。<br>
+              <span style="font-size:0.7rem;font-style:normal;letter-spacing:0.05em;">—— 季颖秋</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="photo-series-block">
+          <div class="photo-series-header photo-modal-caption">
+            <div class="photo-modal-series en">Nature · Life</div>
+            <div class="photo-modal-series zh">自然 · 生命</div>
+            <div class="photo-modal-title en">《生命》Life — I &amp; II</div>
+            <div class="photo-modal-title zh">《生命》— 两帧</div>
+            <div class="photo-modal-meta en">Rachel Ji</div>
+            <div class="photo-modal-meta zh">季颖秋 摄影</div>
+          </div>
+          <div class="photo-series-grid">
+            <img src="photo_shengming_1.jpeg" alt="《生命》I" loading="lazy" />
+            <img src="photo_shengming_2.jpeg" alt="《生命》II" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="photo-series-block">
+          <div class="photo-series-header photo-modal-caption">
+            <div class="photo-modal-series en">Field notes · Street</div>
+            <div class="photo-modal-series zh">现场笔记 · 街头</div>
+            <div class="photo-modal-title en">Anthropology wall · Child from behind · Rooftop football</div>
+            <div class="photo-modal-title zh">人类学墙面 · 孩童背影 · 屋顶足球</div>
+            <div class="photo-modal-meta en">Yunnan · color notes from the same archive</div>
+            <div class="photo-modal-meta zh">云南 · 与「最初筛选」同源的色彩笔记</div>
+          </div>
+          <div class="photo-series-grid">
+            <img src="ph_anthropology.jpg" alt="" loading="lazy" />
+            <img src="ph_child_back.jpg" alt="" loading="lazy" />
+            <img src="ph_rooftop_soccer.jpg" alt="" loading="lazy" />
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -2647,7 +2613,7 @@
         <button class="tastes-close-btn" onclick="closeModal('tastes')">×</button>
       </div>
       <div class="vinyl-carousel" id="vinylCarousel">
-        <div class="vinyl-item" data-title-en="Goodbye Henry." data-title-zh="Goodbye Henry." data-artist="RAYE" data-note-en="The kind of song that arrives at exactly the wrong moment and stays forever." data-note-zh="那种在最不对的时候出现、然后一直留着的歌。" data-preview-src="media/raye_goodbye_henry_30s.mp3" data-preview-url="https://music.apple.com/us/song/goodbye-henry-feat-al-green/1871085707" onclick="toggleVinyl(this)">
+        <div class="vinyl-item" data-title-en="Goodbye Henry." data-title-zh="Goodbye Henry." data-artist="RAYE" data-note-en="The kind of song that arrives at exactly the wrong moment and stays forever." data-note-zh="那种在最不对的时候出现、然后一直留着的歌。" data-preview-src="media/Goodbye%20Henry.%20%28feat.%20Al%20Green%29.mp3" data-preview-url="https://music.apple.com/us/song/goodbye-henry-feat-al-green/1871085707" onclick="toggleVinyl(this)">
           <div class="vinyl-disc">
             <div class="vinyl-cover"><img src="cover_raye_goodbye.jpg" alt="" loading="lazy" /></div>
             <div class="vinyl-hole"></div>
@@ -2655,7 +2621,7 @@
           <div class="vinyl-label en">Goodbye Henry. · RAYE</div>
           <div class="vinyl-label zh">Goodbye Henry. · RAYE</div>
         </div>
-        <div class="vinyl-item" data-title-en="Genesis" data-title-zh="Genesis" data-artist="RAYE" data-note-en="Something beginning. Something already mourned." data-note-zh="某个开始。某个已经被哀悼过的东西。" data-preview-src="media/raye_genesis_30s.mp3" data-preview-url="https://music.apple.com/us/song/genesis/1765602814" onclick="toggleVinyl(this)">
+        <div class="vinyl-item" data-title-en="Genesis" data-title-zh="Genesis" data-artist="RAYE" data-note-en="Something beginning. Something already mourned." data-note-zh="某个开始。某个已经被哀悼过的东西。" data-preview-src="media/RAYE%20-%20Genesis..mp3" data-preview-url="https://music.apple.com/us/song/genesis/1765602814" onclick="toggleVinyl(this)">
           <div class="vinyl-disc">
             <div class="vinyl-cover"><img src="cover_raye_genesis.png" alt="" loading="lazy" /></div>
             <div class="vinyl-hole"></div>
