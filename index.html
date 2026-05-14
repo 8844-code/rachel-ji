@@ -1195,14 +1195,23 @@
     html[data-view="work"] #creative-nav { display: none; }
 
     /* ── PAINTING MODAL ── */
-    .painting-placeholder {
-      padding: 5rem 2rem;
-      text-align: center;
-      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    .painting-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+      gap: 1.25rem;
+      margin-top: 1.75rem;
+      width: 100%;
     }
-    .painting-placeholder-icon { font-size: 2.8rem; }
-    .painting-placeholder-text {
-      font-size: 0.78rem; color: var(--muted); letter-spacing: 0.1em; line-height: 1.8;
+    .painting-gallery figure { margin: 0; display: flex; flex-direction: column; gap: 0.55rem; }
+    .painting-gallery img {
+      width: 100%; height: auto; display: block;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,0.2);
+    }
+    .painting-cap {
+      font-size: 0.72rem; color: var(--muted);
+      letter-spacing: 0.06em; line-height: 1.6; text-align: center;
     }
 
     /* ── TASTES MODAL ── */
@@ -2569,12 +2578,29 @@
       <div class="modal-novel-type zh">素描 · 油画 · 水彩 · 艺考训练</div>
       <div class="modal-novel-title en">Painting & Drawing</div>
       <div class="modal-novel-title zh">绘画</div>
-      <div class="modal-novel-title-sub en">Art-exam background built a visual instinct that flows through filmmaking, photography, and composition. Original works uploading.</div>
-      <div class="modal-novel-title-sub zh">艺考训练积累的视觉直觉，渗透进了一切——影视、摄影、构图。原作品整理上传中。</div>
-      <div class="painting-placeholder">
-        <div class="painting-placeholder-icon">🎨</div>
-        <div class="painting-placeholder-text en">Works uploading — check back soon.</div>
-        <div class="painting-placeholder-text zh">作品整理中，稍后上传。</div>
+      <div class="modal-novel-title-sub en">Art-exam background built a visual instinct that flows through filmmaking, photography, and composition. Selected oil studies below (web-sized JPEGs).</div>
+      <div class="modal-novel-title-sub zh">艺考训练积累的视觉直觉，渗透进了一切——影视、摄影、构图。下方为精选习作（网页用 JPEG）。</div>
+      <div class="painting-gallery">
+        <figure>
+          <img src="paint_hannibal_1.jpg" alt="Oil study after a Hannibal still" loading="lazy" width="2000" height="1313" />
+          <figcaption class="painting-cap"><span class="en">TV still study — Hannibal</span><span class="zh">剧照临摹 — 《汉尼拔》</span></figcaption>
+        </figure>
+        <figure>
+          <img src="paint_hannibal_2.jpg" alt="Oil study after a Hannibal still" loading="lazy" width="2000" height="1371" />
+          <figcaption class="painting-cap"><span class="en">TV still study — Hannibal</span><span class="zh">剧照临摹 — 《汉尼拔》</span></figcaption>
+        </figure>
+        <figure>
+          <img src="paint_hannibal_3.jpg" alt="Oil study after a Hannibal still" loading="lazy" width="1317" height="2000" />
+          <figcaption class="painting-cap"><span class="en">TV still study — Hannibal</span><span class="zh">剧照临摹 — 《汉尼拔》</span></figcaption>
+        </figure>
+        <figure>
+          <img src="paint_hannibal_4.jpg" alt="Oil study after a Hannibal still" loading="lazy" width="2000" height="1284" />
+          <figcaption class="painting-cap"><span class="en">TV still study — Hannibal</span><span class="zh">剧照临摹 — 《汉尼拔》</span></figcaption>
+        </figure>
+        <figure>
+          <img src="paint_jaehyun.jpg" alt="Portrait oil study under stage light" loading="lazy" width="1612" height="2000" />
+          <figcaption class="painting-cap"><span class="en">Portrait study — Jaehyun (reference)</span><span class="zh">人像习作 — 在玹（参考照片）</span></figcaption>
+        </figure>
       </div>
     </div>
   </div>
