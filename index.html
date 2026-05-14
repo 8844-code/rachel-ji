@@ -867,6 +867,70 @@
       line-height: 2; max-width: 520px;
     }
 
+    /* ── PISCES GIRL · AQUARIUM POEM ── */
+    .pisces-hero {
+      position: relative;
+      border-radius: var(--radius-md, 14px);
+      overflow: hidden;
+      margin-bottom: 2rem;
+      border: 1px solid var(--border);
+      background: linear-gradient(145deg, rgba(30,55,90,0.35), rgba(8,12,24,0.9));
+    }
+    .pisces-hero img {
+      width: 100%;
+      height: clamp(160px, 28vh, 260px);
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      filter: saturate(1.05) brightness(0.88);
+    }
+    .pisces-hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(8,8,18,0.75) 100%);
+      pointer-events: none;
+    }
+    .pisces-hero-cap {
+      position: absolute; left: 1.2rem; bottom: 1rem; z-index: 2;
+      font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(180,210,255,0.95);
+    }
+    .pisces-hero-cap .en, .pisces-hero-cap .zh { display: block; }
+    .pisces-intro {
+      font-size: 0.88rem; color: var(--muted); line-height: 1.85;
+      margin-bottom: 1.75rem; max-width: 36em;
+    }
+    .pisces-poem {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 1.02rem;
+      line-height: 2.15;
+      color: var(--text);
+      font-weight: 400;
+      max-width: 32em;
+    }
+    .pisces-stanza {
+      margin-bottom: 1.6rem;
+      white-space: pre-line;
+    }
+    .pisces-stanza:last-child { margin-bottom: 0; }
+    .pisces-strip {
+      display: flex; gap: 0.45rem; margin: 1rem 0 0.25rem;
+      overflow-x: auto; -webkit-overflow-scrolling: touch;
+      padding-bottom: 0.15rem;
+    }
+    .pisces-strip img {
+      flex: 0 0 32%; min-width: 132px; height: 96px;
+      object-fit: cover; border-radius: 6px; border: 1px solid var(--border);
+    }
+    .doc-no-poster {
+      height: 160px; margin: -2rem -1.8rem 1.5rem;
+      display: flex; align-items: center; justify-content: center;
+      padding: 1rem 1.4rem; text-align: center;
+      background: linear-gradient(155deg, rgba(22,18,38,0.95), rgba(42,32,58,0.88), rgba(14,12,22,0.98));
+      border-bottom: 1px solid var(--border);
+    }
+    .doc-no-poster p { font-size: 0.72rem; color: var(--muted); line-height: 1.65; margin: 0; max-width: 14rem; }
+
     /* ── SCRIPTBRIDGE FEATURED PROJECT ── */
     .work-item.featured {
       border: 1px solid var(--violet-dim);
@@ -1390,6 +1454,18 @@
       background: linear-gradient(90deg, var(--violet), var(--amber));
       transition: width 0.18s linear;
     }
+    .music-media-hint {
+      grid-column: 1 / -1;
+      font-size: 0.58rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      line-height: 1.55;
+    }
+    .music-media-hint code {
+      font-size: 0.88em;
+      color: var(--text);
+      font-weight: 500;
+    }
 
     /* ── FILM GRID ── */
     .film-grid {
@@ -1687,39 +1763,37 @@
     <div class="creative-grid fade-in">
 
       <div class="creative-card" style="grid-column: span 2; position:relative; overflow:hidden; padding:0; min-height:320px;">
-        <img src="still_003.jpg" style="width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.45) saturate(0.8);" />
+        <img src="poster-secret-h.jpg" style="width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.42) saturate(0.85);" />
         <div style="position:absolute;inset:0;padding:2.5rem;display:flex;flex-direction:column;justify-content:flex-end;">
           <div style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--violet);margin-bottom:0.8rem;">Documentary · 纪录片</div>
-          <div style="font-size:1.5rem;font-weight:700;color:var(--text);margin-bottom:0.8rem;" class="en">《The Secrets》不能说的秘密</div>
-          <div style="font-size:1.5rem;font-weight:700;color:var(--text);margin-bottom:0.8rem;" class="zh">《不能说的秘密》The Secrets</div>
-          <div style="font-size:0.85rem;color:rgba(240,237,248,0.7);line-height:1.7;max-width:600px;" class="en">A documentary about children's mental health in rural Yunnan. "What do you think beauty is?" "Beauty is complex." — Selected for 2024 Shanghai Film Festival "New Wave Short Documentary Competition" and 5th AME Graduate Showcase.</div>
-          <div style="font-size:0.85rem;color:rgba(240,237,248,0.7);line-height:1.7;max-width:600px;" class="zh">关于云南农村儿童心理健康的纪录片。"你觉得美是什么？""美是复杂的。"——入选2024年海上影展"新锐纪录短片竞赛"单元及第五届AME毕业云展。</div>
+          <div style="font-size:1.5rem;font-weight:700;color:var(--text);margin-bottom:0.8rem;" class="en">The Secrets · 不能说的秘密</div>
+          <div style="font-size:1.5rem;font-weight:700;color:var(--text);margin-bottom:0.8rem;" class="zh">《不能说的秘密》· The Secrets</div>
+          <div style="font-size:0.85rem;color:rgba(240,237,248,0.7);line-height:1.7;max-width:600px;" class="en">A documentary on the mental health of left-behind children in rural Yunnan. — Selected, 2024 Shanghai International Film Festival · New Wave Short Documentary Competition.</div>
+          <div style="font-size:0.85rem;color:rgba(240,237,248,0.7);line-height:1.7;max-width:600px;" class="zh">关注云南农村留守儿童心理健康的纪录片。——入选2024上海国际电影节·新锐纪录短片竞赛单元。</div>
           <div style="margin-top:1rem;font-size:0.72rem;color:var(--amber);font-family:'Cormorant Garamond',serif;font-style:italic;" class="en">Director / Writer / Cinematographer · 2024</div>
           <div style="margin-top:1rem;font-size:0.72rem;color:var(--amber);font-family:'Cormorant Garamond',serif;font-style:italic;" class="zh">导演 / 编剧 / 摄影 · 2024</div>
+          <div style="display:flex;gap:0.8rem;margin-top:1.2rem;flex-wrap:wrap;">
+            <a href="https://www.youtube.com/watch?v=pl_x0XbVcME" target="_blank" style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);padding:0.38rem 0.9rem;border-radius:999px;text-decoration:none;backdrop-filter:blur(4px);" onclick="event.stopPropagation()">▶ YouTube</a>
+            <a href="https://www.bilibili.com/video/BV1Zb5767EAg/" target="_blank" style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);padding:0.38rem 0.9rem;border-radius:999px;text-decoration:none;backdrop-filter:blur(4px);" onclick="event.stopPropagation()">▶ Bilibili</a>
+          </div>
         </div>
       </div>
 
       <div class="creative-card">
-        <div style="height:160px;overflow:hidden;margin:-2rem -1.8rem 1.5rem;position:relative;">
-          <img src="still_007.jpg" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.5) saturate(0.7);" />
-          <div style="position:absolute;bottom:0.8rem;left:1rem;font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--violet);">Documentary · 2023</div>
+        <div class="doc-no-poster">
+          <p class="en">No official poster for this film yet — using typography instead of a wrong image.</p>
+          <p class="zh">本片暂无正式海报，先不用错误图片，以版式代替。</p>
         </div>
-        <div class="creative-title en">They Are Her Too</div>
+        <div class="creative-title en">They Are Also Her</div>
         <div class="creative-title zh">《他们也是她们》</div>
         <div class="creative-desc en">Gender equality documentary. Selected for the 13th Beijing International Film Festival "Short Video Unit." Exploring what equality looks like in practice — in conversation with teachers, students, and strangers.</div>
         <div class="creative-desc zh">性别平等题材纪录片。入选第十三届北京国际电影节"短视频单元"。探索平等在日常生活中的真实面貌。</div>
         <div class="creative-note en">Director / Writer / Cinematographer</div>
         <div class="creative-note zh">导演 / 编剧 / 摄影</div>
-      </div>
-
-      <div class="creative-card">
-        <span class="creative-icon">🏺</span>
-        <div class="creative-title en">Crafts That Endure</div>
-        <div class="creative-title zh">《手艺·守艺》</div>
-        <div class="creative-desc en">Intangible cultural heritage documentary about fire-baked flatbread makers in Yangwu, Yuxi. "Young people rarely do this anymore." — The last inheritors of a dying craft.</div>
-        <div class="creative-desc zh">玉溪市扬武镇火烤饼非遗文化传承纪录片。"年轻人很少来做这个了。"——记录一门手艺最后的守护者。</div>
-        <div class="creative-note en">Director / Writer / Cinematographer · 2022</div>
-        <div class="creative-note zh">导演 / 编剧 / 摄影 · 2022</div>
+        <div style="display:flex;gap:0.8rem;margin-top:1.2rem;flex-wrap:wrap;">
+          <a href="https://www.youtube.com/watch?v=wi12Hjv3u9I" target="_blank" style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);padding:0.38rem 0.9rem;border-radius:999px;text-decoration:none;backdrop-filter:blur(4px);">▶ YouTube</a>
+          <a href="https://www.bilibili.com/video/BV1NP41127GR/" target="_blank" style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);padding:0.38rem 0.9rem;border-radius:999px;text-decoration:none;backdrop-filter:blur(4px);">▶ Bilibili</a>
+        </div>
       </div>
 
       <div class="creative-card card-clickable" onclick="openModal('writing')">
@@ -1734,17 +1808,32 @@
         <span class="card-hint zh">阅读节选 →</span>
       </div>
 
+      <div class="creative-card card-clickable" onclick="openModal('pisces')">
+        <div style="height:160px;overflow:hidden;margin:-2rem -1.8rem 1.5rem;position:relative;">
+          <img src="ph_aqua_1.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(1.08) brightness(0.74) hue-rotate(-6deg);" />
+          <div style="position:absolute;bottom:0.75rem;left:1rem;font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(180,210,255,0.95);">Poem · 小诗</div>
+        </div>
+        <div class="creative-title en">Pisces Girl</div>
+        <div class="creative-title zh">双鱼座女孩</div>
+        <div class="creative-desc en">Same aquarium frames as in Photography (sourced from the desktop “first pass” folder) — a short poem for a friend, blue glass and distance.</div>
+        <div class="creative-desc zh">与「摄影」里的水族馆条目同源：桌面「最初筛选」里那组蓝色水族馆照片，配这首写给朋友的小诗。</div>
+        <div class="creative-note en">Aquarium series · Chinese</div>
+        <div class="creative-note zh">水族馆系列 · 中文</div>
+        <span class="card-hint en">Read poem →</span>
+        <span class="card-hint zh">阅读全诗 →</span>
+      </div>
+
       <div class="creative-card card-clickable" onclick="openModal('photo')">
         <div class="photo-thumb-grid">
-          <img src="photo_zhan_1.jpeg" alt="" loading="lazy" />
-          <img src="photo_ziyou.jpeg"  alt="" loading="lazy" />
-          <img src="photo_danche_1.jpeg" alt="" loading="lazy" />
-          <img src="photo_meng_1.jpeg" alt="" loading="lazy" />
+          <img src="ph_aqua_1.jpg" alt="" loading="lazy" />
+          <img src="ph_freedom.jpg" alt="" loading="lazy" />
+          <img src="ph_bicycle.jpg" alt="" loading="lazy" />
+          <img src="ph_life.jpg" alt="" loading="lazy" />
         </div>
         <div class="creative-title en">Photography</div>
         <div class="creative-title zh">摄影</div>
-        <div class="creative-desc en">Five personal series, 2022–2023. Theater, portraits, street, nature. A record of things others walked past.</div>
-        <div class="creative-desc zh">五个个人系列，2022–2023。戏院、人像、纪实、自然。那些别人走过去、我却停下来的瞬间。</div>
+        <div class="creative-desc en">Sorted from the desktop “first pass” folder: aquarium blues, portraits, street color, nature. Same aquarium set as <em>Pisces Girl.</em></div>
+        <div class="creative-desc zh">按桌面「最初筛选」里的个人作品归类：水族馆、人像、街景色彩、自然与现场。水族馆与《双鱼座女孩》同源。</div>
         <div class="creative-note en">9 photographs · Yunnan</div>
         <div class="creative-note zh">9张 · 云南</div>
         <span class="card-hint en">View gallery →</span>
@@ -2327,6 +2416,68 @@
   </div>
 </div>
 
+<!-- PISCES GIRL · AQUARIUM POEM MODAL -->
+<div class="modal-overlay" id="modalPisces" onclick="closeModalOutside(event)">
+  <div class="modal-box" style="max-width:720px;">
+    <div class="modal-close">
+      <button onclick="closeModal('pisces')" class="en">Close</button>
+      <button onclick="closeModal('pisces')" class="zh">关闭</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-novel-type en">Poem · Photography</div>
+      <div class="modal-novel-type zh">小诗 · 摄影</div>
+      <div class="modal-novel-title zh">双鱼座女孩</div>
+      <div class="modal-novel-title en">Pisces Girl</div>
+      <div class="modal-novel-title-sub zh">水族馆系列</div>
+      <div class="modal-novel-title-sub en">Aquarium series</div>
+
+      <div class="pisces-hero">
+        <img src="dsc_aquarium.jpg" alt="水族馆 · 蓝色调" loading="lazy" />
+        <div class="pisces-hero-cap">
+          <span class="en">Aquarium · blue series</span>
+          <span class="zh">水族馆 · 蓝色系列</span>
+        </div>
+      </div>
+
+      <p class="pisces-intro en">The poem below is in Chinese. It was written for a friend and belongs with these quiet, blue-lit aquarium frames.</p>
+      <p class="pisces-intro zh">以下为完整正文。若还有同系列水族馆照片，放进「01 开发」文件夹后告诉我文件名，我可以帮你排成横向图带一起展示。</p>
+
+      <div class="pisces-poem">
+        <div class="pisces-stanza">嘿，我的朋友
+
+一个善良美丽的女孩儿，
+一个总说自己很坏的善良女孩儿
+看着你的面庞，这么可爱，
+甚至有一丝不易察觉的憨厚可爱夹杂在那些、锋利的、
+你想要最大化凸显出你人格棱角的外形里。
+我知道真实的你柔软、宽容、善良。
+就像泛着冷白色的光，
+别人只觉得你不近人情，
+可我觉得这是宝贵的纯真。
+虽然光有时也以混乱自拟。</div>
+
+        <div class="pisces-stanza">嘿，女孩儿。
+
+我的双鱼座女孩儿。</div>
+
+        <div class="pisces-stanza">昏暗的水族馆里
+吵闹孩子们的声音
+水母在背后游来游去
+我已忘了
+究竟是谁先靠到对方肩上
+睡着了</div>
+
+        <div class="pisces-stanza">嘿，女孩儿。
+五彩斑斓的世界里，你也努力合群。
+但我知道，那不是你。</div>
+
+        <div class="pisces-stanza">嘿，女孩儿。
+安静、脆弱、包容的女孩儿。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- WRITING MODAL -->
 <div class="modal-overlay" id="modalWriting" onclick="closeModalOutside(event)">
   <div class="modal-box">
@@ -2470,17 +2621,17 @@
         <button class="tastes-close-btn" onclick="closeModal('tastes')">×</button>
       </div>
       <div class="vinyl-carousel" id="vinylCarousel">
-        <div class="vinyl-item" data-title-en="Goodbye" data-title-zh="Goodbye" data-artist="RAYE" data-note-en="The kind of song that arrives at exactly the wrong moment and stays forever." data-note-zh="那种在最不对的时候出现、然后一直留着的歌。" data-preview-url="" onclick="toggleVinyl(this)">
+        <div class="vinyl-item" data-title-en="Goodbye Henry." data-title-zh="Goodbye Henry." data-artist="RAYE" data-note-en="The kind of song that arrives at exactly the wrong moment and stays forever." data-note-zh="那种在最不对的时候出现、然后一直留着的歌。" data-preview-src="media/raye_goodbye_henry_30s.mp3" data-preview-url="https://music.apple.com/us/song/goodbye-henry-feat-al-green/1871085707" onclick="toggleVinyl(this)">
           <div class="vinyl-disc">
-            <div class="vinyl-cover" style="background:linear-gradient(135deg,#1a1a2e,#3a2a5a);"></div>
+            <div class="vinyl-cover"><img src="cover_raye_goodbye.jpg" alt="" loading="lazy" /></div>
             <div class="vinyl-hole"></div>
           </div>
-          <div class="vinyl-label en">Goodbye · RAYE</div>
-          <div class="vinyl-label zh">Goodbye · RAYE</div>
+          <div class="vinyl-label en">Goodbye Henry. · RAYE</div>
+          <div class="vinyl-label zh">Goodbye Henry. · RAYE</div>
         </div>
-        <div class="vinyl-item" data-title-en="Genesis" data-title-zh="Genesis" data-artist="RAYE" data-note-en="Something beginning. Something already mourned." data-note-zh="某个开始。某个已经被哀悼过的东西。" data-preview-url="" onclick="toggleVinyl(this)">
+        <div class="vinyl-item" data-title-en="Genesis" data-title-zh="Genesis" data-artist="RAYE" data-note-en="Something beginning. Something already mourned." data-note-zh="某个开始。某个已经被哀悼过的东西。" data-preview-src="media/raye_genesis_30s.mp3" data-preview-url="https://music.apple.com/us/song/genesis/1765602814" onclick="toggleVinyl(this)">
           <div class="vinyl-disc">
-            <div class="vinyl-cover" style="background:linear-gradient(135deg,#0e1f2e,#1a3a4a);"></div>
+            <div class="vinyl-cover"><img src="cover_raye_genesis.png" alt="" loading="lazy" /></div>
             <div class="vinyl-hole"></div>
           </div>
           <div class="vinyl-label en">Genesis · RAYE</div>
@@ -2493,14 +2644,16 @@
           <div class="music-meta-label zh">当前选择</div>
           <div class="music-meta-title" id="musicTitle">—</div>
           <div class="music-meta-sub" id="musicArtist">—</div>
-          <div class="music-meta-note en" id="musicNoteEn">Choose an album to preview interaction. Real audio links can be connected later.</div>
-          <div class="music-meta-note zh" id="musicNoteZh">选择专辑可预览交互。后续可直接接入真实音频链接。</div>
+          <div class="music-meta-note en" id="musicNoteEn">Choose a record. Plays a local ~30s clip if present; otherwise opens Apple Music.</div>
+          <div class="music-meta-note zh" id="musicNoteZh">选一张唱片。若有本地约 30 秒试听文件则直接播放；否则打开 Apple Music。</div>
         </div>
         <button class="music-preview-btn" id="musicPreviewBtn" type="button" disabled>
-          <span class="en">Preview 30s</span>
-          <span class="zh">试听30秒</span>
+          <span class="en">30s preview</span>
+          <span class="zh">30秒试听</span>
         </button>
         <div class="music-preview-track"><div class="music-preview-fill" id="musicPreviewFill"></div></div>
+        <div class="music-media-hint en">Place clips in <code>media/</code>: <code>raye_goodbye_henry_30s.mp3</code>, <code>raye_genesis_30s.mp3</code></div>
+        <div class="music-media-hint zh">将试听文件放入 <code>media/</code>：<code>raye_goodbye_henry_30s.mp3</code>、<code>raye_genesis_30s.mp3</code></div>
       </div>
       <div class="vinyl-hint en">← drag to browse &nbsp;·&nbsp; click to spin →</div>
       <div class="vinyl-hint zh">← 拖动浏览 &nbsp;·&nbsp; 点击旋转 →</div>
@@ -2518,31 +2671,31 @@
       </div>
       <div class="film-grid" id="filmGrid">
         <div class="film-card">
-          <div class="film-poster" style="background:linear-gradient(160deg,#1A1400,#5A4400,#B88C00);"></div>
+          <div class="film-poster"><img src="poster_film_comrades.jpg" alt="" loading="lazy" /></div>
           <div class="film-title en">Comrades: Almost a Love Story</div>
           <div class="film-title zh">甜蜜蜜</div>
           <div class="film-year">1996 · Peter Chan</div>
         </div>
         <div class="film-card">
-          <div class="film-poster" style="background:linear-gradient(160deg,#1A0404,#5A0C0C,#8B1010);"></div>
+          <div class="film-poster"><img src="poster_film_yiyi.jpg" alt="" loading="lazy" /></div>
           <div class="film-title en">Yi Yi</div>
           <div class="film-title zh">一一</div>
           <div class="film-year">2000 · Edward Yang</div>
         </div>
         <div class="film-card">
-          <div class="film-poster" style="background:linear-gradient(160deg,#1C1C1C,#5A5A5A,#B0B0B0);"></div>
+          <div class="film-poster"><img src="poster_film_three.jpg" alt="" loading="lazy" /></div>
           <div class="film-title en">Three</div>
           <div class="film-title zh">三更</div>
           <div class="film-year">2002 · Chan / Kim / Nonzee</div>
         </div>
         <div class="film-card">
-          <div class="film-poster" style="background:linear-gradient(160deg,#04101E,#0C2040,#183060);"></div>
+          <div class="film-poster"><img src="poster_film_spring_fever.jpg" alt="" loading="lazy" /></div>
           <div class="film-title en">Spring Fever</div>
           <div class="film-title zh">春风沉醉的夜晚</div>
           <div class="film-year">2009 · Lou Ye</div>
         </div>
         <div class="film-card">
-          <div class="film-poster" style="background:linear-gradient(160deg,#040404,#0A0A0A,#141414);"></div>
+          <div class="film-poster"><img src="poster_film_prometheus.jpg" alt="" loading="lazy" /></div>
           <div class="film-title en">Prometheus</div>
           <div class="film-title zh">普罗米修斯</div>
           <div class="film-year">2012 · Ridley Scott</div>
@@ -2610,6 +2763,7 @@
   const html = document.documentElement;
   let lastFocusedElement = null;
   let previewTimer = null;
+  let tastesPreviewAudio = null;
 
   function updateBodyLock() {
     const anyModalOpen = document.querySelector('.modal-overlay.open');
@@ -2734,6 +2888,7 @@
     updateBodyLock();
   }
   function closeModal(id) {
+    if (id === 'tastes') stopTastesMusic();
     const key = id.charAt(0).toUpperCase() + id.slice(1);
     const modal = document.getElementById('modal' + key);
     modal.classList.remove('open');
@@ -2744,6 +2899,7 @@
   }
   function closeModalOutside(e) {
     if (e.target.classList.contains('modal-overlay')) {
+      if (e.target.id === 'modalTastes') stopTastesMusic();
       e.target.classList.remove('open');
       updateBodyLock();
       if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
@@ -2764,6 +2920,7 @@
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
       document.querySelectorAll('.modal-overlay.open').forEach(m => {
+        if (m.id === 'modalTastes') stopTastesMusic();
         m.classList.remove('open');
       });
       updateBodyLock();
@@ -2828,6 +2985,18 @@
   faders.forEach(f => obs.observe(f));
 
   // Tastes modal
+  function stopTastesMusic() {
+    if (tastesPreviewAudio) {
+      tastesPreviewAudio.pause();
+      try {
+        tastesPreviewAudio.removeAttribute('src');
+        tastesPreviewAudio.load();
+      } catch (err) {}
+      tastesPreviewAudio = null;
+    }
+    resetPreviewFill();
+  }
+
   function showTasteView(name) {
     document.getElementById('tastesScatter').classList.add('hidden');
     document.querySelectorAll('.taste-view').forEach(v => v.classList.remove('active'));
@@ -2836,10 +3005,10 @@
     if (view) view.classList.add('active');
   }
   function showTasteScatter() {
+    stopTastesMusic();
     document.getElementById('tastesScatter').classList.remove('hidden');
     document.querySelectorAll('.taste-view').forEach(v => v.classList.remove('active'));
     document.querySelectorAll('.vinyl-item.playing').forEach(v => v.classList.remove('playing'));
-    resetPreviewFill();
   }
   function toggleVinyl(el) {
     const wasPlaying = el.classList.contains('playing');
@@ -2864,7 +3033,9 @@
       musicTitle.textContent = '—';
       musicArtist.textContent = '—';
       musicPreviewBtn.disabled = true;
+      musicPreviewBtn.removeAttribute('data-preview-src');
       musicPreviewBtn.removeAttribute('data-preview-url');
+      stopTastesMusic();
       return;
     }
     musicTitle.textContent = html.getAttribute('data-lang') === 'zh'
@@ -2873,9 +3044,14 @@
     musicArtist.textContent = item.dataset.artist || '—';
     musicNoteEn.textContent = item.dataset.noteEn || 'Preview description coming soon.';
     musicNoteZh.textContent = item.dataset.noteZh || '试听说明稍后补充。';
-    const previewUrl = item.dataset.previewUrl || '';
-    musicPreviewBtn.setAttribute('data-preview-url', previewUrl);
-    musicPreviewBtn.disabled = !previewUrl;
+    stopTastesMusic();
+    const previewSrc = (item.dataset.previewSrc || '').trim();
+    const previewUrl = (item.dataset.previewUrl || '').trim();
+    if (previewSrc) musicPreviewBtn.setAttribute('data-preview-src', previewSrc);
+    else musicPreviewBtn.removeAttribute('data-preview-src');
+    if (previewUrl) musicPreviewBtn.setAttribute('data-preview-url', previewUrl);
+    else musicPreviewBtn.removeAttribute('data-preview-url');
+    musicPreviewBtn.disabled = !previewSrc && !previewUrl;
   }
 
   function resetPreviewFill() {
@@ -2886,16 +3062,60 @@
     musicPreviewFill.style.width = '0%';
   }
 
+  function isTastesAudioPlaying() {
+    return tastesPreviewAudio && !tastesPreviewAudio.paused;
+  }
+
   musicPreviewBtn.addEventListener('click', () => {
-    const url = musicPreviewBtn.getAttribute('data-preview-url');
-    if (!url) return;
-    resetPreviewFill();
-    let p = 0;
-    previewTimer = setInterval(() => {
-      p += 2;
-      musicPreviewFill.style.width = p + '%';
-      if (p >= 100) resetPreviewFill();
-    }, 120);
+    const src = (musicPreviewBtn.getAttribute('data-preview-src') || '').trim();
+    const extUrl = (musicPreviewBtn.getAttribute('data-preview-url') || '').trim();
+
+    if (src) {
+      if (isTastesAudioPlaying()) {
+        stopTastesMusic();
+        return;
+      }
+      stopTastesMusic();
+      tastesPreviewAudio = new Audio();
+      tastesPreviewAudio.preload = 'auto';
+      tastesPreviewAudio.src = src;
+      const previewCap = 30;
+      const onTime = () => {
+        if (!tastesPreviewAudio) return;
+        if (tastesPreviewAudio.currentTime >= previewCap) {
+          stopTastesMusic();
+          return;
+        }
+        const d = tastesPreviewAudio.duration;
+        if (d && isFinite(d)) {
+          const denom = Math.min(d, previewCap);
+          musicPreviewFill.style.width = (Math.min(tastesPreviewAudio.currentTime, previewCap) / denom) * 100 + '%';
+        }
+      };
+      tastesPreviewAudio.addEventListener('timeupdate', onTime);
+      tastesPreviewAudio.addEventListener('ended', () => { stopTastesMusic(); });
+      tastesPreviewAudio.addEventListener('error', () => {
+        const zh = html.getAttribute('data-lang') === 'zh';
+        alert(zh
+          ? '未找到或无法播放该试听文件。请将 mp3 放入 media/ 文件夹（见下方文件名说明）。'
+          : 'Could not load the preview file. Add the mp3 files to the media/ folder (filenames below).');
+        stopTastesMusic();
+      });
+      tastesPreviewAudio.play().catch(() => {
+        const zh = html.getAttribute('data-lang') === 'zh';
+        alert(zh
+          ? '无法开始播放（文件可能缺失，或浏览器需要您先与页面交互）。'
+          : 'Playback could not start (file missing, or the browser blocked audio until you interact with the page).');
+        stopTastesMusic();
+      });
+      return;
+    }
+
+    if (extUrl) {
+      resetPreviewFill();
+      window.open(extUrl, '_blank', 'noopener,noreferrer');
+      return;
+    }
   });
 
   const filmGrid = document.getElementById('filmGrid');
