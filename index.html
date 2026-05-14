@@ -378,6 +378,13 @@
     }
 
     /* ── WORK ── */
+    .work-intro {
+      max-width: 680px;
+      font-size: 0.97rem;
+      line-height: 1.85;
+      color: var(--muted);
+      margin-bottom: 2.4rem;
+    }
     /* ── WORK ACCORDION ── */
     .work-accordion { display: flex; flex-direction: column; gap: 3px; }
     .work-card {
@@ -882,6 +889,15 @@
       transition: all 0.2s;
     }
     .project-live-link:hover { background: var(--violet); color: #fff; }
+    .sb-visit-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      margin-top: 1.2rem;
+      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--amber); border: 1px solid rgba(232,184,122,0.35);
+      padding: 0.55rem 1.2rem; border-radius: 999px; text-decoration: none;
+      transition: all 0.22s; align-self: flex-start;
+    }
+    .sb-visit-btn:hover { background: var(--amber); color: #0a0a14; }
     .project-live-dot {
       width: 6px; height: 6px; border-radius: 50%; background: #4caf50;
       box-shadow: 0 0 6px rgba(76,175,80,0.7); flex-shrink: 0;
@@ -903,6 +919,101 @@
     .project-features {
       display: grid; grid-template-columns: repeat(3, 1fr);
       gap: 0.8rem; margin-top: 1rem;
+    }
+    /* ── AI WORKFLOW CARD ── */
+    .ai-process {
+      display: flex; align-items: center; gap: 0.5rem;
+      margin: 1.4rem 0; flex-wrap: wrap;
+    }
+    .ai-process-step {
+      display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
+      background: rgba(157,127,232,0.06);
+      border: 1px solid rgba(157,127,232,0.14);
+      border-radius: 10px; padding: 0.65rem 1rem;
+      min-width: 72px; flex: 1;
+    }
+    .ai-process-icon { font-size: 1.1rem; line-height: 1; }
+    .ai-process-label {
+      font-size: 0.62rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--violet);
+    }
+    .ai-process-arrow { color: var(--violet); opacity: 0.35; font-size: 1rem; flex-shrink: 0; }
+    .ai-projects {
+      display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1.2rem;
+    }
+    .ai-project-item {
+      border: 1px solid var(--border); border-radius: 10px;
+      padding: 0.9rem 1rem; background: rgba(255,255,255,0.015);
+    }
+    .ai-project-name {
+      font-size: 0.8rem; font-weight: 600; color: var(--amber);
+      margin-bottom: 0.4rem;
+    }
+    .ai-project-desc {
+      font-size: 0.76rem; color: var(--text); opacity: 0.75;
+      line-height: 1.6; margin-bottom: 0.5rem;
+    }
+    .ai-project-stack {
+      font-size: 0.62rem; letter-spacing: 0.1em;
+      color: var(--violet); opacity: 0.65;
+    }
+    /* ── SCRIPTBRIDGE FLOW DIAGRAM ── */
+    .sb-flow { margin-top: 1.8rem; border-top: 1px solid var(--border); padding-top: 1.4rem; }
+    .sb-flow-title {
+      font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--violet); margin-bottom: 1.2rem;
+    }
+    .sb-diagram {
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      gap: 0.5rem; align-items: center;
+    }
+    .sb-side { display: flex; flex-direction: column; gap: 0.35rem; }
+    .sb-side-head {
+      font-size: 0.63rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--amber); padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border); margin-bottom: 0.3rem;
+    }
+    .sb-step {
+      display: flex; align-items: flex-start; gap: 0.45rem;
+      padding: 0.38rem 0.55rem;
+      background: rgba(255,255,255,0.018);
+      border: 1px solid var(--border); border-radius: 6px;
+      font-size: 0.73rem; color: var(--text); line-height: 1.4;
+    }
+    .sb-n {
+      font-size: 0.55rem; color: var(--violet); opacity: 0.65;
+      min-width: 1.4rem; padding-top: 0.15rem; letter-spacing: 0.05em; flex-shrink: 0;
+    }
+    .sb-outcome {
+      margin-top: 0.3rem; padding: 0.38rem 0.55rem;
+      background: rgba(157,127,232,0.07);
+      border: 1px solid rgba(157,127,232,0.15);
+      border-radius: 6px; font-size: 0.73rem;
+      color: var(--violet); font-weight: 500;
+    }
+    .sb-middle {
+      display: flex; flex-direction: column;
+      align-items: center; gap: 0.5rem; padding: 0 0.3rem;
+    }
+    .sb-bridge-arrow { font-size: 1rem; color: var(--amber); opacity: 0.45; }
+    .sb-platform {
+      border: 1px solid rgba(232,184,122,0.22);
+      background: rgba(232,184,122,0.04);
+      border-radius: 10px; padding: 0.75rem 0.9rem; text-align: center;
+    }
+    .sb-platform-name {
+      font-size: 0.68rem; font-weight: 600; color: var(--amber);
+      letter-spacing: 0.08em; margin-bottom: 0.6rem;
+      padding-bottom: 0.45rem; border-bottom: 1px solid rgba(232,184,122,0.15);
+    }
+    .sb-platform-items {
+      display: flex; flex-direction: column; gap: 0.3rem;
+      font-size: 0.68rem; color: var(--text); opacity: 0.75; text-align: left;
+    }
+    @media (max-width: 640px) {
+      .sb-diagram { grid-template-columns: 1fr; }
+      .sb-middle { flex-direction: row; justify-content: center; }
+      .sb-bridge-arrow { transform: rotate(90deg); }
     }
     @media (max-width: 600px) { .project-features { grid-template-columns: 1fr; } }
     .project-feature {
@@ -1700,6 +1811,9 @@
     <h2 class="section-title en">How I <em>work.</em></h2>
     <h2 class="section-title zh">我的<em>工作。</em></h2>
 
+    <p class="work-intro en">Bilingual content producer, documentary director, and online English instructor. End-to-end video production — field shooting, editing, copywriting, account operations — with experience at Kunming Television and Yunnan Net (state media). Two documentary films selected at international film festivals: Shanghai International Film Festival (2024) and Beijing International Film Festival (13th edition). Builds and deploys web products using HTML / CSS / JS with AI-assisted workflows. Available for media production, documentary direction, bilingual content, and digital project work.</p>
+    <p class="work-intro zh">双语内容制作人、纪录片导演、线上英语教师。具备采访、拍摄、剪辑、文案、账号运营全流程制作能力，曾任职昆明电视台与云南网（国家媒体）。两部纪录片作品入选国际电影节：2024年上海国际电影节、第十三届北京国际电影节。使用 HTML / CSS / JS 结合 AI 工具独立开发并部署网站产品。可承接媒体制作、纪录片导演、双语内容及数字项目工作。</p>
+
     <div class="work-accordion fade-in">
 
       <!-- Language Teacher -->
@@ -1752,12 +1866,8 @@
             <div class="work-card-period en">2026 — Present</div>
             <div class="work-card-period zh">2026 — 至今</div>
           </div>
-          <a href="https://8844-code.github.io/scriptbridge/" target="_blank" class="project-live-link" onclick="event.stopPropagation()">
-            <span class="project-live-dot"></span>
-            <span class="en">Live →</span><span class="zh">已上线 →</span>
-          </a>
-          <span class="work-card-hint en" style="margin-left:0.8rem;">Expand →</span>
-          <span class="work-card-hint zh" style="margin-left:0.8rem;">展开 →</span>
+          <span class="work-card-hint en">Expand →</span>
+          <span class="work-card-hint zh">展开 →</span>
           <span class="work-card-arrow" style="margin-left:0.4rem;">→</span>
         </div>
         <div class="work-card-body">
@@ -1804,11 +1914,62 @@
                 <div class="project-feature-desc zh">买断或授权，按地区按年限，标准合同具备法律效力。</div>
               </div>
             </div>
+            <!-- HOW IT WORKS FLOW -->
+            <div class="sb-flow">
+              <div class="sb-flow-title en">How it works</div>
+              <div class="sb-flow-title zh">平台运作逻辑</div>
+              <div class="sb-diagram">
+
+                <!-- Writer side -->
+                <div class="sb-side">
+                  <div class="sb-side-head en">✍ Writer</div>
+                  <div class="sb-side-head zh">✍ 创作者</div>
+                  <div class="sb-step"><span class="sb-n">01</span><span class="en">Upload script</span><span class="zh">上传剧本</span></div>
+                  <div class="sb-step"><span class="sb-n">02</span><span class="en">Copyright auto-registered</span><span class="zh">版权自动存证</span></div>
+                  <div class="sb-step"><span class="sb-n">03</span><span class="en">Set price &amp; license terms</span><span class="zh">定价与授权设置</span></div>
+                  <div class="sb-outcome en">💰 Paid on deal close</div>
+                  <div class="sb-outcome zh">💰 成交后收款</div>
+                </div>
+
+                <!-- Center platform -->
+                <div class="sb-middle">
+                  <div class="sb-bridge-arrow">→</div>
+                  <div class="sb-platform">
+                    <div class="sb-platform-name">ScriptBridge</div>
+                    <div class="sb-platform-items">
+                      <div><span class="en">⚖️ Rights verification</span><span class="zh">⚖️ 版权存证</span></div>
+                      <div><span class="en">🔒 Escrow payment</span><span class="zh">🔒 资金托管</span></div>
+                      <div><span class="en">📋 Legal contract</span><span class="zh">📋 法律合同</span></div>
+                      <div><span class="en">🤝 Deal facilitation</span><span class="zh">🤝 交易撮合</span></div>
+                    </div>
+                  </div>
+                  <div class="sb-bridge-arrow">→</div>
+                </div>
+
+                <!-- Buyer side -->
+                <div class="sb-side">
+                  <div class="sb-side-head en">🎬 Buyer</div>
+                  <div class="sb-side-head zh">🎬 买方</div>
+                  <div class="sb-step"><span class="sb-n">01</span><span class="en">Browse marketplace</span><span class="zh">浏览市场</span></div>
+                  <div class="sb-step"><span class="sb-n">02</span><span class="en">Purchase or license</span><span class="zh">购买或授权</span></div>
+                  <div class="sb-step"><span class="sb-n">03</span><span class="en">Payment held in escrow</span><span class="zh">款项进入托管</span></div>
+                  <div class="sb-outcome en">✅ Rights delivered</div>
+                  <div class="sb-outcome zh">✅ 版权交付完成</div>
+                </div>
+
+              </div>
+            </div>
+
             <div class="work-tags">
               <span class="tag">Founder</span>
               <span class="tag">AI-built</span>
               <span class="tag en">Live · Beta</span><span class="tag zh">已上线 · 内测</span>
             </div>
+            <a href="https://8844-code.github.io/scriptbridge/" target="_blank" class="sb-visit-btn" onclick="event.stopPropagation()">
+              <span class="project-live-dot"></span>
+              <span class="en">Visit ScriptBridge →</span>
+              <span class="zh">访问 ScriptBridge →</span>
+            </a>
           </div>
         </div>
       </div>
@@ -1892,6 +2053,80 @@
               <span class="tag en">Museum</span><span class="tag zh">博物馆</span>
               <span class="tag en">Interpretation</span><span class="tag zh">讲解</span>
               <span class="tag en">Editorial</span><span class="tag zh">编辑写作</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Workflow -->
+      <div class="work-card featured" onclick="toggleWork(this)">
+        <div class="work-card-header">
+          <div class="work-card-left">
+            <div class="work-card-role en">Builder · Prompter · Deployer</div>
+            <div class="work-card-role zh">构建者 · 提示者 · 部署者</div>
+            <div class="work-card-name en">Building with AI</div>
+            <div class="work-card-name zh">AI 工作方式</div>
+            <div class="work-card-period en">2025 — Present</div>
+            <div class="work-card-period zh">2025 — 至今</div>
+          </div>
+          <span class="work-card-hint en">Expand →</span>
+          <span class="work-card-hint zh">展开 →</span>
+          <span class="work-card-arrow">→</span>
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-body-inner">
+            <div class="work-body en">Two web products taken from idea to live deployment using AI as a co-builder — no prior coding background. Workflow: define the problem clearly, prompt precisely, review every output, iterate. The result is working software, not just a prototype.</div>
+            <div class="work-body zh">两个网站产品从零概念到上线部署，以 AI 为协作者完成——此前无编程背景。工作方式：把问题说清楚，精准提示，逐行审查输出，反复迭代。产出的是真正能用的产品，不是演示稿。</div>
+
+            <!-- Process flow -->
+            <div class="ai-process">
+              <div class="ai-process-step">
+                <div class="ai-process-icon">💡</div>
+                <div class="ai-process-label en">Define</div>
+                <div class="ai-process-label zh">定义问题</div>
+              </div>
+              <div class="ai-process-arrow">→</div>
+              <div class="ai-process-step">
+                <div class="ai-process-icon">✦</div>
+                <div class="ai-process-label en">Prompt</div>
+                <div class="ai-process-label zh">精准提示</div>
+              </div>
+              <div class="ai-process-arrow">→</div>
+              <div class="ai-process-step">
+                <div class="ai-process-icon">⌥</div>
+                <div class="ai-process-label en">Review</div>
+                <div class="ai-process-label zh">审查输出</div>
+              </div>
+              <div class="ai-process-arrow">→</div>
+              <div class="ai-process-step">
+                <div class="ai-process-icon">↗</div>
+                <div class="ai-process-label en">Deploy</div>
+                <div class="ai-process-label zh">部署上线</div>
+              </div>
+            </div>
+
+            <!-- Built projects -->
+            <div class="ai-projects">
+              <div class="ai-project-item">
+                <div class="ai-project-name">ScriptBridge</div>
+                <div class="ai-project-desc en">Screenplay rights marketplace — product concept, UX design, full HTML/CSS/JS build, GitHub Pages deployment. Waitlist live.</div>
+                <div class="ai-project-desc zh">剧本版权交易平台——产品概念、交互设计、完整前端开发、GitHub Pages 部署。候补名单已上线。</div>
+                <div class="ai-project-stack">HTML · CSS · JS · Claude · GitHub Pages</div>
+              </div>
+              <div class="ai-project-item">
+                <div class="ai-project-name en">This website</div>
+                <div class="ai-project-name zh">这个网站</div>
+                <div class="ai-project-desc en">Bilingual personal brand site — dark/light theming, language switching, modal system, CSS animations, accordion components. Single file, zero frameworks.</div>
+                <div class="ai-project-desc zh">双语个人品牌网站——深浅色切换、中英双语、模态系统、CSS动画、手风琴组件。单文件，零依赖框架。</div>
+                <div class="ai-project-stack">HTML · CSS · JS · Claude · GitHub Pages</div>
+              </div>
+            </div>
+
+            <div class="work-tags">
+              <span class="tag">Claude</span>
+              <span class="tag">HTML / CSS / JS</span>
+              <span class="tag">GitHub Pages</span>
+              <span class="tag en">Zero frameworks</span><span class="tag zh">零框架</span>
             </div>
           </div>
         </div>
@@ -2235,45 +2470,21 @@
         <button class="tastes-close-btn" onclick="closeModal('tastes')">×</button>
       </div>
       <div class="vinyl-carousel" id="vinylCarousel">
-        <div class="vinyl-item" data-title-en="The Rippling Night" data-title-zh="涟漪夜色" data-artist="R. Ji Curated" data-note-en="Ambient textures for writing sessions." data-note-zh="写作时循环的氛围层。" data-preview-url="" onclick="toggleVinyl(this)">
+        <div class="vinyl-item" data-title-en="Goodbye" data-title-zh="Goodbye" data-artist="RAYE" data-note-en="The kind of song that arrives at exactly the wrong moment and stays forever." data-note-zh="那种在最不对的时候出现、然后一直留着的歌。" data-preview-url="" onclick="toggleVinyl(this)">
           <div class="vinyl-disc">
-            <div class="vinyl-cover" style="background:linear-gradient(135deg,#2a1a3e,#5a2d82);"></div>
+            <div class="vinyl-cover" style="background:linear-gradient(135deg,#1a1a2e,#3a2a5a);"></div>
             <div class="vinyl-hole"></div>
           </div>
-          <div class="vinyl-label en">The Rippling Night · R. Ji Curated</div>
-          <div class="vinyl-label zh">《涟漪夜色》· RJ精选</div>
+          <div class="vinyl-label en">Goodbye · RAYE</div>
+          <div class="vinyl-label zh">Goodbye · RAYE</div>
         </div>
-        <div class="vinyl-item" data-title-en="Skyline Pulse" data-title-zh="天际脉冲" data-artist="R. Ji Curated" data-note-en="Minimal beats for momentum." data-note-zh="保持节奏感的极简律动。" data-preview-url="" onclick="toggleVinyl(this)">
+        <div class="vinyl-item" data-title-en="Genesis" data-title-zh="Genesis" data-artist="RAYE" data-note-en="Something beginning. Something already mourned." data-note-zh="某个开始。某个已经被哀悼过的东西。" data-preview-url="" onclick="toggleVinyl(this)">
           <div class="vinyl-disc">
-            <div class="vinyl-cover" style="background:linear-gradient(135deg,#1a2e20,#2a5a3a);"></div>
+            <div class="vinyl-cover" style="background:linear-gradient(135deg,#0e1f2e,#1a3a4a);"></div>
             <div class="vinyl-hole"></div>
           </div>
-          <div class="vinyl-label en">Skyline Pulse · R. Ji Curated</div>
-          <div class="vinyl-label zh">《天际脉冲》· RJ精选</div>
-        </div>
-        <div class="vinyl-item" data-title-en="Fire and Earth" data-title-zh="火与土地" data-artist="R. Ji Curated" data-note-en="Rooted tones with emotional lift." data-note-zh="有土地感的情绪张力。" data-preview-url="" onclick="toggleVinyl(this)">
-          <div class="vinyl-disc">
-            <div class="vinyl-cover" style="background:linear-gradient(135deg,#2e1a14,#5a2a1e);"></div>
-            <div class="vinyl-hole"></div>
-          </div>
-          <div class="vinyl-label en">Fire and Earth · R. Ji Curated</div>
-          <div class="vinyl-label zh">《火与土地》· RJ精选</div>
-        </div>
-        <div class="vinyl-item" data-title-en="Rainline" data-title-zh="雨线" data-artist="R. Ji Curated" data-note-en="Late-night headphones material." data-note-zh="深夜耳机专用音色。" data-preview-url="" onclick="toggleVinyl(this)">
-          <div class="vinyl-disc">
-            <div class="vinyl-cover" style="background:linear-gradient(135deg,#141a2e,#1e2a5a);"></div>
-            <div class="vinyl-hole"></div>
-          </div>
-          <div class="vinyl-label en">Rainline · R. Ji Curated</div>
-          <div class="vinyl-label zh">《雨线》· RJ精选</div>
-        </div>
-        <div class="vinyl-item" data-title-en="Golden Dust" data-title-zh="金色尘埃" data-artist="R. Ji Curated" data-note-en="Warm vocals and open roads." data-note-zh="温暖人声与公路感。" data-preview-url="" onclick="toggleVinyl(this)">
-          <div class="vinyl-disc">
-            <div class="vinyl-cover" style="background:linear-gradient(135deg,#2e2a14,#5a501e);"></div>
-            <div class="vinyl-hole"></div>
-          </div>
-          <div class="vinyl-label en">Golden Dust · R. Ji Curated</div>
-          <div class="vinyl-label zh">《金色尘埃》· RJ精选</div>
+          <div class="vinyl-label en">Genesis · RAYE</div>
+          <div class="vinyl-label zh">Genesis · RAYE</div>
         </div>
       </div>
       <div class="music-detail">
@@ -2307,40 +2518,34 @@
       </div>
       <div class="film-grid" id="filmGrid">
         <div class="film-card">
-          <div class="film-poster" style="background:linear-gradient(160deg,#0f0f1e,#1a1240);"></div>
-          <div class="film-title en">Title</div>
-          <div class="film-title zh">片名</div>
-          <div class="film-year">—</div>
+          <div class="film-poster" style="background:linear-gradient(160deg,#1A1400,#5A4400,#B88C00);"></div>
+          <div class="film-title en">Comrades: Almost a Love Story</div>
+          <div class="film-title zh">甜蜜蜜</div>
+          <div class="film-year">1996 · Peter Chan</div>
         </div>
         <div class="film-card">
-          <div class="film-poster" style="background:linear-gradient(160deg,#1e0f0f,#401212);"></div>
-          <div class="film-title en">Title</div>
-          <div class="film-title zh">片名</div>
-          <div class="film-year">—</div>
+          <div class="film-poster" style="background:linear-gradient(160deg,#1A0404,#5A0C0C,#8B1010);"></div>
+          <div class="film-title en">Yi Yi</div>
+          <div class="film-title zh">一一</div>
+          <div class="film-year">2000 · Edward Yang</div>
         </div>
         <div class="film-card">
-          <div class="film-poster" style="background:linear-gradient(160deg,#0f1e0f,#124012);"></div>
-          <div class="film-title en">Title</div>
-          <div class="film-title zh">片名</div>
-          <div class="film-year">—</div>
+          <div class="film-poster" style="background:linear-gradient(160deg,#1C1C1C,#5A5A5A,#B0B0B0);"></div>
+          <div class="film-title en">Three</div>
+          <div class="film-title zh">三更</div>
+          <div class="film-year">2002 · Chan / Kim / Nonzee</div>
         </div>
         <div class="film-card">
-          <div class="film-poster" style="background:linear-gradient(160deg,#1e1a0f,#403012);"></div>
-          <div class="film-title en">Title</div>
-          <div class="film-title zh">片名</div>
-          <div class="film-year">—</div>
+          <div class="film-poster" style="background:linear-gradient(160deg,#04101E,#0C2040,#183060);"></div>
+          <div class="film-title en">Spring Fever</div>
+          <div class="film-title zh">春风沉醉的夜晚</div>
+          <div class="film-year">2009 · Lou Ye</div>
         </div>
         <div class="film-card">
-          <div class="film-poster" style="background:linear-gradient(160deg,#1a0f1e,#301240);"></div>
-          <div class="film-title en">Title</div>
-          <div class="film-title zh">片名</div>
-          <div class="film-year">—</div>
-        </div>
-        <div class="film-card">
-          <div class="film-poster" style="background:linear-gradient(160deg,#0f1a1e,#123040);"></div>
-          <div class="film-title en">Title</div>
-          <div class="film-title zh">片名</div>
-          <div class="film-year">—</div>
+          <div class="film-poster" style="background:linear-gradient(160deg,#040404,#0A0A0A,#141414);"></div>
+          <div class="film-title en">Prometheus</div>
+          <div class="film-title zh">普罗米修斯</div>
+          <div class="film-year">2012 · Ridley Scott</div>
         </div>
       </div>
     </div>
