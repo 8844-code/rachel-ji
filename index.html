@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rachel Ji — 季颖秋</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23F7F3EE'/%3E%3Ctext x='16' y='13' font-family='Georgia%2Cserif' font-style='italic' font-size='12' fill='%232A7850' text-anchor='middle'%3ER%3C/text%3E%3Ctext x='16' y='30' font-family='Georgia%2Cserif' font-style='italic' font-size='24' font-weight='700' fill='%23A83830' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23F7F7F4'/%3E%3Ctext x='16' y='13' font-family='Georgia%2Cserif' font-style='italic' font-size='12' fill='%23666660' text-anchor='middle'%3ER%3C/text%3E%3Ctext x='16' y='30' font-family='Georgia%2Cserif' font-style='italic' font-size='24' font-weight='700' fill='%23111111' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet" />
   <style>
@@ -12,61 +12,61 @@
       color-scheme: dark light;
 
       /* ── 深色主题（默认）── */
-      --bg:        #080812;
-      --surface:   #0F0D1C;
-      --surface2:  #161428;
-      --border:    rgba(180,160,255,0.09);
-      --violet:    #9D7FE8;
-      --violet-dim:#5B3FA8;
-      --amber:     #E8B87A;
-      --amber-dim: #A07840;
-      --text:      #F0EDF8;
-      --muted:     #7A7090;
-      --glow-v:    rgba(157,127,232,0.18);
+      --bg:        #111111;
+      --surface:   #1B1B1A;
+      --surface2:  #262624;
+      --border:    rgba(255,255,255,0.12);
+      --violet:    #A8A8A2;
+      --violet-dim:#6F6F6A;
+      --amber:     #B89B70;
+      --amber-dim: #806A49;
+      --text:      #F7F7F4;
+      --muted:     #969690;
+      --glow-v:    rgba(214,214,205,0.22);
 
-      --nav-bg:      rgba(8,8,18,0.80);
-      --modal-bg:    rgba(4,4,12,0.88);
-      --photo-grad:  linear-gradient(135deg, #1a1030, #0d1a40);
-      --wf-vis-grad: linear-gradient(135deg, #140e28 0%, #0b1535 50%, #100b22 100%);
-      --excerpt-bg:  rgba(157,127,232,0.04);
+      --nav-bg:      rgba(17,17,17,0.86);
+      --modal-bg:    rgba(10,10,10,0.92);
+      --photo-grad:  linear-gradient(135deg, #3A3935, #181817);
+      --wf-vis-grad: linear-gradient(135deg, #383733 0%, #181817 52%, #2B2A27 100%);
+      --excerpt-bg:  rgba(190,190,182,0.04);
 
       /* Logo mark */
-      --logo-r:    #5DAA88;
-      --logo-j:    #D46058;
-      --logo-line: rgba(212,96,88,0.38);
-      --focus-ring: rgba(157,127,232,0.55);
+      --logo-r:    #D5D5CF;
+      --logo-j:    #FFFFFF;
+      --logo-line: rgba(255,255,255,0.28);
+      --focus-ring: rgba(210,210,202,0.52);
       --radius-sm: 8px;
       --radius-md: 14px;
       --radius-lg: 22px;
-      --glass-bg: rgba(255,255,255,0.02);
-      --glass-border: rgba(255,255,255,0.1);
+      --glass-bg: rgba(255,255,255,0.035);
+      --glass-border: rgba(255,255,255,0.14);
     }
 
     /* ── 浅色主题 ── */
     [data-theme="light"] {
-      --bg:        #F7F3EE;
-      --surface:   #EDE8DF;
-      --surface2:  #E3DDD4;
-      --border:    rgba(90,70,50,0.13);
-      --violet:    #6840C0;
-      --violet-dim:#4A2898;
-      --amber:     #B87020;
-      --amber-dim: #7A4810;
-      --text:      #1A1228;
-      --muted:     #6A5870;
-      --glow-v:    rgba(104,64,192,0.09);
+      --bg:        #F7F7F4;
+      --surface:   #ECECE7;
+      --surface2:  #E2E2DC;
+      --border:    rgba(17,17,17,0.12);
+      --violet:    #3F3F3C;
+      --violet-dim:#1F1F1E;
+      --amber:     #8B744F;
+      --amber-dim: #5F4E34;
+      --text:      #111111;
+      --muted:     #666660;
+      --glow-v:    rgba(17,17,17,0.07);
 
-      --nav-bg:      rgba(247,243,238,0.88);
-      --modal-bg:    rgba(230,224,215,0.94);
-      --photo-grad:  linear-gradient(135deg, #cfc5e2, #bacce0);
-      --wf-vis-grad: linear-gradient(135deg, #e2daf2 0%, #d4daf2 50%, #dcd6f2 100%);
-      --excerpt-bg:  rgba(104,64,192,0.04);
+      --nav-bg:      rgba(247,247,244,0.90);
+      --modal-bg:    rgba(236,236,231,0.95);
+      --photo-grad:  linear-gradient(135deg, #D7D7D1, #BEBEB8);
+      --wf-vis-grad: linear-gradient(135deg, #E6E6E1 0%, #D2D2CC 50%, #DEDED8 100%);
+      --excerpt-bg:  rgba(17,17,17,0.035);
 
-      --logo-r:    #2A7850;
-      --logo-j:    #A83830;
-      --logo-line: rgba(168,56,48,0.38);
+      --logo-r:    #666660;
+      --logo-j:    #111111;
+      --logo-line: rgba(17,17,17,0.28);
       --glass-bg: rgba(255,255,255,0.42);
-      --glass-border: rgba(30,20,45,0.12);
+      --glass-border: rgba(17,17,17,0.12);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -77,7 +77,10 @@
       color: var(--text);
       font-family: 'Space Grotesk', 'Noto Serif SC', serif;
       line-height: 1.6;
-      overflow-x: hidden;
+    }
+    /* overflow-x clip lives on a wrapper, NOT body — avoids iOS Safari scroll bug */
+    body > *:not(#gateway):not(.modal-overlay):not(#photoZoomOverlay) {
+      max-width: 100%;
     }
 
     /* grain */
@@ -197,7 +200,7 @@
       letter-spacing: -0.02em; color: var(--text); display: block;
     }
     .hero-name-secondary {
-      font-family: 'Noto Sans SC', sans-serif;
+      font-family: 'Noto Serif SC', serif;
       font-size: clamp(1.8rem, 3.5vw, 3rem);
       font-weight: 300; color: var(--muted);
       letter-spacing: 0.18em; margin-top: 0.5rem; display: block;
@@ -335,9 +338,12 @@
     /* ── CREATIVE ── */
     .creative-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.5px;
       background: var(--border);
+    }
+    .creative-card--full {
+      grid-column: 1 / -1;
     }
     .creative-card {
       background: color-mix(in srgb, var(--bg) 92%, white 8%);
@@ -376,6 +382,27 @@
       color: var(--violet); letter-spacing: 0.08em;
       font-family: 'Cormorant Garamond', serif; font-style: italic;
     }
+    .creative-progress {
+      display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;
+      margin: -1.5rem 0 2rem; color: var(--muted);
+      font-size: 0.82rem; line-height: 1.65;
+    }
+    .creative-progress-badge {
+      flex-shrink: 0; padding: 0.3rem 0.7rem;
+      border: 1px solid rgba(168,168,162,0.32); border-radius: 999px;
+      color: var(--violet); font-size: 0.62rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    #modalWriting .modal-tabs,
+    #modalWriting .modal-panel { display: none; }
+    .writing-placeholder {
+      min-height: 260px; display: flex; flex-direction: column;
+      justify-content: center; align-items: flex-start;
+      padding: 1rem 0 2rem; max-width: 34rem;
+    }
+    .writing-placeholder p {
+      color: var(--muted); line-height: 1.8; margin-top: 0.8rem;
+    }
 
     /* ── WORK ── */
     .work-intro {
@@ -394,8 +421,8 @@
       backdrop-filter: blur(8px);
       transition: border-color 0.25s, background 0.2s;
     }
-    .work-card:hover { border-color: rgba(157,127,232,0.3); background: var(--surface); }
-    .work-card.open { border-color: rgba(157,127,232,0.42); background: var(--surface); }
+    .work-card:hover { border-color: rgba(168,168,162,0.3); background: var(--surface); }
+    .work-card.open { border-color: rgba(168,168,162,0.42); background: var(--surface); }
     .work-card-header {
       display: flex; align-items: center; gap: 1rem;
       padding: 1.2rem 1.5rem; cursor: pointer; user-select: none;
@@ -473,11 +500,11 @@
     }
     .wf-visual::before {
       content: 'SB'; font-size: 7rem; font-weight: 800;
-      color: rgba(157,127,232,0.06); letter-spacing: -0.05em;
+      color: rgba(168,168,162,0.06); letter-spacing: -0.05em;
     }
     .wf-glow {
       position: absolute; width: 180px; height: 180px;
-      background: radial-gradient(circle, rgba(157,127,232,0.28) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(168,168,162,0.24) 0%, transparent 70%);
       border-radius: 50%;
     }
 
@@ -526,6 +553,9 @@
     .modal-overlay {
       display: none;
       position: fixed; inset: 0; z-index: 1000;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
       background: var(--modal-bg);
       backdrop-filter: blur(12px);
       align-items: center; justify-content: center;
@@ -539,6 +569,8 @@
       backdrop-filter: blur(14px);
       max-width: 760px; width: 100%;
       max-height: 85vh; overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
       position: relative;
       animation: modalIn 0.3s ease;
       box-shadow: 0 20px 44px rgba(0,0,0,0.24);
@@ -562,6 +594,8 @@
       font-family: inherit; transition: all 0.2s;
     }
     .modal-close button:hover { border-color: var(--violet); color: var(--violet); }
+    .photo-modal-back-top { display: none; }
+    #modalPhoto.photo-series-active .photo-modal-back-top { display: inline-flex; }
     .modal-body { padding: 1.5rem 2.5rem 3rem; }
     .modal-tabs {
       display: flex; gap: 0; border-bottom: 1px solid var(--border);
@@ -602,7 +636,7 @@
       margin-bottom: 1.8rem;
     }
     .modal-excerpt p {
-      font-family: 'Noto Sans SC', 'Space Grotesk', sans-serif;
+      font-family: 'Noto Serif SC', 'Space Grotesk', serif;
       font-size: 1rem; line-height: 2; color: var(--text);
       font-weight: 300;
     }
@@ -719,7 +753,7 @@
       .about-quote-block { position: static; }
     }
     @media (max-width: 700px) {
-      .creative-grid [style*="grid-column: span 2"] { grid-column: span 1 !important; }
+      .creative-grid { grid-template-columns: 1fr; }
     }
 
     /* 中文专用：思源宋体，字重加厚 */
@@ -742,10 +776,16 @@
       position: fixed; inset: 0; z-index: 300;
       display: flex; flex-direction: column;
       background: var(--bg);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
       transition: opacity 0.7s ease, visibility 0.7s ease;
     }
     #gateway.leaving { opacity: 0; pointer-events: none; }
-    #gateway.gone { display: none; }
+    #gateway.gone {
+      display: none !important;
+      visibility: hidden;
+      pointer-events: none;
+    }
 
     .gw-top {
       padding: 3.5rem 2rem 2rem;
@@ -757,7 +797,7 @@
       color: var(--muted); margin-bottom: 1rem;
     }
     .gw-question {
-      font-size: clamp(1.5rem, 4vw, 2.8rem);
+      font-size: clamp(2rem, 5vw, 3.2rem);
       font-weight: 700; line-height: 1.15;
       letter-spacing: -0.02em; color: var(--text);
     }
@@ -765,15 +805,26 @@
 
     .gw-panels {
       flex: 1; display: grid; grid-template-columns: 1fr 1fr;
-      min-height: 0;
+      min-height: 0; gap: 0;
     }
     .gw-panel {
       cursor: pointer; border: none; background: transparent;
       color: var(--text); font-family: inherit;
       display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: 1.2rem; padding: 2.5rem 2rem;
+      gap: 1.2rem; padding: 3rem 2.5rem;
+      margin: 1.25rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
       position: relative; overflow: hidden;
-      transition: background 0.35s;
+      transition: background 0.35s, border-color 0.35s, box-shadow 0.35s;
+    }
+    .gw-panel:hover {
+      border-color: var(--violet-dim);
+      box-shadow: 0 0 48px var(--glow-v), 0 12px 40px rgba(0,0,0,0.25);
+    }
+    .gw-panel.gw-professional:hover {
+      border-color: var(--amber-dim);
+      box-shadow: 0 0 40px rgba(232,184,122,0.15), 0 12px 40px rgba(0,0,0,0.25);
     }
     .gw-panel::before {
       content: ''; position: absolute; inset: 0;
@@ -783,13 +834,16 @@
     .gw-panel.gw-professional::before { background: radial-gradient(ellipse at 50% 60%, rgba(232,184,122,0.12), transparent 70%); }
     .gw-panel:hover::before { opacity: 1; }
     .gw-divider {
-      position: absolute; left: 50%; top: 8%; bottom: 8%;
-      width: 1px; background: var(--border); z-index: 1;
+      position: absolute; left: 50%; top: 10%; bottom: 10%;
+      width: 1px;
+      background: linear-gradient(180deg, transparent, var(--border) 15%, var(--violet-dim) 50%, var(--border) 85%, transparent);
+      z-index: 1; pointer-events: none;
     }
-    .gw-panel-inner { position: relative; z-index: 2; text-align: center; }
+    .gw-panel-inner { position: relative; z-index: 2; text-align: center; max-width: 22rem; }
     .gw-label {
-      display: block; font-size: 0.6rem; letter-spacing: 0.3em;
-      text-transform: uppercase; color: var(--muted); margin-bottom: 0.8rem;
+      display: block; font-size: 1.5rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text); margin-bottom: 0.65rem;
     }
     .gw-title {
       display: block; font-size: clamp(2.5rem, 7vw, 5rem);
@@ -799,8 +853,8 @@
     .gw-panel.gw-personal .gw-title { color: var(--violet); }
     .gw-panel.gw-professional .gw-title { color: var(--amber); }
     .gw-sub {
-      display: block; font-size: 0.72rem; color: var(--muted);
-      letter-spacing: 0.08em; line-height: 1.8;
+      display: block; font-size: 0.8rem; color: var(--muted);
+      letter-spacing: 0.06em; line-height: 1.85;
     }
     .gw-arrow {
       display: block; margin-top: 1.5rem; font-size: 1.2rem;
@@ -836,34 +890,224 @@
       transition: filter 0.3s;
     }
     .card-clickable:hover .photo-thumb-grid img { filter: brightness(0.88) saturate(1); }
-
-    /* ── PHOTO MODAL GALLERY (series groups) ── */
-    .photo-modal-gallery { display: flex; flex-direction: column; gap: 0; }
-    .photo-series-block { margin: 0; }
-    .photo-series-header.photo-modal-caption {
-      padding-top: 0.5rem;
-      border-bottom: none;
-      padding-bottom: 0.35rem;
-    }
-    .photo-series-grid {
+    .taste-thumb-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 0.5rem;
-      padding: 0 2rem 0.85rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+      height: 150px;
+      overflow: hidden;
+      margin-bottom: 1.2rem;
+      border-radius: 2px;
+    }
+    .taste-thumb-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.74) saturate(0.88);
+      transition: filter 0.3s, transform 0.3s;
+    }
+    .taste-thumb-grid img:nth-child(1) { object-position: center; }
+    .taste-thumb-grid img:nth-child(2) { object-position: center top; }
+    .taste-thumb-grid img:nth-child(3) { object-position: center top; }
+    .card-clickable:hover .taste-thumb-grid img {
+      filter: brightness(0.92) saturate(1);
+      transform: scale(1.03);
+    }
+    .voice-cover-preview {
+      height: 150px;
+      margin-bottom: 1.2rem;
+      position: relative;
+      overflow: hidden;
+      border-radius: 2px;
+      background:
+        radial-gradient(circle at 48% 50%, rgba(209,177,119,0.14), transparent 36%),
+        linear-gradient(145deg, rgba(210,210,202,0.14), rgba(18,18,17,0.92));
+    }
+    .voice-cover-stack {
+      position: absolute;
+      width: 150px;
+      height: 118px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: transform 0.35s ease;
+      z-index: 2;
+    }
+    .voice-cover-stack img {
+      position: absolute;
+      width: 92px;
+      height: 92px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.16);
+      box-shadow: 0 14px 26px rgba(0,0,0,0.35);
+      filter: brightness(0.9) saturate(0.96);
+      transition: transform 0.35s ease, filter 0.35s ease;
+    }
+    .voice-cover-stack img:nth-child(1) {
+      transform: translate(12px, 14px) rotate(-4deg);
+      z-index: 5;
+      box-shadow: 0 18px 32px rgba(0,0,0,0.48);
+      filter: brightness(0.98) saturate(1.02);
+    }
+    .voice-cover-stack img:nth-child(2) { transform: translate(44px, 8px) rotate(8deg); z-index: 4; }
+    .voice-cover-stack img:nth-child(3) { transform: translate(60px, 24px) rotate(14deg); z-index: 3; }
+    .voice-cover-stack img:nth-child(4) { transform: translate(31px, -6px) rotate(4deg); z-index: 2; }
+    .voice-cover-stack img:nth-child(5) { transform: translate(72px, 3px) rotate(19deg); z-index: 1; }
+    .card-clickable:hover .voice-cover-stack {
+      transform: translate(-50%, -50%) scale(1.03);
+    }
+    .card-clickable:hover .voice-cover-stack img {
+      filter: brightness(1) saturate(1.06);
+    }
+
+    /* ── PHOTO MODAL · card grid → series viewer ── */
+    .photo-modal-box { max-width: min(1180px, 96vw) !important; width: 100%; }
+    .photo-series-home {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+      padding: 0 1.75rem 2.25rem;
+    }
+    .photo-series-home--hidden { display: none !important; }
+    .photo-series-tile {
+      display: flex; flex-direction: column; text-align: left;
+      border: 1px solid var(--border); border-radius: 8px;
+      background: var(--surface2); overflow: hidden; cursor: pointer;
+      padding: 0; margin: 0; font: inherit; color: inherit;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .photo-series-tile:hover {
+      border-color: var(--violet-dim);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.35);
+    }
+    .photo-series-tile:focus-visible {
+      outline: 2px solid var(--violet); outline-offset: 2px;
+    }
+    .photo-series-tile-cover {
+      display: block; height: 140px; overflow: hidden;
+      background: #0a0a12; position: relative;
+    }
+    .photo-series-tile-cover img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.35s ease, filter 0.35s ease;
+    }
+    .photo-series-tile:hover .photo-series-tile-cover img {
+      transform: scale(1.06); filter: brightness(0.5);
+    }
+    .photo-series-tile-cover::after {
+      content: attr(data-hint);
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(255,255,255,0.9); opacity: 0;
+      transition: opacity 0.3s ease;
+      font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.95rem;
+    }
+    .photo-series-tile:hover .photo-series-tile-cover::after { opacity: 1; }
+    .photo-series-tile-body { padding: 1rem 1.1rem 1.15rem; }
+    .photo-series-tile-eyebrow {
+      font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--violet); margin-bottom: 0.45rem; display: block;
+    }
+    .photo-series-tile-title {
+      font-size: 1.02rem; font-weight: 700; color: var(--text);
+      line-height: 1.35; margin-bottom: 0.45rem; display: block;
+    }
+    .photo-series-tile-excerpt {
+      font-size: 0.78rem; color: var(--muted); line-height: 1.65; display: block;
+    }
+    .photo-series-viewer { display: none; padding: 0 0 2rem; }
+    .photo-series-viewer.photo-series-viewer--open { display: block; }
+    .photo-viewer-back {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      margin: 0 1.75rem 1.25rem; padding: 0.45rem 0.85rem;
+      border: 1px solid var(--border); border-radius: 4px;
+      background: transparent; color: var(--violet); font: inherit;
+      font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+      cursor: pointer; transition: background 0.2s, color 0.2s;
+    }
+    .photo-viewer-back:hover { background: var(--violet); color: #fff; border-color: var(--violet); }
+    .photo-viewer-panel { display: none; padding: 0 1.75rem; }
+    .photo-viewer-panel.active { display: block; }
+    .photo-viewer-layout {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: clamp(1rem, 3vw, 2rem);
       align-items: start;
     }
-    .photo-series-grid img {
-      width: 100%; height: auto; display: block;
-      max-height: min(40vh, 380px);
-      object-fit: cover;
-      border-radius: 6px; border: 1px solid var(--border);
-      background: #000;
+    @media (max-width: 820px) {
+      .photo-viewer-layout { grid-template-columns: 1fr; }
     }
-    .photo-modal-caption {
-      padding: 0 2rem 1.5rem;
-      border-bottom: 1px solid var(--border);
+    .photo-viewer-images {
+      display: flex; flex-direction: column; gap: 0.85rem;
     }
-    .photo-series-block:last-child .photo-modal-caption { border-bottom: none; }
+    .photo-viewer-images.photo-viewer-images--grid2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.65rem;
+    }
+    @media (max-width: 520px) {
+      .photo-viewer-images.photo-viewer-images--grid2 { grid-template-columns: 1fr; }
+    }
+    .photo-viewer-images img {
+      width: 100%; max-height: min(62vh, 560px); height: auto;
+      object-fit: contain; object-position: center;
+      border-radius: 8px; border: 1px solid var(--border);
+      background: #080810; cursor: zoom-in;
+    }
+    .photo-viewer-images.photo-viewer-images--grid3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.65rem;
+    }
+    @media (max-width: 640px) {
+      .photo-viewer-images.photo-viewer-images--grid3 { grid-template-columns: 1fr; }
+    }
+    .photo-viewer-images.photo-viewer-images--grid3 img {
+      max-height: min(52vh, 480px);
+    }
+    .photo-viewer-head {
+      margin-bottom: 1rem;
+    }
+    .photo-viewer-head .photo-modal-series {
+      font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--violet); margin-bottom: 0.35rem;
+    }
+    .photo-viewer-head .photo-modal-title {
+      font-size: clamp(1.05rem, 2.2vw, 1.35rem); font-weight: 700; color: var(--text);
+      margin-bottom: 0.35rem; line-height: 1.35;
+    }
+    .photo-viewer-head .photo-modal-meta {
+      font-size: 0.68rem; letter-spacing: 0.08em; color: var(--muted);
+    }
+    .photo-viewer-prose {
+      font-size: clamp(0.9rem, 1.6vw, 1.02rem);
+      line-height: 1.95; color: var(--text);
+      max-width: 38em;
+    }
+    .photo-viewer-prose .photo-modal-poem {
+      margin-top: 0.75rem; font-size: 0.95rem; color: var(--muted);
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      line-height: 2.05;
+    }
+    .photo-viewer-prose .photo-modal-poem.zh,
+    .photo-viewer-prose .pisces-poem { font-style: normal; font-family: 'Noto Serif SC', serif; }
+    .photo-zoom-overlay {
+      display: none; position: fixed; inset: 0; z-index: 30000;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      background: rgba(4,4,10,0.94); align-items: center; justify-content: center;
+      padding: min(3vw, 2rem); cursor: zoom-out;
+      pointer-events: none;
+    }
+    .photo-zoom-overlay.open { display: flex; pointer-events: auto; }
+    .photo-zoom-overlay img {
+      max-width: 100%; max-height: 100%; object-fit: contain;
+      border-radius: 4px; cursor: zoom-out;
+    }
     .photo-modal-series {
       font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
       color: var(--violet); margin-bottom: 0.35rem;
@@ -880,20 +1124,8 @@
       font-family: 'Cormorant Garamond', serif; font-style: italic;
       line-height: 2; max-width: 520px;
     }
-    .photo-series-details { margin-top: 0.75rem; }
-    .photo-series-details summary {
-      cursor: pointer;
-      font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--violet); user-select: none; list-style: none;
-    }
-    .photo-series-details summary::-webkit-details-marker { display: none; }
-    .photo-series-details .pisces-poem {
-      margin-top: 0.75rem; padding-top: 0.65rem;
-      max-height: min(52vh, 480px); overflow-y: auto;
-      border-top: 1px solid var(--border);
-    }
 
-    /* Pisces poem (embedded in photography modal) */
+    /* Pisces poem (series viewer) */
     .pisces-poem {
       font-family: 'Noto Serif SC', serif;
       font-size: 0.95rem;
@@ -911,7 +1143,7 @@
       height: 160px; margin: -2rem -1.8rem 1.5rem;
       display: flex; align-items: center; justify-content: center;
       padding: 1rem 1.4rem; text-align: center;
-      background: linear-gradient(155deg, rgba(22,18,38,0.95), rgba(42,32,58,0.88), rgba(14,12,22,0.98));
+      background: linear-gradient(155deg, rgba(28,28,27,0.97), rgba(48,48,45,0.90), rgba(16,16,15,0.98));
       border-bottom: 1px solid var(--border);
     }
     .doc-no-poster p { font-size: 0.72rem; color: var(--muted); line-height: 1.65; margin: 0; max-width: 14rem; }
@@ -919,12 +1151,12 @@
     /* ── SCRIPTBRIDGE FEATURED PROJECT ── */
     .work-item.featured {
       border: 1px solid var(--violet-dim);
-      background: linear-gradient(135deg, rgba(157,127,232,0.04) 0%, rgba(157,127,232,0.01) 100%);
+      background: linear-gradient(135deg, rgba(168,168,162,0.05) 0%, rgba(168,168,162,0.01) 100%);
       border-radius: 4px;
     }
     [data-theme="light"] .work-item.featured {
-      border-color: rgba(104,64,192,0.25);
-      background: rgba(104,64,192,0.03);
+      border-color: rgba(17,17,17,0.24);
+      background: rgba(17,17,17,0.025);
     }
     .project-header {
       display: flex; align-items: center; justify-content: space-between;
@@ -976,8 +1208,8 @@
     }
     .ai-process-step {
       display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
-      background: rgba(157,127,232,0.06);
-      border: 1px solid rgba(157,127,232,0.14);
+      background: rgba(168,168,162,0.06);
+      border: 1px solid rgba(168,168,162,0.14);
       border-radius: 10px; padding: 0.65rem 1rem;
       min-width: 72px; flex: 1;
     }
@@ -1035,8 +1267,8 @@
     }
     .sb-outcome {
       margin-top: 0.3rem; padding: 0.38rem 0.55rem;
-      background: rgba(157,127,232,0.07);
-      border: 1px solid rgba(157,127,232,0.15);
+      background: rgba(210,210,202,0.07);
+      border: 1px solid rgba(210,210,202,0.15);
       border-radius: 6px; font-size: 0.73rem;
       color: var(--violet); font-weight: 500;
     }
@@ -1092,7 +1324,7 @@
       inset: -50% auto auto -20%;
       width: 320px;
       height: 320px;
-      background: radial-gradient(circle, rgba(157,127,232,0.14) 0%, transparent 72%);
+      background: radial-gradient(circle, rgba(218,218,210,0.18) 0%, transparent 72%);
       pointer-events: none;
       animation: navGlowDrift 14s ease-in-out infinite;
     }
@@ -1173,21 +1405,70 @@
 
     /* ── VIEW SWITCHING ── */
     html[data-view="creative"] #work,
+    html[data-view="creative"] #ai,
     html[data-view="creative"] #work-nav,
-    html[data-view="creative"] #hr-work { display: none; }
+    html[data-view="creative"] #hr-work,
+    html[data-view="creative"] #hr-ai { display: none; }
 
     html[data-view="work"] #creative,
     html[data-view="work"] #creative-nav { display: none; }
 
+    /* ── WORK DOMAINS ── */
+    .work-domains { display: flex; flex-direction: column; gap: 0.75rem; }
+    .work-domain { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: rgba(255,255,255,0.02); transition: border-color 0.25s; }
+    .work-domain:hover { border-color: rgba(168,168,162,0.3); }
+    .work-domain.open { border-color: rgba(168,168,162,0.45); background: var(--surface); }
+    .work-domain-header { display: flex; align-items: center; gap: 1.4rem; padding: 1.6rem 1.8rem; cursor: pointer; }
+    .domain-num { font-size: 0.58rem; letter-spacing: 0.22em; color: var(--muted); font-family: 'Cormorant Garamond',serif; flex-shrink: 0; width: 1.8rem; }
+    .domain-info { flex: 1; min-width: 0; }
+    .domain-title { font-size: 1.08rem; font-weight: 700; color: var(--text); line-height: 1.2; margin-bottom: 0.5rem; }
+    .domain-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .domain-chip { font-size: 0.58rem; letter-spacing: 0.13em; text-transform: uppercase; background: rgba(168,168,162,0.1); color: var(--violet); border-radius: 999px; padding: 0.18rem 0.6rem; border: 1px solid rgba(168,168,162,0.2); }
+    .domain-arrow { font-size: 1rem; color: var(--muted); transition: transform 0.3s, color 0.2s; flex-shrink: 0; }
+    .work-domain.open .domain-arrow { transform: rotate(90deg); color: var(--violet); }
+    .domain-body { max-height: 0; overflow: hidden; transition: max-height 0.45s ease; }
+    .work-domain.open .domain-body { max-height: 5200px; }
+    .domain-body-inner { padding: 0 1.8rem 1.8rem; display: flex; flex-direction: column; gap: 1.6rem; }
+    .domain-entry { border-top: 1px solid var(--border); padding-top: 1.2rem; }
+    .domain-entry-label { font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--violet); margin-bottom: 0.4rem; }
+    .domain-entry-title { font-size: 0.92rem; font-weight: 600; color: var(--text); margin-bottom: 0.2rem; }
+    .domain-entry-period { font-size: 0.62rem; color: var(--muted); margin-bottom: 0.6rem; }
+    .domain-entry-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.75; }
+    .domain-skills { border-top: 1px solid var(--border); padding-top: 1.2rem; }
+    .domain-skills-head { font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); margin-bottom: 0.7rem; }
+    .domain-analysis { font-size: 0.75rem; color: var(--muted); line-height: 1.8; font-style: italic; border-left: 2px solid var(--border); padding-left: 0.9rem; }
+    /* ScriptBridge 3-part */
+    .sb-section { margin-bottom: 1.4rem; }
+    .sb-section-head { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); margin-bottom: 0.7rem; padding: 0.48rem 0.65rem; border-left: 2px solid var(--violet); background: rgba(168,168,162,0.055); }
+    .sb-section-body { font-size: 0.8rem; color: var(--muted); line-height: 1.8; }
+    .sb-section-body li { list-style: none; padding-left: 1em; position: relative; margin-bottom: 0.35rem; }
+    .sb-section-body li::before { content: '—'; position: absolute; left: 0; color: var(--violet); }
+    .system-focus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 1rem 0 1.2rem; }
+    .system-focus-card { padding: 1rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: rgba(168,168,162,0.035); }
+    .system-focus-label { font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--violet); margin-bottom: 0.45rem; }
+    .system-focus-copy { font-size: 0.78rem; line-height: 1.7; color: var(--muted); }
+    .system-flow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.55rem; margin-top: 1rem; }
+    .system-step { min-height: 9rem; padding: 0.85rem 0.75rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: rgba(232,184,122,0.025); }
+    .system-step-num { display: block; font-size: 0.55rem; letter-spacing: 0.14em; color: var(--amber); margin-bottom: 0.55rem; }
+    .system-step-title { display: block; font-size: 0.72rem; line-height: 1.35; color: var(--text); margin-bottom: 0.45rem; }
+    .system-step-copy { font-size: 0.65rem; line-height: 1.6; color: var(--muted); }
+    @media (max-width: 900px) { .system-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 600px) { .system-focus-grid, .system-flow { grid-template-columns: 1fr; } .system-step { min-height: 0; } }
+
     /* ── PAINTING MODAL ── */
     .painting-gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
-      gap: 1.25rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
       margin-top: 1.75rem;
       width: 100%;
     }
-    .painting-gallery figure { margin: 0; display: flex; flex-direction: column; gap: 0.55rem; }
+    @media (max-width: 640px) {
+      .painting-gallery { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+    .painting-gallery figure {
+      margin: 0; display: flex; flex-direction: column; gap: 0.75rem;
+    }
     .painting-gallery img {
       width: 100%; height: auto; display: block;
       border-radius: var(--radius-md);
@@ -1195,8 +1476,8 @@
       background: rgba(0,0,0,0.2);
     }
     .painting-cap {
-      font-size: 0.72rem; color: var(--muted);
-      letter-spacing: 0.06em; line-height: 1.6; text-align: center;
+      font-size: 0.78rem; color: var(--muted);
+      letter-spacing: 0.06em; line-height: 1.65; text-align: left;
     }
 
     /* ── TASTES MODAL ── */
@@ -1213,7 +1494,7 @@
       position: absolute;
       inset: -20% -10% auto;
       height: 60%;
-      background: radial-gradient(circle at 50% 40%, rgba(157,127,232,0.18), transparent 70%);
+      background: radial-gradient(circle at 50% 40%, rgba(218,218,210,0.22), transparent 70%);
       pointer-events: none;
       z-index: 0;
     }
@@ -1244,48 +1525,132 @@
       font-family: 'Cormorant Garamond', serif; font-style: italic;
       margin-bottom: 0;
     }
+    .tastes-progress {
+      max-width: 34rem; margin: 0.7rem auto 0;
+      color: var(--muted); text-align: center;
+      font-size: 0.76rem; line-height: 1.7;
+    }
     .taste-bubbles {
       position: relative; flex: 1; width: 100%;
     }
     .taste-bubble {
       position: absolute; left: var(--bx); top: var(--by);
       display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-      padding: 1.2rem 1.8rem;
-      background: color-mix(in srgb, var(--surface) 76%, transparent);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-md); cursor: pointer;
-      backdrop-filter: blur(12px);
-      transition: transform 0.3s ease, border-color 0.2s, background 0.2s;
+      width: 132px;
+      min-height: 132px;
+      padding: 0.6rem;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.35s ease, filter 0.25s;
       transform: rotate(var(--br));
       font-family: 'Space Grotesk', sans-serif;
-      animation: bubbleFloat 10.2s cubic-bezier(0.37, 0, 0.22, 1) infinite;
+      animation: bubbleFloat 14.5s cubic-bezier(0.37, 0, 0.22, 1) infinite;
       will-change: transform;
-      box-shadow: 0 14px 32px rgba(0,0,0,0.24);
     }
     .taste-bubble:hover {
-      transform: rotate(0deg) scale(1.08);
-      border-color: var(--violet);
-      background: rgba(157,127,232,0.18);
-      animation: bubbleHoverDrift 4.6s ease-in-out infinite;
-      box-shadow: 0 18px 42px rgba(0,0,0,0.28), 0 0 0 1px rgba(157,127,232,0.24) inset;
+      transform: rotate(0deg) scale(1.1);
+      filter: drop-shadow(0 18px 28px rgba(0,0,0,0.34));
+      animation: bubbleHoverDrift 6.4s ease-in-out infinite;
     }
-    .taste-bubble:nth-child(1) { animation-delay: -1.2s; animation-duration: 9.8s; }
-    .taste-bubble:nth-child(2) { animation-delay: -3.4s; animation-duration: 11.1s; }
-    .taste-bubble:nth-child(3) { animation-delay: -6.1s; animation-duration: 10.5s; }
-    .taste-bubble-icon { font-size: 1.5rem; line-height: 1; }
+    .taste-bubble:nth-child(1) { animation-delay: -1.2s; animation-duration: 14.8s; }
+    .taste-bubble:nth-child(2) { animation-delay: -4.2s; animation-duration: 16.2s; }
+    .taste-bubble:nth-child(3) { animation-delay: -7.1s; animation-duration: 15.4s; }
+    .taste-bubble-icon {
+      position: relative;
+      width: 78px;
+      height: 78px;
+      display: grid;
+      place-items: center;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 0.2rem;
+      filter: drop-shadow(0 14px 26px rgba(0,0,0,0.35));
+    }
+    .taste-bubble-icon--music {
+      font-size: 4.8rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--amber);
+    }
+    .taste-bubble-icon--film {
+      border: 2px solid var(--amber);
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 10px rgba(209,177,119,0.14);
+      animation: filmRoll 18s linear infinite;
+    }
+    .taste-bubble-icon--film::before,
+    .taste-bubble-icon--film::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+    }
+    .taste-bubble-icon--film::before {
+      width: 14px;
+      height: 14px;
+      background: var(--amber);
+      box-shadow:
+        0 -24px 0 rgba(209,177,119,0.82),
+        24px 0 0 rgba(209,177,119,0.82),
+        0 24px 0 rgba(209,177,119,0.82),
+        -24px 0 0 rgba(209,177,119,0.82);
+    }
+    .taste-bubble-icon--film::after {
+      width: 6px;
+      height: 6px;
+      background: var(--bg);
+    }
+    .taste-bubble-icon--book {
+      width: 76px;
+      height: 66px;
+      perspective: 300px;
+    }
+    .taste-bubble-icon--book::before,
+    .taste-bubble-icon--book::after {
+      content: '';
+      position: absolute;
+      top: 6px;
+      width: 34px;
+      height: 54px;
+      background: color-mix(in srgb, var(--amber) 74%, var(--surface) 26%);
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+    }
+    .taste-bubble-icon--book::before {
+      left: 4px;
+      border-radius: 7px 2px 2px 7px;
+      transform-origin: right center;
+      transform: rotateY(20deg);
+    }
+    .taste-bubble-icon--book::after {
+      right: 4px;
+      border-radius: 2px 7px 7px 2px;
+      transform-origin: left center;
+      animation: bookPage 7.5s ease-in-out infinite;
+    }
     .taste-bubble-label {
       font-size: 0.68rem; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--muted);
+      text-transform: uppercase; color: var(--text);
+      opacity: 0.76;
     }
-    .taste-bubble:hover .taste-bubble-label { color: var(--violet); }
+    .taste-bubble:hover .taste-bubble-label { color: var(--violet); opacity: 1; }
     @keyframes bubbleFloat {
       0%, 100% { transform: translate3d(0, 0, 0) rotate(var(--br)) scale(1); }
-      33% { transform: translate3d(14px, -34px, 0) rotate(calc(var(--br) + 2deg)) scale(1.03); }
-      66% { transform: translate3d(-12px, -20px, 0) rotate(calc(var(--br) - 1.6deg)) scale(1.02); }
+      33% { transform: translate3d(26px, -48px, 0) rotate(calc(var(--br) + 2deg)) scale(1.03); }
+      66% { transform: translate3d(-22px, -28px, 0) rotate(calc(var(--br) - 1.8deg)) scale(1.02); }
     }
     @keyframes bubbleHoverDrift {
-      0%, 100% { transform: translate3d(0, -2px, 0) rotate(-0.5deg) scale(1.08); }
-      50% { transform: translate3d(4px, -10px, 0) rotate(0.7deg) scale(1.095); }
+      0%, 100% { transform: translate3d(0, -2px, 0) rotate(-0.5deg) scale(1.1); }
+      50% { transform: translate3d(8px, -18px, 0) rotate(0.7deg) scale(1.12); }
+    }
+    @keyframes filmRoll {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes bookPage {
+      0%, 100% { transform: rotateY(-12deg); }
+      45% { transform: rotateY(-54deg); }
+      70% { transform: rotateY(-20deg); }
     }
 
     /* Category views */
@@ -1353,7 +1718,7 @@
     }
     .vinyl-item.playing .vinyl-disc {
       animation: vinylSpin 3s linear infinite;
-      box-shadow: 0 0 30px rgba(157,127,232,0.22), 0 4px 24px rgba(0,0,0,0.5);
+      box-shadow: 0 0 30px rgba(218,218,210,0.26), 0 4px 24px rgba(0,0,0,0.5);
     }
     @keyframes vinylSpin {
       from { transform: rotate(0deg); }
@@ -1374,6 +1739,27 @@
       color: var(--muted); text-align: center; max-width: 160px; line-height: 1.55;
     }
     .vinyl-item.playing .vinyl-label { color: var(--violet); }
+    .voice-label-link {
+      width: 1.05rem;
+      height: 1.05rem;
+      margin-left: 0.35rem;
+      border: 1px solid var(--violet-dim);
+      border-radius: 50%;
+      color: var(--violet);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.58rem;
+      line-height: 1;
+      text-decoration: none;
+      vertical-align: text-bottom;
+      transition: all 0.2s ease;
+    }
+    .voice-label-link:hover {
+      background: var(--violet);
+      color: #fff;
+      transform: translateY(-1px);
+    }
     .vinyl-hint {
       text-align: center; color: var(--muted);
       font-size: 0.6rem; letter-spacing: 0.12em;
@@ -1428,6 +1814,10 @@
       cursor: pointer;
       transition: all 0.2s ease;
       justify-self: end;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
     .music-preview-btn:hover:not(:disabled) { background: var(--violet); color: #fff; }
     .music-preview-btn:disabled {
@@ -1435,11 +1825,22 @@
       border-color: var(--border);
       cursor: not-allowed;
     }
+    .music-action-row {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.55rem;
+      flex-wrap: wrap;
+    }
+    .music-link-btn[aria-disabled="true"] {
+      pointer-events: none;
+      color: var(--muted);
+      border-color: var(--border);
+    }
     .music-preview-track {
       grid-column: 1 / -1;
       height: 4px;
       border-radius: 999px;
-      background: rgba(157,127,232,0.14);
+      background: rgba(210,210,202,0.14);
       overflow: hidden;
     }
     .music-preview-fill {
@@ -1460,6 +1861,21 @@
       color: var(--text);
       font-weight: 500;
     }
+    .voice-box {
+      max-width: min(920px, 96vw);
+      overflow: hidden;
+    }
+    .voice-box .modal-body {
+      padding-bottom: 0.4rem;
+    }
+    .voice-box .modal-novel-title {
+      line-height: 1.18;
+      padding-top: 0.08rem;
+    }
+    .voice-box .vinyl-carousel {
+      min-height: 265px;
+      flex: 0 0 auto;
+    }
 
     /* ── FILM GRID ── */
     .film-grid {
@@ -1479,7 +1895,8 @@
       display: flex;
       flex-direction: column;
       gap: 0.55rem;
-      min-width: 155px;
+      flex: 0 0 155px;
+      width: 155px;
       scroll-snap-align: center;
       flex-shrink: 0;
     }
@@ -1507,16 +1924,17 @@
     .books-slider::-webkit-scrollbar { height: 3px; }
     .books-slider::-webkit-scrollbar-thumb { background: var(--border); }
     .book-card {
-      flex-shrink: 0; scroll-snap-align: start; width: 340px;
-      display: flex; gap: 0;
+      flex-shrink: 0; scroll-snap-align: start; width: 300px;
+      display: flex; flex-direction: column; gap: 0;
       background: var(--bg); border: 1px solid var(--border); border-radius: 3px;
       overflow: hidden;
     }
     .book-spine {
-      width: 12px; flex-shrink: 0;
+      width: 100%; height: 300px; flex-shrink: 0; overflow: hidden;
     }
+    .book-spine img { object-position: top; }
     .book-content {
-      padding: 1.6rem 1.4rem; display: flex; flex-direction: column; gap: 0.35rem;
+      padding: 1.4rem 1.4rem 1.6rem; display: flex; flex-direction: column; gap: 0.35rem;
     }
     .book-title {
       font-size: 1rem; color: var(--text);
@@ -1542,6 +1960,63 @@
       .taste-bubble { transform: rotate(var(--br)); }
       #hero::before, #hero::after, .section-nav::before, .section-nav::after { animation: none !important; }
     }
+
+    /* ── SCRIPTBRIDGE MINDMAP ── */
+    .sb-mindmap { margin: 1.8rem 0 1.2rem; }
+    .sb-mindmap-root { display:inline-block; background:var(--violet); color:#fff; font-size:0.75rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; padding:0.4rem 1rem; border-radius:3px; margin-bottom:1.2rem; }
+    .sb-mindmap-branches { display:grid; grid-template-columns:1fr auto 1fr; border:1px solid var(--border); border-radius:4px; overflow:hidden; }
+    .sb-branch { padding:1.4rem 1.6rem; }
+    .sb-branch-divider { width:1px; background:var(--border); }
+    .sb-branch-head { font-size:0.6rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--amber); margin-bottom:0.9rem; font-weight:600; }
+    .sb-branch-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.55rem; }
+    .sb-branch-list li { font-size:0.78rem; color:var(--muted); line-height:1.6; padding-left:1rem; position:relative; }
+    .sb-branch-list li::before { content:'—'; position:absolute; left:0; color:var(--violet-dim); }
+    @media (max-width:600px) { .sb-mindmap-branches { grid-template-columns:1fr; } .sb-branch-divider { width:100%; height:1px; } }
+
+    /* ── AI SECTION ── */
+    .ai-section-grid { display:grid; grid-template-columns:repeat(3,1fr); border:1px solid var(--border); border-radius:4px; margin-top:2.5rem; overflow:hidden; }
+    .ai-col { padding:2rem 1.8rem; border-right:1px solid var(--border); }
+    .ai-col:last-child { border-right:none; }
+    .ai-col-head { font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--violet); margin-bottom:1.4rem; font-weight:600; }
+    .ai-tool-list { display:flex; flex-direction:column; gap:1.2rem; }
+    .ai-tool-name { font-size:0.85rem; font-weight:700; color:var(--text); margin-bottom:0.3rem; }
+    .ai-tool-desc { font-size:0.78rem; color:var(--muted); line-height:1.7; }
+    .ai-skill-tags { display:flex; flex-wrap:wrap; gap:0.5rem; }
+    .ai-skill-tag { font-size:0.65rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--text); border:1px solid var(--border); padding:0.3rem 0.7rem; border-radius:2px; }
+    .ai-workflow-note { font-size:0.78rem; color:var(--muted); line-height:1.7; margin-top:1.2rem; border-left:2px solid var(--violet-dim); padding-left:0.8rem; }
+    @media (max-width:900px) { .ai-section-grid { grid-template-columns:1fr; } .ai-col { border-right:none; border-bottom:1px solid var(--border); } .ai-col:last-child { border-bottom:none; } }
+
+    /* ── PISCES: photos + poem in one grid, poem spans full width ── */
+    .photo-viewer-layout--pisces {
+      display: block;
+    }
+    .photo-viewer-images--pisces {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    .photo-viewer-images--pisces img {
+      width: 100%;
+      max-height: min(48vh, 420px);
+    }
+    .photo-viewer-images--pisces .pisces-hero-img {
+      grid-column: 1 / -1;
+      max-height: min(56vh, 520px);
+    }
+    .photo-viewer-pisces-prose {
+      grid-column: 1 / -1;
+      margin-top: 0.5rem;
+      padding: 1.25rem 0 0;
+      border-top: 1px solid var(--border);
+      font-size: clamp(0.92rem, 1.5vw, 1.02rem);
+      line-height: 2;
+      color: var(--text);
+      max-width: none;
+    }
+    @media (max-width: 520px) {
+      .photo-viewer-images--pisces { grid-template-columns: 1fr; }
+      .photo-viewer-images--pisces .pisces-hero-img { grid-column: 1; }
+    }
   </style>
 </head>
 <body>
@@ -1557,25 +2032,25 @@
   </div>
   <div class="gw-panels">
     <div class="gw-divider" aria-hidden="true"></div>
-    <button class="gw-panel gw-personal" onclick="chooseGateway('creative')">
-      <div class="gw-panel-inner">
-        <span class="gw-label en">Personal</span>
-        <span class="gw-label zh">个人</span>
-        <span class="gw-title en">The<br>Creator</span>
-        <span class="gw-title zh">创作者</span>
-        <span class="gw-sub en">Film · Photography<br>Writing · Music</span>
-        <span class="gw-sub zh">影视 · 摄影<br>写作 · 音乐</span>
-        <span class="gw-arrow">↓</span>
-      </div>
-    </button>
     <button class="gw-panel gw-professional" onclick="chooseGateway('work')">
       <div class="gw-panel-inner">
         <span class="gw-label en">Professional</span>
         <span class="gw-label zh">专业</span>
         <span class="gw-title en">The<br>Builder</span>
         <span class="gw-title zh">建造者</span>
-        <span class="gw-sub en">Teaching · Media<br>ScriptBridge · AI</span>
-        <span class="gw-sub zh">教学 · 媒体<br>ScriptBridge · AI</span>
+        <span class="gw-sub en">AI workflows · Digital products · Online education · Media</span>
+        <span class="gw-sub zh">AI 工作流 · 数字产品 · 线上教育 · 媒体</span>
+        <span class="gw-arrow">↓</span>
+      </div>
+    </button>
+    <button class="gw-panel gw-personal" onclick="chooseGateway('creative')">
+      <div class="gw-panel-inner">
+        <span class="gw-label en">Personal</span>
+        <span class="gw-label zh">个人</span>
+        <span class="gw-title en">The<br>Creator</span>
+        <span class="gw-title zh">创作者</span>
+        <span class="gw-sub en">Documentary · Photography · Writing · Painting · Music</span>
+        <span class="gw-sub zh">纪录片 · 摄影 · 写作 · 绘画 · 音乐</span>
         <span class="gw-arrow">↓</span>
       </div>
     </button>
@@ -1615,8 +2090,8 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-text">
-    <div class="hero-label en">Creator · Teacher · Builder</div>
-    <div class="hero-label zh">创作者 · 教育者 · 建造者</div>
+    <div class="hero-label en">Digital Media Creator · AI Workflow Builder · Online Educator</div>
+    <div class="hero-label zh">数字媒体创作者 · AI 工作流构建者 · 线上教育者</div>
 
     <span class="hero-name-primary en">Rachel Ji</span>
     <span class="hero-name-primary zh">季颖秋</span>
@@ -1625,28 +2100,28 @@
     <div class="hero-alias">RJ</div>
 
     <p class="hero-bio en">
-      I lift the camera to <strong>find philosophy in images, find the world.</strong> Documentary filmmaker, novelist, English teacher, builder of things that matter.
+      I start with recurring problems in real work, structure the workflow, and use <strong>AI-assisted development to turn ideas into tools I actually use.</strong>
     </p>
     <p class="hero-bio zh">
-      我抬起摄像机，<strong>试图用影像来发现哲学、来发现世界。</strong>纪录片导演、小说作者、英语老师，也在构建有意义的事物。
+      我从真实工作里的重复问题出发，整理需求与流程，再借助 <strong>AI 把想法做成自己真正会使用的工具。</strong>
     </p>
 
     <div class="hero-blocks">
-      <a href="#creative" class="block-btn">
+      <a href="#creative" class="block-btn" onclick="setView('creative')">
         <span class="block-label en">Personal</span>
         <span class="block-label zh">个人</span>
         <span class="block-title en">Creative</span>
         <span class="block-title zh">艺术创作</span>
-        <span class="block-sub en">Film · Writing · Music · Art</span>
-        <span class="block-sub zh">影视 · 写作 · 音乐 · 绘画</span>
+        <span class="block-sub en">Film · Photography · Writing</span>
+        <span class="block-sub zh">纪录片 · 摄影 · 写作</span>
       </a>
-      <a href="#work" class="block-btn">
+      <a href="#work" class="block-btn" onclick="setView('work')">
         <span class="block-label en">Professional</span>
         <span class="block-label zh">专业</span>
         <span class="block-title en">Work</span>
         <span class="block-title zh">工作</span>
-        <span class="block-sub en">Teaching · ScriptBridge · Media</span>
-        <span class="block-sub zh">教学 · ScriptBridge · 媒体</span>
+        <span class="block-sub en">AI workflows · Digital products · Media</span>
+        <span class="block-sub zh">AI 工作流 · 数字产品 · 媒体</span>
       </a>
     </div>
   </div>
@@ -1672,7 +2147,7 @@
     <div class="marquee-item en">Visual Artist</div>
     <div class="marquee-item en">AI Builder</div>
     <div class="marquee-item en">Photographer</div>
-    <div class="marquee-item en">ScriptBridge Founder</div>
+    <div class="marquee-item en">AI-assisted Builder</div>
     <div class="marquee-item en">Filmmaker</div>
     <div class="marquee-item en">Novelist</div>
     <div class="marquee-item en">English Teacher</div>
@@ -1680,7 +2155,7 @@
     <div class="marquee-item en">Visual Artist</div>
     <div class="marquee-item en">AI Builder</div>
     <div class="marquee-item en">Photographer</div>
-    <div class="marquee-item en">ScriptBridge Founder</div>
+    <div class="marquee-item en">AI-assisted Builder</div>
     <div class="marquee-item zh">电影创作者</div>
     <div class="marquee-item zh">小说作者</div>
     <div class="marquee-item zh">英语老师</div>
@@ -1688,7 +2163,7 @@
     <div class="marquee-item zh">视觉艺术家</div>
     <div class="marquee-item zh">AI建造者</div>
     <div class="marquee-item zh">摄影师</div>
-    <div class="marquee-item zh">ScriptBridge创始人</div>
+    <div class="marquee-item zh">AI协作建造者</div>
     <div class="marquee-item zh">电影创作者</div>
     <div class="marquee-item zh">小说作者</div>
     <div class="marquee-item zh">英语老师</div>
@@ -1696,7 +2171,7 @@
     <div class="marquee-item zh">视觉艺术家</div>
     <div class="marquee-item zh">AI建造者</div>
     <div class="marquee-item zh">摄影师</div>
-    <div class="marquee-item zh">ScriptBridge创始人</div>
+    <div class="marquee-item zh">AI协作建造者</div>
   </div>
 </div>
 
@@ -1727,10 +2202,14 @@
         </blockquote>
       </div>
       <div class="about-text">
-        <p class="en">I came to filmmaking and asked: <strong>where do I start?</strong> Then I watched Wings of Desire and understood — the camera and I had found each other. I picked it up with impulsive conviction and tried to find philosophy through images, find the world.</p>
-        <p class="zh">我接触影视的时候问自己：<strong>该从哪里开始呢？</strong>直到看了《柏林苍穹下》才明白——摄像机和我是找到彼此了。我带着冲动的偏执抬起它，试图用影像来发现哲学、来发现世界。</p>
-        <p class="en">Raised in an ethnic minority region of southwest China. Studied Digital Media Arts at Southwest Forestry University. My research: audiovisual language, film sound, cinematography, camera blocking. I've worked in TV news, documentary production, and film festival coverage. Now I teach English, build platforms with AI, and keep writing the novel that's been with me for years.</p>
-        <p class="zh">成长于中国西南少数民族地区。就读于西南林业大学数字媒体艺术专业。研究方向：视听语言剧本创作、影视声音艺术、摄影艺术、镜头调度。做过电视台外采、纪录片、影展摄像。现在教英语，用AI构建平台，也继续写那部写了很多年的小说。</p>
+        <p class="en">I grew up in an ethnic minority region of southwest China and graduated in Digital Media Arts from Southwest Forestry University.</p>
+        <p class="zh">我成长于中国西南少数民族地区，毕业于西南林业大学数字媒体艺术专业。</p>
+        <p class="en">My learning and creative practice span audiovisual language, screenwriting, film sound, photography, and camera blocking. I have also worked across television news, documentary production, museum content, retail content, and digital media.</p>
+        <p class="zh">我的学习与创作涉及视听语言、剧本创作、影视声音、摄影与镜头调度，同时也做过电视新闻、纪录片、博物馆内容、门店内容和数字媒体工作。</p>
+        <p class="en">My experience as a creator showed me how unclear the path can be between finishing a script, getting it discovered, and receiving licensing interest. That led me to build and launch ScriptBridge—a prototype for presenting Chinese-language scripts and receiving licensing requests, designed to make the connection between creators and potential users clearer.</p>
+        <p class="zh">创作者的经历让我看见，一部剧本从完成创作到被看见、提出授权申请，中间仍有许多模糊环节。因此，我搭建并上线了 ScriptBridge：一个面向中文剧本展示与授权申请的产品原型，希望把创作者与潜在使用者之间的路径变得更清楚。</p>
+        <p class="en">Alongside online English teaching, I am developing an AI-assisted learning and action system. It breaks goals into manageable steps and creates a loop of real action, visible results, emotional feedback, and the next plan. The aim is to help people with ADHD—and others who struggle to start or finish tasks—move toward learning and action goals with less pressure.</p>
+        <p class="zh">现在，我在从事线上英语教学的同时，也在构建一套 AI 协作学习与行动系统：把目标拆成可执行的步骤，通过真实行动、可见成果、感受反馈与下一步安排形成闭环，希望帮助 ADHD 人群以及其他难以启动或完成任务的人，以更低压力的方式推进学习与行动目标。</p>
         <div class="about-tags">
           <span class="about-tag">ENFJ-A</span>
           <span class="about-tag en">Ethnic minority region · China</span>
@@ -1754,9 +2233,16 @@
     <h2 class="section-title en">Artistic <em>Creation.</em></h2>
     <h2 class="section-title zh">艺术<em>创作。</em></h2>
 
+    <div class="creative-progress fade-in">
+      <span class="creative-progress-badge en">Work in progress</span>
+      <span class="creative-progress-badge zh">持续丰富中</span>
+      <span class="en">This corner is still growing. What you see is part of the story—more of me is on the way.</span>
+      <span class="zh">这里还在慢慢长大。先看已经留下的痕迹，更多的我正在路上。</span>
+    </div>
+
     <div class="creative-grid fade-in">
 
-      <div class="creative-card" style="grid-column: span 2; position:relative; overflow:hidden; padding:0; min-height:320px;">
+      <div class="creative-card creative-card--full" style="position:relative; overflow:hidden; padding:0; min-height:320px;">
         <img src="poster-secret-h.jpg" style="width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.42) saturate(0.85);" />
         <div style="position:absolute;inset:0;padding:2.5rem;display:flex;flex-direction:column;justify-content:flex-end;">
           <div style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--violet);margin-bottom:0.8rem;">Documentary · 纪录片</div>
@@ -1767,88 +2253,102 @@
           <div style="margin-top:1rem;font-size:0.72rem;color:var(--amber);font-family:'Cormorant Garamond',serif;font-style:italic;" class="en">Director / Writer / Cinematographer · 2024</div>
           <div style="margin-top:1rem;font-size:0.72rem;color:var(--amber);font-family:'Cormorant Garamond',serif;font-style:italic;" class="zh">导演 / 编剧 / 摄影 · 2024</div>
           <div style="display:flex;gap:0.8rem;margin-top:1.2rem;flex-wrap:wrap;">
-            <a href="https://www.youtube.com/watch?v=pl_x0XbVcME" target="_blank" style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);padding:0.38rem 0.9rem;border-radius:999px;text-decoration:none;backdrop-filter:blur(4px);" onclick="event.stopPropagation()">▶ YouTube</a>
-            <a href="https://www.bilibili.com/video/BV1Zb5767EAg/" target="_blank" style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);padding:0.38rem 0.9rem;border-radius:999px;text-decoration:none;backdrop-filter:blur(4px);" onclick="event.stopPropagation()">▶ Bilibili</a>
+            <a href="https://www.youtube.com/watch?v=pl_x0XbVcME" target="_blank" rel="noopener noreferrer" style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);padding:0.38rem 0.9rem;border-radius:999px;text-decoration:none;backdrop-filter:blur(4px);" onclick="event.stopPropagation()">▶ YouTube</a>
+            <a href="https://www.bilibili.com/video/BV1Zb5767EAg/" target="_blank" rel="noopener noreferrer" style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);padding:0.38rem 0.9rem;border-radius:999px;text-decoration:none;backdrop-filter:blur(4px);" onclick="event.stopPropagation()">▶ Bilibili</a>
           </div>
         </div>
       </div>
 
-      <div class="creative-card">
-        <div class="doc-no-poster">
-          <p class="en">No official poster for this film yet — using typography instead of a wrong image.</p>
-          <p class="zh">本片暂无正式海报，先不用错误图片，以版式代替。</p>
-        </div>
-        <div class="creative-title en">They Are Also Her</div>
-        <div class="creative-title zh">《他们也是她们》</div>
-        <div class="creative-desc en">Gender equality documentary. Selected for the 13th Beijing International Film Festival "Short Video Unit." Exploring what equality looks like in practice — in conversation with teachers, students, and strangers.</div>
-        <div class="creative-desc zh">性别平等题材纪录片。入选第十三届北京国际电影节"短视频单元"。探索平等在日常生活中的真实面貌。</div>
-        <div class="creative-note en">Director / Writer / Cinematographer</div>
-        <div class="creative-note zh">导演 / 编剧 / 摄影</div>
-        <div style="display:flex;gap:0.8rem;margin-top:1.2rem;flex-wrap:wrap;">
-          <a href="https://www.youtube.com/watch?v=wi12Hjv3u9I" target="_blank" style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);padding:0.38rem 0.9rem;border-radius:999px;text-decoration:none;backdrop-filter:blur(4px);">▶ YouTube</a>
-          <a href="https://www.bilibili.com/video/BV1NP41127GR/" target="_blank" style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);padding:0.38rem 0.9rem;border-radius:999px;text-decoration:none;backdrop-filter:blur(4px);">▶ Bilibili</a>
+      <div class="creative-card creative-card--full" style="position:relative; overflow:hidden; padding:0; min-height:320px;">
+        <img src="poster-tamen.jpg" style="width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.38) saturate(0.8);" />
+        <div style="position:absolute;inset:0;padding:2.5rem;display:flex;flex-direction:column;justify-content:flex-end;">
+          <div style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--violet);margin-bottom:0.8rem;">Documentary · 纪录片</div>
+          <div style="font-size:1.5rem;font-weight:700;color:var(--text);margin-bottom:0.8rem;" class="en">They Are Also Her · 他们也是她们</div>
+          <div style="font-size:1.5rem;font-weight:700;color:var(--text);margin-bottom:0.8rem;" class="zh">《他们也是她们》· They Are Also Her</div>
+          <div style="font-size:0.85rem;color:rgba(240,237,248,0.7);line-height:1.7;max-width:600px;" class="en">A gender equality documentary. — Selected, 13th Beijing International Film Festival · Short Video Unit.</div>
+          <div style="font-size:0.85rem;color:rgba(240,237,248,0.7);line-height:1.7;max-width:600px;" class="zh">性别平等题材纪录片。——入选第十三届北京国际电影节"短视频单元"。</div>
+          <div style="margin-top:1rem;font-size:0.72rem;color:var(--amber);font-family:'Cormorant Garamond',serif;font-style:italic;" class="en">Director / Writer / Cinematographer · 2023</div>
+          <div style="margin-top:1rem;font-size:0.72rem;color:var(--amber);font-family:'Cormorant Garamond',serif;font-style:italic;" class="zh">导演 / 编剧 / 摄影 · 2023</div>
+          <div style="display:flex;gap:0.8rem;margin-top:1.2rem;flex-wrap:wrap;">
+            <a href="https://www.youtube.com/watch?v=wi12Hjv3u9I" target="_blank" rel="noopener noreferrer" style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);padding:0.38rem 0.9rem;border-radius:999px;text-decoration:none;backdrop-filter:blur(4px);" onclick="event.stopPropagation()">▶ YouTube</a>
+            <a href="https://www.bilibili.com/video/BV1NP41127GR/" target="_blank" rel="noopener noreferrer" style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);padding:0.38rem 0.9rem;border-radius:999px;text-decoration:none;backdrop-filter:blur(4px);" onclick="event.stopPropagation()">▶ Bilibili</a>
+          </div>
         </div>
       </div>
 
-      <div class="creative-card card-clickable" onclick="openModal('writing')">
-        <span class="creative-icon">✍️</span>
-        <div class="creative-title en">Fiction & Writing</div>
-        <div class="creative-title zh">写作</div>
-        <div class="creative-desc en">Two novels in progress — coming-of-age and high-concept thriller. Prose, diaries, essays. A deep archive of words since childhood. Writing is how she thinks.</div>
-        <div class="creative-desc zh">两部进行中的小说——青春成长与高概念悬疑。散文、日记、随笔。从小积累的大量文字。写作是她思考的方式。</div>
-        <div class="creative-note en">Ongoing</div>
-        <div class="creative-note zh">进行中</div>
-        <span class="card-hint en">Read excerpt →</span>
-        <span class="card-hint zh">阅读节选 →</span>
+      <div class="creative-card card-clickable" onclick="openModal('tastes'); showTasteScatter();">
+        <div class="taste-thumb-grid">
+          <img src="cover_raye_goodbye.jpg" alt="" loading="lazy" />
+          <img src="poster_film_yiyi.png" alt="" loading="lazy" />
+          <img src="book_niezi.png" alt="" loading="lazy" />
+        </div>
+        <div class="creative-title en">Tastes & Influences</div>
+        <div class="creative-title zh">品味与影响</div>
+        <span class="card-hint en">Explore →</span>
+        <span class="card-hint zh">探索 →</span>
       </div>
 
       <div class="creative-card card-clickable" onclick="openModal('photo')">
         <div class="photo-thumb-grid">
-          <img src="ph_pisces_1.jpg" alt="" loading="lazy" />
+          <img src="dsc_aquarium_web.jpg" alt="" loading="lazy" />
+          <img src="pisces_aqua_2_web.jpg" alt="" loading="lazy" />
           <img src="photo_ziyou.jpeg" alt="" loading="lazy" />
           <img src="photo_meng_1.jpeg" alt="" loading="lazy" />
-          <img src="photo_danche_1.jpeg" alt="" loading="lazy" />
         </div>
         <div class="creative-title en">Photography</div>
         <div class="creative-title zh">摄影</div>
-        <div class="creative-desc en">Personal series from Yunnan: aquarium blues (Pisces set), portraits, street color, nature, and field notes — grouped in the gallery.</div>
-        <div class="creative-desc zh">云南个人系列：水族馆《双鱼座女孩》、人像、街景、自然与现场笔记——在图库里按组展示。</div>
-        <div class="creative-note en">16 frames · Series grids</div>
-        <div class="creative-note zh">16张 · 分组栅格</div>
+        <div class="creative-desc en">Personal series from Yunnan: aquarium blues (Pisces set), portraits, street color, and nature — grouped in the gallery.</div>
+        <div class="creative-desc zh">云南个人系列：水族馆《双鱼座女孩》、人像、街景与自然——在图库里按组展示。</div>
+        <div class="creative-note en">19 frames · Series grids</div>
+        <div class="creative-note zh">19张 · 分组栅格</div>
         <span class="card-hint en">View gallery →</span>
         <span class="card-hint zh">查看图库 →</span>
       </div>
 
       <div class="creative-card card-clickable" onclick="openModal('painting')">
-        <span class="creative-icon">🎨</span>
+        <div class="photo-thumb-grid">
+          <img src="paint_hannibal_1.jpg" alt="" loading="lazy" />
+          <img src="paint_hannibal_3.jpg" alt="" loading="lazy" />
+          <img src="paint_jaehyun.jpg" alt="" loading="lazy" />
+          <img src="paint_hannibal_2.jpg" alt="" loading="lazy" />
+        </div>
         <div class="creative-title en">Painting & Drawing</div>
         <div class="creative-title zh">绘画</div>
-        <div class="creative-desc en">Art-exam background. Sketch, oil, and watercolor. Years of training built a visual instinct that flows into everything — filmmaking, photography, composition.</div>
-        <div class="creative-desc zh">艺考生背景。素描、油画、水彩。多年训练积累的视觉直觉，渗透进了一切——影视、摄影、构图。</div>
+        <div class="creative-desc en">Sketch, oil, and watercolor. A selection of studies and personal work, still being organized.</div>
+        <div class="creative-desc zh">素描、油画与水彩。部分习作与个人作品仍在整理中。</div>
         <div class="creative-note en">Works uploading</div>
         <div class="creative-note zh">作品整理中</div>
         <span class="card-hint en">View works →</span>
         <span class="card-hint zh">查看作品 →</span>
       </div>
 
-      <div class="creative-card">
-        <span class="creative-icon">🎵</span>
+      <div class="creative-card card-clickable" onclick="openModal('voice')">
+        <div class="voice-cover-preview">
+          <div class="voice-cover-stack">
+            <img src="voice_cover_hug.jpg" alt="" loading="lazy" />
+            <img src="voice_cover_blue_light.jpg" alt="" loading="lazy" />
+            <img src="voice_cover_kuroneko.jpg" alt="" loading="lazy" />
+            <img src="voice_cover_miserarete.jpg" alt="" loading="lazy" />
+          </div>
+        </div>
         <div class="creative-title en">Singing & Sound</div>
         <div class="creative-title zh">唱歌与声音</div>
-        <div class="creative-desc en">Natural ear. Picks up accents, tones, and sounds instinctively. The same quality that makes her a good language teacher makes her a good singer — she hears what others miss.</div>
-        <div class="creative-desc zh">天然的耳朵。直觉性地掌握口音、音调、声音。让她成为好老师的特质，也让她唱歌好——她听到别人忽略的东西。</div>
-        <div class="creative-note en">Always has been</div>
-        <div class="creative-note zh">一直都是</div>
+        <div class="creative-note en">4 tracks · NetEase Cloud Music</div>
+        <div class="creative-note zh">4首 · 网易云音乐</div>
+        <span class="card-hint en">Listen in →</span>
+        <span class="card-hint zh">听一听 →</span>
       </div>
 
-      <div class="creative-card card-clickable" onclick="openModal('tastes'); showTasteScatter();">
-        <span class="creative-icon">✦</span>
-        <div class="creative-title en">Tastes & Influences</div>
-        <div class="creative-title zh">品味与影响</div>
-        <div class="creative-desc en">Music that shaped how I hear. Films I return to. Books that changed something.</div>
-        <div class="creative-desc zh">塑造了我耳朵的音乐。反复去看的电影。改变了什么的书。</div>
-        <span class="card-hint en">Explore →</span>
-        <span class="card-hint zh">探索 →</span>
+      <div class="creative-card card-clickable" onclick="openModal('writing')">
+        <span class="creative-icon">✍️</span>
+        <div class="creative-title en">Fiction & Writing</div>
+        <div class="creative-title zh">写作</div>
+        <div class="creative-desc en">The writing archive is being organized. This space stays open for what comes next.</div>
+        <div class="creative-desc zh">写作档案整理中。这里先留一个位置，更多内容会慢慢出现。</div>
+        <div class="creative-note en">In development</div>
+        <div class="creative-note zh">待完善</div>
+        <span class="card-hint en">View note →</span>
+        <span class="card-hint zh">查看说明 →</span>
       </div>
 
     </div>
@@ -1879,355 +2379,381 @@
     <h2 class="section-title en">How I <em>work.</em></h2>
     <h2 class="section-title zh">我的<em>工作。</em></h2>
 
-    <p class="work-intro en">Bilingual content producer, documentary director, and online English instructor. End-to-end video production — field shooting, editing, copywriting, account operations — with experience at Kunming Television and Yunnan Net (state media). Two documentary films selected at international film festivals: Shanghai International Film Festival (2024) and Beijing International Film Festival (13th edition). Builds and deploys web products using HTML / CSS / JS with AI-assisted workflows. Available for media production, documentary direction, bilingual content, and digital project work.</p>
-    <p class="work-intro zh">双语内容制作人、纪录片导演、线上英语教师。具备采访、拍摄、剪辑、文案、账号运营全流程制作能力，曾任职昆明电视台与云南网（国家媒体）。两部纪录片作品入选国际电影节：2024年上海国际电影节、第十三届北京国际电影节。使用 HTML / CSS / JS 结合 AI 工具独立开发并部署网站产品。可承接媒体制作、纪录片导演、双语内容及数字项目工作。</p>
+    <p class="work-intro en">I have a background in Digital Media Arts and currently work as an online English teacher. I turn recurring problems in teaching, creative work, and learning into practical systems. I define the problem, structure the workflow, evaluate the output, and use AI to accelerate implementation and iteration.<br><br>The proof is not a tool list. It is what runs, what gets used, and what I learn from it.</p>
+    <p class="work-intro zh">我有数字媒体艺术背景，现在是一名线上英语老师。我把教学、创作和学习中反复出现的问题，整理成能够实际运行的系统。我负责定义问题、组织流程、判断结果，再让 AI 帮我更快地实现和迭代。<br><br>证据不是工具清单，而是什么真正跑起来、被使用，并让我继续改进。</p>
 
     <div class="work-accordion fade-in">
 
       <!-- Language Teacher -->
-      <div class="work-card" onclick="toggleWork(this)">
-        <div class="work-card-header">
-          <div class="work-card-left">
-            <div class="work-card-role en">Current</div>
-            <div class="work-card-role zh">现任</div>
-            <div class="work-card-name en">Language Teacher</div>
-            <div class="work-card-name zh">语言老师</div>
-            <div class="work-card-period en">2025 — Present</div>
-            <div class="work-card-period zh">2025 — 至今</div>
-          </div>
-          <span class="work-card-hint en">See more →</span>
-          <span class="work-card-hint zh">点击查看 →</span>
-          <span class="work-card-arrow">→</span>
-        </div>
-        <div class="work-card-body">
-          <div class="work-card-body-inner">
-            <div style="display:flex;flex-direction:column;gap:1.2rem;">
-              <div>
-                <div style="font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--violet);margin-bottom:0.4rem;" class="en">English · Independent</div>
-                <div style="font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--violet);margin-bottom:0.4rem;" class="zh">英语 · 独立授课</div>
-                <div class="work-body en">1-on-1 online instruction for learners worldwide. Student base built from scratch, growing month-over-month. Curriculum design, phonetics coaching, and conversation training.</div>
-                <div class="work-body zh">面向全球学员一对一线上教学，从零积累学生群体，持续增长中。课程设计、发音训练与口语指导。</div>
-              </div>
-              <div style="border-top:1px solid var(--border);padding-top:1.2rem;">
-                <div style="font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--violet);margin-bottom:0.4rem;" class="en">Chinese · Preply · In preparation</div>
-                <div style="font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--violet);margin-bottom:0.4rem;" class="zh">中文 · Preply · 筹备中</div>
-                <div class="work-body en">Registered on Preply as a Mandarin teacher. Course structure in development. Native speaker with a precise ear for tone, rhythm, and the texture of everyday speech.</div>
-                <div class="work-body zh">已在Preply注册中文老师，课程体系搭建中。母语者视角，对声调、节奏与日常语感有精准把握。</div>
-              </div>
-            </div>
-            <div class="work-tags" style="margin-top:1.2rem;">
-              <span class="tag en">English · Independent</span><span class="tag zh">英语 · 独立</span>
-              <span class="tag en">Chinese · Preply</span><span class="tag zh">中文 · Preply</span>
-              <span class="tag en">1-on-1</span><span class="tag zh">一对一</span>
+      <div class="work-domains">
+
+      <!-- DOMAIN 1: AI 协作系统 -->
+      <div class="work-domain" onclick="toggleDomain(this)">
+        <div class="work-domain-header">
+          <div class="domain-num">01</div>
+          <div class="domain-info">
+            <div class="domain-title en">AI-Assisted Systems</div>
+            <div class="domain-title zh">AI 协作系统</div>
+            <div class="domain-chips">
+              <span class="domain-chip en">Workflow Design</span><span class="domain-chip zh">工作流设计</span>
+              <span class="domain-chip en">Daily Use</span><span class="domain-chip zh">真实使用</span>
+              <span class="domain-chip">Vibe Coding</span>
+              <span class="domain-chip en">Live Products</span><span class="domain-chip zh">已上线产品</span>
             </div>
           </div>
+          <span class="domain-arrow">→</span>
         </div>
-      </div>
+        <div class="domain-body">
+          <div class="domain-body-inner">
 
-      <!-- ScriptBridge — Featured -->
-      <div class="work-card featured" onclick="toggleWork(this)">
-        <div class="work-card-header">
-          <div class="work-card-left">
-            <div class="work-card-role en">Founder · Product · Builder</div>
-            <div class="work-card-role zh">创始人 · 产品 · 建造</div>
-            <div class="work-card-name">ScriptBridge</div>
-            <div class="work-card-period en">2026 — Present</div>
-            <div class="work-card-period zh">2026 — 至今</div>
-          </div>
-          <span class="work-card-hint en">Expand →</span>
-          <span class="work-card-hint zh">展开 →</span>
-          <span class="work-card-arrow" style="margin-left:0.4rem;">→</span>
-        </div>
-        <div class="work-card-body">
-          <div class="work-card-body-inner">
-            <div class="work-body en">The <strong>first legitimate marketplace for Chinese screenplay rights</strong> — transparent pricing, legal contracts, escrow payments. Built solo with AI tools from product concept to live deployment.</div>
-            <div class="work-body zh"><strong>第一个正规的中文剧本版权交易平台</strong>——透明定价、法律合同、资金托管。借助AI工具从产品概念到线上部署独立完成。</div>
-            <div class="project-stats">
-              <div class="project-stat">
-                <span class="project-stat-num">¥37B+</span>
-                <span class="project-stat-label en">Market size 2023</span>
-                <span class="project-stat-label zh">2023年市场规模</span>
-              </div>
-              <div class="project-stat">
-                <span class="project-stat-num">268%</span>
-                <span class="project-stat-label en">YoY growth</span>
-                <span class="project-stat-label zh">同比增长</span>
-              </div>
-              <div class="project-stat">
-                <span class="project-stat-num">0</span>
-                <span class="project-stat-label en">Legitimate competitors</span>
-                <span class="project-stat-label zh">正规竞品</span>
-              </div>
-            </div>
-            <div class="project-features">
-              <div class="project-feature">
-                <span class="project-feature-icon">⚖️</span>
-                <div class="project-feature-title en">Copyright on Upload</div>
-                <div class="project-feature-title zh">上传即存证</div>
-                <div class="project-feature-desc en">Automatic rights registration the moment a script is submitted.</div>
-                <div class="project-feature-desc zh">剧本提交即自动版权存证，不再靠口头承诺。</div>
-              </div>
-              <div class="project-feature">
-                <span class="project-feature-icon">🔒</span>
-                <div class="project-feature-title en">Escrow Payments</div>
-                <div class="project-feature-title zh">资金托管</div>
-                <div class="project-feature-desc en">Funds held until delivery is confirmed. No more getting ripped off.</div>
-                <div class="project-feature-desc zh">交付确认前资金托管，创作者不被白嫖。</div>
-              </div>
-              <div class="project-feature">
-                <span class="project-feature-icon">🌐</span>
-                <div class="project-feature-title en">Global Licensing</div>
-                <div class="project-feature-title zh">灵活授权</div>
-                <div class="project-feature-desc en">Buyout or license — by region, by year. Legal contracts included.</div>
-                <div class="project-feature-desc zh">买断或授权，按地区按年限，标准合同具备法律效力。</div>
-              </div>
-            </div>
-            <!-- HOW IT WORKS FLOW -->
-            <div class="sb-flow">
-              <div class="sb-flow-title en">How it works</div>
-              <div class="sb-flow-title zh">平台运作逻辑</div>
-              <div class="sb-diagram">
-
-                <!-- Writer side -->
-                <div class="sb-side">
-                  <div class="sb-side-head en">✍ Writer</div>
-                  <div class="sb-side-head zh">✍ 创作者</div>
-                  <div class="sb-step"><span class="sb-n">01</span><span class="en">Upload script</span><span class="zh">上传剧本</span></div>
-                  <div class="sb-step"><span class="sb-n">02</span><span class="en">Copyright auto-registered</span><span class="zh">版权自动存证</span></div>
-                  <div class="sb-step"><span class="sb-n">03</span><span class="en">Set price &amp; license terms</span><span class="zh">定价与授权设置</span></div>
-                  <div class="sb-outcome en">💰 Paid on deal close</div>
-                  <div class="sb-outcome zh">💰 成交后收款</div>
-                </div>
-
-                <!-- Center platform -->
-                <div class="sb-middle">
-                  <div class="sb-bridge-arrow">→</div>
-                  <div class="sb-platform">
-                    <div class="sb-platform-name">ScriptBridge</div>
-                    <div class="sb-platform-items">
-                      <div><span class="en">⚖️ Rights verification</span><span class="zh">⚖️ 版权存证</span></div>
-                      <div><span class="en">🔒 Escrow payment</span><span class="zh">🔒 资金托管</span></div>
-                      <div><span class="en">📋 Legal contract</span><span class="zh">📋 法律合同</span></div>
-                      <div><span class="en">🤝 Deal facilitation</span><span class="zh">🤝 交易撮合</span></div>
-                    </div>
+            <div class="domain-entry">
+              <div class="domain-entry-label en">Mature · In Daily Use</div>
+              <div class="domain-entry-label zh">成熟 · 日常使用中</div>
+              <div class="domain-entry-title en">Teaching Operations System</div>
+              <div class="domain-entry-title zh">教学工作系统</div>
+              <div class="domain-entry-desc en">Two tools built from my own work as an online English teacher. They reduce repetitive reporting, make lesson data visible, and have become part of my daily routine.</div>
+              <div class="domain-entry-desc zh">从线上英语老师的真实工作中生长出来的两个工具。它们减少重复报告，让课时数据变得可见，现在已经成为我的日常工作环节。</div>
+              <div style="margin-top:1rem;">
+                <div class="sb-section">
+                  <div class="sb-section-head en">Post-class Report Automation</div>
+                  <div class="sb-section-head zh">课后报告自动化</div>
+                  <div class="sb-section-body">
+                    <ul>
+                      <li><span class="en">Reduces a personalized report from several minutes to about 2–3 seconds</span><span class="zh">把一份个性化课后报告从数分钟缩短至约 2–3 秒</span></li>
+                      <li><span class="en">Shortcut-driven: reads prepared lesson information, generates feedback, and returns it to the clipboard</span><span class="zh">通过快捷键读取已有课堂信息、生成反馈并返回剪贴板</span></li>
+                      <li><span class="en">Used around 10–20 times a day</span><span class="zh">每天实际使用约 10–20 次</span></li>
+                    </ul>
                   </div>
-                  <div class="sb-bridge-arrow">→</div>
                 </div>
-
-                <!-- Buyer side -->
-                <div class="sb-side">
-                  <div class="sb-side-head en">🎬 Buyer</div>
-                  <div class="sb-side-head zh">🎬 买方</div>
-                  <div class="sb-step"><span class="sb-n">01</span><span class="en">Browse marketplace</span><span class="zh">浏览市场</span></div>
-                  <div class="sb-step"><span class="sb-n">02</span><span class="en">Purchase or license</span><span class="zh">购买或授权</span></div>
-                  <div class="sb-step"><span class="sb-n">03</span><span class="en">Payment held in escrow</span><span class="zh">款项进入托管</span></div>
-                  <div class="sb-outcome en">✅ Rights delivered</div>
-                  <div class="sb-outcome zh">✅ 版权交付完成</div>
+                <div class="sb-section">
+                  <div class="sb-section-head en">Lesson & Income Dashboard</div>
+                  <div class="sb-section-head zh">课时与收入仪表盘</div>
+                  <div class="sb-section-body">
+                    <ul>
+                      <li><span class="en">Summarizes weekly and monthly lesson counts and estimates income in a native macOS window</span><span class="zh">在原生 macOS 窗口中汇总每周、每月课时并计算预计收入</span></li>
+                      <li><span class="en">Stable in daily use, with scheduled updates and self-checks</span><span class="zh">完整数据流程稳定运行，并具备自动更新与自检</span></li>
+                      <li><span class="en">Processes only my own schedule data and stores no student names, lesson content, or login credentials</span><span class="zh">只处理本人课程统计，不保存学生姓名、课堂内容或登录凭据</span></li>
+                    </ul>
+                  </div>
                 </div>
+              </div>
+              <div class="domain-analysis en">My role: define the problem and quality criteria, structure the workflow, direct AI-assisted development, test the output, and improve it through real use.</div>
+              <div class="domain-analysis zh">我的角色：定义问题与质量标准、组织流程、指挥 AI 辅助开发、测试输出，再根据真实使用持续改进。</div>
+            </div>
 
+            <div class="domain-entry">
+              <div class="domain-entry-label en">Live Beta · 2026</div>
+              <div class="domain-entry-label zh">已上线 · 内测中 · 2026</div>
+              <div class="domain-entry-title">ScriptBridge</div>
+              <div class="domain-entry-desc en">A Chinese-language platform for presenting scripts and receiving licensing requests. Creators can register, upload, and edit scripts; visitors can browse works and submit requests that I can receive and manage through the backend.</div>
+              <div class="domain-entry-desc zh">一个用于展示中文剧本并接收授权申请的平台。创作者可以注册、上传和编辑剧本，访客可以浏览作品并提交申请，我可以在后台接收和管理信息。</div>
+              <div style="margin-top:1rem;">
+                <div class="sb-section">
+                  <div class="sb-section-head en">What is live</div>
+                  <div class="sb-section-head zh">已经实现</div>
+                  <div class="sb-section-body">
+                    <ul>
+                      <li><span class="en">Custom domain, authentication, database, file storage, script pages, and licensing-request flow</span><span class="zh">自定义域名、登录系统、数据库、文件存储、剧本页面与授权申请流程</span></li>
+                      <li><span class="en">Built with AI-assisted HTML, CSS, JavaScript, Supabase, and GitHub Pages</span><span class="zh">通过 AI 协作完成 HTML、CSS、JavaScript、Supabase 与 GitHub Pages 的实现和部署</span></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="sb-section">
+                  <div class="sb-section-head en">Early signal</div>
+                  <div class="sb-section-head zh">早期信号</div>
+                  <div class="sb-section-body">
+                    <ul>
+                      <li><span class="en">Two initial posts brought 100+ new followers and repeated requests for beta access</span><span class="zh">两条冷启动内容带来 100+ 新增关注，并持续收到内测链接请求</span></li>
+                      <li><span class="en">Received 6–8 actual beta applications; an early interest signal, not full commercial validation</span><span class="zh">收到 6–8 份实际内测申请；这是早期兴趣信号，不等于已经完成商业验证</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="domain-analysis en">My role: problem research, product structure, user flows, content and interface direction, feature review, launch, and iteration.</div>
+              <div class="domain-analysis zh">我的角色：问题研究、产品结构、用户流程、内容与界面方向、功能验收、上线和迭代。</div>
+              <a href="https://scriptbridge.cn" target="_blank" rel="noopener noreferrer" class="sb-visit-btn" style="margin-top:1rem;" onclick="event.stopPropagation()">
+                <span class="project-live-dot"></span>
+                <span class="en">Visit ScriptBridge →</span>
+                <span class="zh">访问 ScriptBridge →</span>
+              </a>
+            </div>
+
+            <div class="domain-entry">
+              <div class="domain-entry-label en">Next Direction · In Exploration</div>
+              <div class="domain-entry-label zh">下一步重点方向 · 探索中</div>
+              <div class="domain-entry-title en">AI-assisted Learning & Action System</div>
+              <div class="domain-entry-title zh">AI 协作学习与行动系统</div>
+              <div class="system-focus-grid">
+                <div class="system-focus-card">
+                  <div class="system-focus-label en">Who it helps</div>
+                  <div class="system-focus-label zh">帮助谁</div>
+                  <div class="system-focus-copy en">Helps people with ADHD—and others who struggle to organize, start, or finish tasks—move toward their goals with less pressure.</div>
+                  <div class="system-focus-copy zh">帮助 ADHD 人群以及其他难以安排、启动或完成任务的人，以更低压力的方式推进目标。</div>
+                </div>
+                <div class="system-focus-card">
+                  <div class="system-focus-label en">What it does</div>
+                  <div class="system-focus-label zh">解决什么</div>
+                  <div class="system-focus-copy en">Turns a goal into manageable actions, makes progress visible, and adjusts the pace through both completion evidence and emotional feedback.</div>
+                  <div class="system-focus-copy zh">把目标变成可以完成的行动，让进展看得见，并同时依据完成证据与真实感受调整节奏。</div>
+                </div>
+              </div>
+              <div class="sb-section-head en">How it works</div>
+              <div class="sb-section-head zh">怎样运行</div>
+              <div class="system-flow">
+                <div class="system-step">
+                  <span class="system-step-num">01</span>
+                  <strong class="system-step-title en">Understand you</strong><strong class="system-step-title zh">了解你</strong>
+                  <div class="system-step-copy en">Capture goals, personal patterns, current capacity, voice notes, and screenshots.</div>
+                  <div class="system-step-copy zh">接收目标、个人特点、当下状态，以及语音、截图等输入。</div>
+                </div>
+                <div class="system-step">
+                  <span class="system-step-num">02</span>
+                  <strong class="system-step-title en">Set the rhythm</strong><strong class="system-step-title zh">安排节奏</strong>
+                  <div class="system-step-copy en">AI organizes the input and sets an adjustable 7-day, 10-day, or one-month action cycle based on the goal, available time, and personal capacity. Longer cycles are avoided to keep feedback timely.</div>
+                  <div class="system-step-copy zh">AI 整理与分流信息，根据目标、可用时间和个人状态，生成可调整的 7 天、10 天或 1 个月行动周期；避免周期过长，让反馈保持及时。</div>
+                </div>
+                <div class="system-step">
+                  <span class="system-step-num">03</span>
+                  <strong class="system-step-title en">Take one action</strong><strong class="system-step-title zh">低压行动</strong>
+                  <div class="system-step-copy en">Give one manageable next action with a limited finish line instead of a growing task list.</div>
+                  <div class="system-step-copy zh">一次只给出一个有明确终点的动作，不让任务不断扩大。</div>
+                </div>
+                <div class="system-step">
+                  <span class="system-step-num">04</span>
+                  <strong class="system-step-title en">Record facts & feelings</strong><strong class="system-step-title zh">记录事实与感受</strong>
+                  <div class="system-step-copy en">Keep what was done, visible evidence, and how the process actually felt.</div>
+                  <div class="system-step-copy zh">不只记录做了什么，也记录成果证据和完成时的真实感受。</div>
+                </div>
+                <div class="system-step">
+                  <span class="system-step-num">05</span>
+                  <strong class="system-step-title en">Review & continue</strong><strong class="system-step-title zh">回顾并继续</strong>
+                  <div class="system-step-copy en">AI recognizes progress, adjusts the pace from real feedback, and generates the next step.</div>
+                  <div class="system-step-copy zh">AI 承认已经发生的完成，根据真实反馈调整节奏，再生成下一步。</div>
+                </div>
+              </div>
+              <div class="domain-analysis en">This is not only a tracker. The system is designed to understand both progress and the human experience behind it, helping users build a warmer and more sustainable sense of momentum.</div>
+              <div class="domain-analysis zh">它不只是一个打卡工具，而是同时理解进展与人的感受，帮助用户建立更有温度、也更可持续的行动感。</div>
+            </div>
+
+            <div class="domain-skills">
+              <div class="domain-skills-head en">Core skills in this domain</div>
+              <div class="domain-skills-head zh">该领域核心能力</div>
+              <div class="work-tags">
+                <span class="tag en">Problem definition</span><span class="tag zh">问题定义</span>
+                <span class="tag en">Workflow design</span><span class="tag zh">工作流设计</span>
+                <span class="tag en">AI collaboration</span><span class="tag zh">AI 协作</span>
+                <span class="tag en">Product structure</span><span class="tag zh">产品结构</span>
+                <span class="tag en">Output review</span><span class="tag zh">输出审查</span>
+                <span class="tag en">Testing & iteration</span><span class="tag zh">测试与迭代</span>
               </div>
             </div>
-
-            <div class="work-tags">
-              <span class="tag">Founder</span>
-              <span class="tag">AI-built</span>
-              <span class="tag en">Live · Beta</span><span class="tag zh">已上线 · 内测</span>
-            </div>
-            <a href="https://8844-code.github.io/scriptbridge/" target="_blank" class="sb-visit-btn" onclick="event.stopPropagation()">
-              <span class="project-live-dot"></span>
-              <span class="en">Visit ScriptBridge →</span>
-              <span class="zh">访问 ScriptBridge →</span>
-            </a>
+            <div class="domain-analysis en">I am not presenting myself as a traditional engineer. My value is turning a vague need into a structured workflow, directing AI tools, checking what they produce, and carrying the result into real use.</div>
+            <div class="domain-analysis zh">我不把自己包装成传统工程师。我的价值是把模糊需求变成结构化流程，指挥 AI 工具、检查结果，并让它真正进入使用。</div>
           </div>
         </div>
       </div>
 
-      <!-- Yunnan Net -->
-      <div class="work-card" onclick="toggleWork(this)">
-        <div class="work-card-header">
-          <div class="work-card-left">
-            <div class="work-card-role en">Content Producer</div>
-            <div class="work-card-role zh">内容制作</div>
-            <div class="work-card-name en">Yunnan Net · State Media</div>
-            <div class="work-card-name zh">云南网 · 国家媒体</div>
-            <div class="work-card-period en">2025</div>
-            <div class="work-card-period zh">2025</div>
-          </div>
-          <span class="work-card-hint en">See more →</span>
-          <span class="work-card-hint zh">点击查看 →</span>
-          <span class="work-card-arrow">→</span>
-        </div>
-        <div class="work-card-body">
-          <div class="work-card-body-inner">
-            <div class="work-body en">Full-cycle content production for Yunnan's official state media — field shooting, editing, copywriting, and social media account management. End-to-end from location to final output.</div>
-            <div class="work-body zh">为云南省官方媒体负责完整内容制作——外拍、剪辑、文案、账号运营，独立掌控从现场到成片的全链条。</div>
-            <div class="work-tags">
-              <span class="tag en">State Media</span><span class="tag zh">国家媒体</span>
-              <span class="tag en">Editing</span><span class="tag zh">剪辑</span>
-              <span class="tag en">Social Media</span><span class="tag zh">账号运营</span>
+      <!-- DOMAIN 2: 语言 & 教学 -->
+      <div class="work-domain" onclick="toggleDomain(this)">
+        <div class="work-domain-header">
+          <div class="domain-num">02</div>
+          <div class="domain-info">
+            <div class="domain-title en">Language & Teaching</div>
+            <div class="domain-title zh">语言 & 教学</div>
+            <div class="domain-chips">
+              <span class="domain-chip en">English Instruction</span><span class="domain-chip zh">英语教学</span>
+              <span class="domain-chip en">Bilingual</span><span class="domain-chip zh">双语</span>
+              <span class="domain-chip en">Communication</span><span class="domain-chip zh">跨文化沟通</span>
+              <span class="domain-chip en">Content Writing</span><span class="domain-chip zh">内容写作</span>
             </div>
+          </div>
+          <span class="domain-arrow">→</span>
+        </div>
+        <div class="domain-body">
+          <div class="domain-body-inner">
+            <div class="domain-entry">
+              <div class="domain-entry-label en">Jan 2026 — Present · 2,000+ Lessons</div>
+              <div class="domain-entry-label zh">2026.01 — 至今 · 2,000+ 课时</div>
+              <div class="domain-entry-title en">Online English Teacher</div>
+              <div class="domain-entry-title zh">线上英语老师</div>
+              <div class="domain-entry-period en">Jan 2026 — Present</div>
+              <div class="domain-entry-period zh">2026.01 — 至今</div>
+              <div class="domain-entry-desc en">Delivered 2,000+ online English lessons for young learners, with a focus on classroom interaction, pronunciation and communication guidance, personalized post-class feedback, and ongoing improvement of daily teaching workflows.</div>
+              <div class="domain-entry-desc zh">已完成 2,000+ 节少儿在线英语课程，负责课堂互动、发音与表达引导、个性化课后反馈，并持续优化日常教学流程。</div>
+            </div>
+            <div class="domain-entry">
+              <div class="domain-entry-label en">Interpretation & Editorial</div>
+              <div class="domain-entry-label zh">讲解与内容</div>
+              <div class="domain-entry-title en">Cangshan Nature Photo Museum · Dali</div>
+              <div class="domain-entry-title zh">大理苍山自然影像博物馆</div>
+              <div class="domain-entry-period en">Mar — Apr 2024</div>
+              <div class="domain-entry-period zh">2024.03 — 2024.04</div>
+              <div class="domain-entry-desc en">Visitor reception and guided interpretation at a natural-history photography museum. Curated exhibition documentation, produced editorial content, designed recruitment materials.</div>
+              <div class="domain-entry-desc zh">自然影像博物馆参观接待与专业讲解，整理归档展览文书，撰写推文内容，制作招聘海报。</div>
+            </div>
+            <div class="domain-entry">
+              <div class="domain-entry-label en">Content Creator</div>
+              <div class="domain-entry-label zh">内容创作</div>
+              <div class="domain-entry-title en">Apple Retail · Store Associate</div>
+              <div class="domain-entry-title zh">Apple 门店 · 店员</div>
+              <div class="domain-entry-period en">Apr — Jul 2025</div>
+              <div class="domain-entry-period zh">2025.04 — 2025.07</div>
+              <div class="domain-entry-desc en">Handled product introductions, customer problem-solving, and store display, while also contributing to short-video shooting, editing, and account content.</div>
+              <div class="domain-entry-desc zh">负责产品介绍、客户问题解决和门店陈列，并参与短视频拍摄、剪辑与账号内容运营。</div>
+            </div>
+            <div class="domain-skills">
+              <div class="domain-skills-head en">Core skills in this domain</div>
+              <div class="domain-skills-head zh">该领域核心能力</div>
+              <div class="work-tags">
+                <span class="tag en">English instruction</span><span class="tag zh">英语教学</span>
+                <span class="tag en">Chinese Mandarin</span><span class="tag zh">中文（母语）</span>
+                <span class="tag en">Accent acquisition</span><span class="tag zh">口音习得</span>
+                <span class="tag en">Bilingual copywriting</span><span class="tag zh">双语文案</span>
+                <span class="tag en">Cross-cultural comm.</span><span class="tag zh">跨文化沟通</span>
+                <span class="tag en">Interpretation</span><span class="tag zh">讲解表达</span>
+              </div>
+            </div>
+            <div class="domain-analysis en">Language is both a practical path and a natural strength. Teaching turns that strength into repeatable work: listening closely, adjusting quickly, and helping learners speak with more confidence.</div>
+            <div class="domain-analysis zh">语言既是现实路径，也是天然强项。教学把这种能力变成可重复的工作：细致倾听、快速调整，并帮助学习者更有信心地开口表达。</div>
           </div>
         </div>
       </div>
 
-      <!-- Apple -->
-      <div class="work-card" onclick="toggleWork(this)">
-        <div class="work-card-header">
-          <div class="work-card-left">
-            <div class="work-card-role en">Sales & Content Creator</div>
-            <div class="work-card-role zh">销售 & 内容创作</div>
-            <div class="work-card-name en">Apple Authorized Reseller</div>
-            <div class="work-card-name zh">Apple授权专卖店</div>
-            <div class="work-card-period en">2024 — 2025</div>
-            <div class="work-card-period zh">2024 — 2025</div>
-          </div>
-          <span class="work-card-hint en">See more →</span>
-          <span class="work-card-hint zh">点击查看 →</span>
-          <span class="work-card-arrow">→</span>
-        </div>
-        <div class="work-card-body">
-          <div class="work-card-body-inner">
-            <div class="work-body en">In-store customer service and product education. Simultaneously managed the store's short-video account — shooting, editing, and growing its social media presence from scratch.</div>
-            <div class="work-body zh">门店客户接待与产品讲解。同时主导门店短视频账号从零搭建——策划、拍摄、剪辑，持续扩大品牌社交媒体影响力。</div>
-            <div class="work-tags">
-              <span class="tag">Apple</span>
-              <span class="tag en">Short Video</span><span class="tag zh">短视频</span>
-              <span class="tag en">Social Media</span><span class="tag zh">账号运营</span>
+      <!-- DOMAIN 3: 影像 & 媒体 -->
+      <div class="work-domain" onclick="toggleDomain(this)">
+        <div class="work-domain-header">
+          <div class="domain-num">03</div>
+          <div class="domain-info">
+            <div class="domain-title en">Film & Media</div>
+            <div class="domain-title zh">影像 & 媒体</div>
+            <div class="domain-chips">
+              <span class="domain-chip en">Documentary</span><span class="domain-chip zh">纪录片</span>
+              <span class="domain-chip en">Journalism</span><span class="domain-chip zh">新闻采访</span>
+              <span class="domain-chip en">Camera</span><span class="domain-chip zh">摄像</span>
+              <span class="domain-chip en">Editing</span><span class="domain-chip zh">剪辑</span>
+              <span class="domain-chip en">Social Media</span><span class="domain-chip zh">账号运营</span>
             </div>
+          </div>
+          <span class="domain-arrow">→</span>
+        </div>
+        <div class="domain-body">
+          <div class="domain-body-inner">
+            <div class="domain-entry">
+              <div class="domain-entry-label en">Documentary Director</div>
+              <div class="domain-entry-label zh">纪录片导演</div>
+              <div class="domain-entry-title en">2 Films Selected at International Film Festivals</div>
+              <div class="domain-entry-title zh">两部入选国际电影节</div>
+              <div class="domain-entry-period en">2023 — 2024</div>
+              <div class="domain-entry-period zh">2023 — 2024</div>
+              <div class="domain-entry-desc en">《不能说的秘密》selected at 2024 Shanghai International Film Festival (New Wave Short Documentary). 《他们也是她们》selected at 13th Beijing International Film Festival (Short Video Unit). Both directed, written, and shot solo.</div>
+              <div class="domain-entry-desc zh">《不能说的秘密》入选2024上海国际电影节新锐纪录短片竞赛单元；《他们也是她们》入选第十三届北京国际电影节短视频单元。导演、编剧、摄影均由本人独立完成。</div>
+            </div>
+            <div class="domain-entry">
+              <div class="domain-entry-label en">Field Journalist</div>
+              <div class="domain-entry-label zh">外采记者</div>
+              <div class="domain-entry-title en">Kunming TV · Urban Barcode</div>
+              <div class="domain-entry-title zh">昆明电视台 · 都市条形码</div>
+              <div class="domain-entry-period en">2023 — 2024</div>
+              <div class="domain-entry-period zh">2023 — 2024</div>
+              <div class="domain-entry-desc en">Sole field journalist on a civil-affairs news program — broadcast camera operation, subject interviews, and news-script writing. Full pipeline handled solo, from departure to broadcast.</div>
+              <div class="domain-entry-desc zh">民生新闻节目外采记者，全流程独立负责——专业摄像机拍摄、采访受访者、新闻稿写作，从出发到播出一人完成。</div>
+            </div>
+            <div class="domain-entry">
+              <div class="domain-entry-label en">Content Producer</div>
+              <div class="domain-entry-label zh">内容制作</div>
+              <div class="domain-entry-title en">Yunnan Net · State Media</div>
+              <div class="domain-entry-title zh">云南网 · 国家媒体</div>
+              <div class="domain-entry-period en">Late Jul — Nov 2025</div>
+              <div class="domain-entry-period zh">2025.07 末 — 2025.11</div>
+              <div class="domain-entry-desc en">Contributed to shooting, editing, copywriting, social account operations, and the organization and archiving of video materials.</div>
+              <div class="domain-entry-desc zh">参与拍摄、剪辑、文案、账号运营，以及视频素材的整理分类与归档。</div>
+            </div>
+            <div class="domain-skills">
+              <div class="domain-skills-head en">Core skills in this domain</div>
+              <div class="domain-skills-head zh">该领域核心能力</div>
+              <div class="work-tags">
+                <span class="tag en">Documentary direction</span><span class="tag zh">纪录片导演</span>
+                <span class="tag en">Broadcast camera</span><span class="tag zh">专业摄像</span>
+                <span class="tag en">Field journalism</span><span class="tag zh">外采采访</span>
+                <span class="tag en">Video editing</span><span class="tag zh">视频剪辑</span>
+                <span class="tag en">Scriptwriting</span><span class="tag zh">脚本/新闻稿</span>
+                <span class="tag en">Social media ops</span><span class="tag zh">账号运营</span>
+              </div>
+            </div>
+            <div class="domain-analysis en">The throughline is storytelling through the lens — from breaking news to long-form documentary. Two international festival selections are the proof point. The camera was never just a tool; it was the way of seeing.</div>
+            <div class="domain-analysis zh">贯穿始终的是影像叙事——从突发新闻到长篇纪录片。两部入选国际电影节的作品是最好的证明。摄像机从来不只是工具，它是观察世界的方式。</div>
           </div>
         </div>
       </div>
 
-      <!-- Cangshan Museum -->
-      <div class="work-card" onclick="toggleWork(this)">
-        <div class="work-card-header">
-          <div class="work-card-left">
-            <div class="work-card-role en">Communications & Interpretation</div>
-            <div class="work-card-role zh">传播与讲解</div>
-            <div class="work-card-name en">Cangshan Nature Photo Museum · Dali</div>
-            <div class="work-card-name zh">大理苍山自然影像博物馆</div>
-            <div class="work-card-period en">2024</div>
-            <div class="work-card-period zh">2024</div>
+      </div><!-- /work-domains -->
+
+
+    </div>
+  </div>
+</div>
+
+<!-- AI SECTION -->
+<hr class="divider" id="hr-ai" />
+<div id="ai">
+  <div class="section-wrap">
+    <div class="section-label en">AI</div>
+    <div class="section-label zh">AI 能力</div>
+    <h2 class="section-title en">How I work <em>with AI.</em></h2>
+    <h2 class="section-title zh">我如何<em>用 AI 工作。</em></h2>
+    <p class="work-intro en">AI is not a separate trick in my work. It sits inside a repeatable loop: identify a real problem, define the result, structure the workflow, direct the tools, review the output, test it in context, and keep iterating.</p>
+    <p class="work-intro zh">AI 不是我工作里的一个单独技巧，而是在一套可重复的闭环里：找到真实问题、定义结果、整理流程、指挥工具、审查输出、放进情境中测试，再继续迭代。</p>
+    <div class="ai-section-grid fade-in">
+      <div class="ai-col">
+        <div class="ai-col-head en">Proof through real use</div>
+        <div class="ai-col-head zh">用真实使用证明</div>
+        <div class="ai-tool-list">
+          <div class="ai-tool-item">
+            <div class="ai-tool-name en">Teaching Operations System</div>
+            <div class="ai-tool-name zh">教学工作系统</div>
+            <div class="ai-tool-desc en">Two mature tools now used in my daily teaching: report automation and a lesson-and-income dashboard.</div>
+            <div class="ai-tool-desc zh">课后报告自动化与课时收入仪表盘，两个已经进入日常工作的成熟工具。</div>
           </div>
-          <span class="work-card-hint en">See more →</span>
-          <span class="work-card-hint zh">点击查看 →</span>
-          <span class="work-card-arrow">→</span>
-        </div>
-        <div class="work-card-body">
-          <div class="work-card-body-inner">
-            <div class="work-body en">Visitor reception and guided interpretation at a natural-history photography museum. Curated exhibition documentation, produced editorial content, and designed recruitment materials.</div>
-            <div class="work-body zh">自然影像博物馆参观接待与专业讲解。整理归档展览文书，撰写推文内容，制作招聘海报。</div>
-            <div class="work-tags">
-              <span class="tag en">Museum</span><span class="tag zh">博物馆</span>
-              <span class="tag en">Interpretation</span><span class="tag zh">讲解</span>
-              <span class="tag en">Editorial</span><span class="tag zh">编辑写作</span>
-            </div>
+          <div class="ai-tool-item">
+            <div class="ai-tool-name">ScriptBridge</div>
+            <div class="ai-tool-desc en">Took a product idea through research, user flow, interface, backend, custom domain, and live beta.</div>
+            <div class="ai-tool-desc zh">把产品想法推进到调研、用户流程、界面、后台、自定义域名与公开内测。</div>
           </div>
-        </div>
-      </div>
-
-      <!-- AI Workflow -->
-      <div class="work-card featured" onclick="toggleWork(this)">
-        <div class="work-card-header">
-          <div class="work-card-left">
-            <div class="work-card-role en">Builder · Prompter · Deployer</div>
-            <div class="work-card-role zh">构建者 · 提示者 · 部署者</div>
-            <div class="work-card-name en">Building with AI</div>
-            <div class="work-card-name zh">AI 工作方式</div>
-            <div class="work-card-period en">2025 — Present</div>
-            <div class="work-card-period zh">2025 — 至今</div>
-          </div>
-          <span class="work-card-hint en">Expand →</span>
-          <span class="work-card-hint zh">展开 →</span>
-          <span class="work-card-arrow">→</span>
-        </div>
-        <div class="work-card-body">
-          <div class="work-card-body-inner">
-            <div class="work-body en">Two web products taken from idea to live deployment using AI as a co-builder — no prior coding background. Workflow: define the problem clearly, prompt precisely, review every output, iterate. The result is working software, not just a prototype.</div>
-            <div class="work-body zh">两个网站产品从零概念到上线部署，以 AI 为协作者完成——此前无编程背景。工作方式：把问题说清楚，精准提示，逐行审查输出，反复迭代。产出的是真正能用的产品，不是演示稿。</div>
-
-            <!-- Process flow -->
-            <div class="ai-process">
-              <div class="ai-process-step">
-                <div class="ai-process-icon">💡</div>
-                <div class="ai-process-label en">Define</div>
-                <div class="ai-process-label zh">定义问题</div>
-              </div>
-              <div class="ai-process-arrow">→</div>
-              <div class="ai-process-step">
-                <div class="ai-process-icon">✦</div>
-                <div class="ai-process-label en">Prompt</div>
-                <div class="ai-process-label zh">精准提示</div>
-              </div>
-              <div class="ai-process-arrow">→</div>
-              <div class="ai-process-step">
-                <div class="ai-process-icon">⌥</div>
-                <div class="ai-process-label en">Review</div>
-                <div class="ai-process-label zh">审查输出</div>
-              </div>
-              <div class="ai-process-arrow">→</div>
-              <div class="ai-process-step">
-                <div class="ai-process-icon">↗</div>
-                <div class="ai-process-label en">Deploy</div>
-                <div class="ai-process-label zh">部署上线</div>
-              </div>
-            </div>
-
-            <!-- Built projects -->
-            <div class="ai-projects">
-              <div class="ai-project-item">
-                <div class="ai-project-name">ScriptBridge</div>
-                <div class="ai-project-desc en">Screenplay rights marketplace — product concept, UX design, full HTML/CSS/JS build, GitHub Pages deployment. Waitlist live.</div>
-                <div class="ai-project-desc zh">剧本版权交易平台——产品概念、交互设计、完整前端开发、GitHub Pages 部署。候补名单已上线。</div>
-                <div class="ai-project-stack">HTML · CSS · JS · Claude · GitHub Pages</div>
-              </div>
-              <div class="ai-project-item">
-                <div class="ai-project-name en">This website</div>
-                <div class="ai-project-name zh">这个网站</div>
-                <div class="ai-project-desc en">Bilingual personal brand site — dark/light theming, language switching, modal system, CSS animations, accordion components. Single file, zero frameworks.</div>
-                <div class="ai-project-desc zh">双语个人品牌网站——深浅色切换、中英双语、模态系统、CSS动画、手风琴组件。单文件，零依赖框架。</div>
-                <div class="ai-project-stack">HTML · CSS · JS · Claude · GitHub Pages</div>
-              </div>
-            </div>
-
-            <div class="work-tags">
-              <span class="tag">Claude</span>
-              <span class="tag">HTML / CSS / JS</span>
-              <span class="tag">GitHub Pages</span>
-              <span class="tag en">Zero frameworks</span><span class="tag zh">零框架</span>
-            </div>
+          <div class="ai-tool-item">
+            <div class="ai-tool-name en">Learning & Action System</div>
+            <div class="ai-tool-name zh">学习与行动系统</div>
+            <div class="ai-tool-desc en">A next-direction system for lower-pressure goal completion, designed first around ADHD and task-initiation difficulties.</div>
+            <div class="ai-tool-desc zh">下一步重点方向：以 ADHD 与任务启动困难为优先场景，帮助人们更低压力地完成目标。</div>
           </div>
         </div>
       </div>
-
-      <!-- Kunming TV -->
-      <div class="work-card" onclick="toggleWork(this)">
-        <div class="work-card-header">
-          <div class="work-card-left">
-            <div class="work-card-role en">Field Reporter & Cameraman</div>
-            <div class="work-card-role zh">外采记者 & 摄像</div>
-            <div class="work-card-name en">Kunming TV · Urban Barcode</div>
-            <div class="work-card-name zh">昆明电视台 · 都市条形码</div>
-            <div class="work-card-period en">2023 — 2024</div>
-            <div class="work-card-period zh">2023 — 2024</div>
-          </div>
-          <span class="work-card-hint en">See more →</span>
-          <span class="work-card-hint zh">点击查看 →</span>
-          <span class="work-card-arrow">→</span>
-        </div>
-        <div class="work-card-body">
-          <div class="work-card-body-inner">
-            <div class="work-body en">Sole field journalist on a civil-affairs news program — broadcast camera shooting, subject interviews, and news-script writing. Full pipeline handled solo, from departure to broadcast.</div>
-            <div class="work-body zh">民生新闻节目外采记者，全流程独立负责——专业摄像机拍摄、采访受访者、新闻稿写作，从出发到播出一人完成。</div>
-            <div class="work-tags">
-              <span class="tag en">Broadcast TV</span><span class="tag zh">电视台</span>
-              <span class="tag en">Field Journalism</span><span class="tag zh">外采</span>
-              <span class="tag en">Scriptwriting</span><span class="tag zh">新闻稿</span>
-            </div>
-          </div>
+      <div class="ai-col">
+        <div class="ai-col-head en">What I contribute</div>
+        <div class="ai-col-head zh">我在其中做什么</div>
+        <div class="ai-skill-tags">
+          <span class="ai-skill-tag en">Problem definition</span><span class="ai-skill-tag zh">问题定义</span>
+          <span class="ai-skill-tag en">Requirement structuring</span><span class="ai-skill-tag zh">需求整理</span>
+          <span class="ai-skill-tag en">Workflow design</span><span class="ai-skill-tag zh">工作流设计</span>
+          <span class="ai-skill-tag en">AI tool orchestration</span><span class="ai-skill-tag zh">AI 工具协作</span>
+          <span class="ai-skill-tag en">Output review</span><span class="ai-skill-tag zh">输出审查</span>
+          <span class="ai-skill-tag en">Testing & iteration</span><span class="ai-skill-tag zh">测试与迭代</span>
         </div>
       </div>
-
+      <div class="ai-col">
+        <div class="ai-col-head en">Next direction</div>
+        <div class="ai-col-head zh">下一步方向</div>
+        <div class="ai-process">
+          <div class="ai-process-step"><div class="ai-process-icon">💡</div><div class="ai-process-label en">Goal</div><div class="ai-process-label zh">学习目标</div></div>
+          <div class="ai-process-arrow">→</div>
+          <div class="ai-process-step"><div class="ai-process-icon">✦</div><div class="ai-process-label en">Practice</div><div class="ai-process-label zh">实际操作</div></div>
+          <div class="ai-process-arrow">→</div>
+          <div class="ai-process-step"><div class="ai-process-icon">⌥</div><div class="ai-process-label en">Evidence</div><div class="ai-process-label zh">可见成果</div></div>
+          <div class="ai-process-arrow">→</div>
+          <div class="ai-process-step"><div class="ai-process-icon">↗</div><div class="ai-process-label en">Next step</div><div class="ai-process-label zh">生成下一步</div></div>
+        </div>
+        <p class="ai-workflow-note en"><strong>AI-assisted Learning & Action System · In exploration.</strong> My next focus is a warmer system that learns the user's patterns, manages a lower-pressure rhythm, records both evidence and feelings, and adapts the next step.</p>
+        <p class="ai-workflow-note zh"><strong>AI 协作学习与行动系统 · 探索中。</strong>我的下一步重点，是让系统理解使用者的特点，以更低压力的节奏安排任务，同时记录成果与感受，再调整下一步。</p>
+      </div>
     </div>
   </div>
 </div>
@@ -2252,9 +2778,9 @@
   <div class="section-label zh" style="justify-content:center">联系</div>
   <h2 class="contact-title en">Let's <span>connect.</span></h2>
   <h2 class="contact-title zh">来<span>聊聊。</span></h2>
-  <p class="contact-sub en">Open to teaching opportunities, creative collaborations, international projects, and interesting conversations.</p>
-  <p class="contact-sub zh">欢迎教学合作、创意项目、国际合作，以及有趣的对话。</p>
-  <a href="mailto:qtian904@gmail.com" class="contact-email">qtian904@gmail.com</a>
+  <p class="contact-sub en">Best reasons to reach out: English teaching, documentary or visual projects, AI-assisted content and web projects, international applications, or creative collaboration.</p>
+  <p class="contact-sub zh">适合联系我的方向：英语教学、纪录片/影像合作、AI 辅助内容与网站项目、国际申请或创意项目合作。</p>
+  <a href="mailto:jir884140@gmail.com" class="contact-email">jir884140@gmail.com</a>
 </section>
 
 <button class="back-to-top" id="backToTop" type="button">
@@ -2264,42 +2790,106 @@
 
 <!-- PHOTO MODAL -->
 <div class="modal-overlay" id="modalPhoto" onclick="closeModalOutside(event)">
-  <div class="modal-box" style="max-width:860px;">
+  <div class="modal-box photo-modal-box">
     <div class="modal-close">
+      <button type="button" onclick="closePhotoSeries()" class="photo-modal-back-top">
+        <span class="en">← Back</span>
+        <span class="zh">← 返回</span>
+      </button>
       <button onclick="closeModal('photo')" class="en">Close</button>
       <button onclick="closeModal('photo')" class="zh">关闭</button>
     </div>
     <div class="modal-body">
-      <div style="padding:0.5rem 2rem 2rem;">
+      <div class="photo-modal-hero" style="padding:0.5rem 2rem 1.25rem;">
         <div class="modal-novel-type en">Photography · Personal Series · 2022–2023</div>
         <div class="modal-novel-type zh">摄影 · 个人系列 · 2022–2023</div>
-        <div class="modal-novel-title" style="font-size:1.6rem;margin:0.4rem 0 0.2rem;">季颖秋 摄影</div>
-        <div style="font-size:0.72rem;color:var(--muted);" class="en">Rachel Ji · Ethnic minority region · China</div>
-        <div style="font-size:0.72rem;color:var(--muted);" class="zh">季颖秋 · 少数民族地区 · 中国</div>
+        <div class="modal-novel-title en" style="font-size:1.6rem;margin:0.4rem 0 0.2rem;">Photography Series</div>
+        <div class="modal-novel-title zh" style="font-size:1.6rem;margin:0.4rem 0 0.2rem;">摄影系列</div>
+        <div style="font-size:0.72rem;color:var(--muted);" class="en">Personal photography archive · 2022–2023</div>
+        <div style="font-size:0.72rem;color:var(--muted);" class="zh">个人摄影档案 · 2022–2023</div>
       </div>
 
-      <div class="photo-modal-gallery">
+      <div id="photoSeriesHome" class="photo-series-home">
+        <button type="button" class="photo-series-tile" onclick="openPhotoSeries('pisces')">
+          <span class="photo-series-tile-cover" data-hint="进入系列 →"><img src="dsc_aquarium_web.jpg" alt="" loading="lazy" /></span>
+          <span class="photo-series-tile-body">
+            <span class="photo-series-tile-eyebrow"><span class="en">Aquarium · Pisces Girl</span><span class="zh">水族馆 · 双鱼座女孩</span></span>
+            <span class="photo-series-tile-title"><span class="zh">双鱼座女孩</span><span class="en">Pisces Girl</span></span>
+            <span class="photo-series-tile-excerpt zh">写给朋友的小诗，与水族馆、洱海组照。</span>
+            <span class="photo-series-tile-excerpt en">A poem for a friend, with aquarium and lakeside frames.</span>
+          </span>
+        </button>
+        <button type="button" class="photo-series-tile" onclick="openPhotoSeries('shuan')">
+          <span class="photo-series-tile-cover" data-hint="进入系列 →"><img src="photo_zhan_1.jpeg" alt="" loading="lazy" /></span>
+          <span class="photo-series-tile-body">
+            <span class="photo-series-tile-eyebrow"><span class="en">Theater</span><span class="zh">戏院</span></span>
+            <span class="photo-series-tile-title"><span class="zh">《栓》两帧</span><span class="en">Bound — I &amp; II</span></span>
+            <span class="photo-series-tile-excerpt zh">梁国福《栓》诗句与工映现场。</span>
+            <span class="photo-series-tile-excerpt en">Liang Guofu's poem with two theater frames.</span>
+          </span>
+        </button>
+        <button type="button" class="photo-series-tile" onclick="openPhotoSeries('freedom')">
+          <span class="photo-series-tile-cover" data-hint="进入系列 →"><img src="photo_ziyou.jpeg" alt="" loading="lazy" /></span>
+          <span class="photo-series-tile-body">
+            <span class="photo-series-tile-eyebrow"><span class="en">Portrait</span><span class="zh">人像</span></span>
+            <span class="photo-series-tile-title"><span class="zh">《自由》</span><span class="en">Freedom</span></span>
+            <span class="photo-series-tile-excerpt zh">名为夏天的影子 · 新平</span>
+            <span class="photo-series-tile-excerpt en">A shadow named summer · Xinping</span>
+          </span>
+        </button>
+        <button type="button" class="photo-series-tile" onclick="openPhotoSeries('bicycle')">
+          <span class="photo-series-tile-cover" data-hint="进入系列 →"><img src="photo_danche_1.jpeg" alt="" loading="lazy" /></span>
+          <span class="photo-series-tile-body">
+            <span class="photo-series-tile-eyebrow"><span class="en">Street · Childhood</span><span class="zh">纪实 · 童年</span></span>
+            <span class="photo-series-tile-title"><span class="zh">《单车》两帧</span><span class="en">Bicycle — I &amp; II</span></span>
+            <span class="photo-series-tile-excerpt zh">2022.10.23 · 新平彝族傣族自治县</span>
+            <span class="photo-series-tile-excerpt en">Sunlight on stone paths and small bicycles.</span>
+          </span>
+        </button>
+        <button type="button" class="photo-series-tile" onclick="openPhotoSeries('dream')">
+          <span class="photo-series-tile-cover" data-hint="进入系列 →"><img src="photo_meng_1.jpeg" alt="" loading="lazy" /></span>
+          <span class="photo-series-tile-body">
+            <span class="photo-series-tile-eyebrow"><span class="en">Portrait · Dream</span><span class="zh">人像 · 梦</span></span>
+            <span class="photo-series-tile-title"><span class="zh">《梦》两帧</span><span class="en">Dream — I &amp; II</span></span>
+            <span class="photo-series-tile-excerpt zh">滇池岸边 · 配文完整保留</span>
+            <span class="photo-series-tile-excerpt en">Dianchi shore — full caption preserved.</span>
+          </span>
+        </button>
+        <button type="button" class="photo-series-tile" onclick="openPhotoSeries('life')">
+          <span class="photo-series-tile-cover" data-hint="进入系列 →"><img src="photo_shengming_1.jpeg" alt="" loading="lazy" /></span>
+          <span class="photo-series-tile-body">
+            <span class="photo-series-tile-eyebrow"><span class="en">Nature · Life</span><span class="zh">自然 · 生命</span></span>
+            <span class="photo-series-tile-title"><span class="zh">《生命》两帧</span><span class="en">Life — I &amp; II</span></span>
+            <span class="photo-series-tile-excerpt zh">个人摄影系列</span>
+            <span class="photo-series-tile-excerpt en">Two frames from the Life series.</span>
+          </span>
+        </button>
+      </div>
 
-        <div class="photo-series-block">
-          <div class="photo-series-header photo-modal-caption">
+      <div id="photoSeriesViewer" class="photo-series-viewer" aria-hidden="true">
+        <button type="button" class="photo-viewer-back" onclick="closePhotoSeries()">
+          <span class="en">← Back</span>
+          <span class="zh">← 返回</span>
+        </button>
+
+        <div id="photoViewer-pisces" class="photo-viewer-panel">
+          <div class="photo-viewer-head">
             <div class="photo-modal-series en">Aquarium · Pisces Girl</div>
             <div class="photo-modal-series zh">水族馆 · 双鱼座女孩</div>
             <div class="photo-modal-title en">Pisces Girl — aquarium frames</div>
             <div class="photo-modal-title zh">双鱼座女孩 — 水族馆组照</div>
-            <div class="photo-modal-meta en">Kunming · frames from desktop “first pass”</div>
-            <div class="photo-modal-meta zh">昆明 · 源文件来自桌面「最初筛选/双鱼座女孩儿」</div>
+            <div class="photo-modal-meta en">Kunming · Aquarium + Erhai Lake · 2023</div>
+            <div class="photo-modal-meta zh">昆明水族馆 · 洱海 · 2023</div>
           </div>
-          <div class="photo-series-grid">
-            <img src="ph_pisces_1.jpg" alt="" loading="lazy" />
-            <img src="ph_pisces_2.jpg" alt="" loading="lazy" />
-            <img src="ph_pisces_3.jpg" alt="" loading="lazy" />
-            <img src="ph_pisces_4.jpg" alt="" loading="lazy" />
-          </div>
-          <div class="photo-modal-caption">
-            <p class="en" style="font-size:0.82rem;color:var(--muted);line-height:1.75;margin:0 0 0.5rem;max-width:36em;">Chinese poem for a friend — written to sit with these blue-lit frames. Open below for the full text.</p>
-            <p class="zh" style="font-size:0.82rem;color:var(--muted);line-height:1.75;margin:0 0 0.5rem;max-width:36em;">写给朋友的中文小诗，与这组蓝色水族馆画面放在一起。点击下方展开阅读全诗。</p>
-            <details class="photo-series-details">
-              <summary><span class="en">Full poem (中文正文)</span><span class="zh">展开阅读全诗</span></summary>
+          <div class="photo-viewer-layout photo-viewer-layout--pisces">
+            <div class="photo-viewer-images photo-viewer-images--pisces">
+              <img src="dsc_aquarium_web.jpg" alt="" loading="lazy" class="pisces-hero-img" />
+              <img src="pisces_aqua_2_web.jpg" alt="" loading="lazy" />
+              <img src="pisces_lake_2_web.jpg" alt="" loading="lazy" />
+              <img src="pisces_lake_3_web.jpg" alt="" loading="lazy" />
+              <img src="pisces_dock_web.jpg" alt="" loading="lazy" />
+              <img src="pisces_park_2_web.jpg" alt="" loading="lazy" />
+              <div class="photo-viewer-pisces-prose">
               <div class="pisces-poem">
                 <div class="pisces-stanza">嘿，我的朋友
 
@@ -2313,144 +2903,147 @@
 别人只觉得你不近人情，
 可我觉得这是宝贵的纯真。
 虽然光有时也以混乱自拟。</div>
-
                 <div class="pisces-stanza">嘿，女孩儿。
 
 我的双鱼座女孩儿。</div>
-
                 <div class="pisces-stanza">昏暗的水族馆里
 吵闹孩子们的声音
 水母在背后游来游去
 我已忘了
 究竟是谁先靠到对方肩上
 睡着了</div>
-
                 <div class="pisces-stanza">嘿，女孩儿。
 五彩斑斓的世界里，你也努力合群。
 但我知道，那不是你。</div>
-
                 <div class="pisces-stanza">嘿，女孩儿。
 安静、脆弱、包容的女孩儿。</div>
               </div>
-            </details>
+            </div>
           </div>
         </div>
+        </div>
 
-        <div class="photo-series-block">
-          <div class="photo-series-header photo-modal-caption">
+        <div id="photoViewer-shuan" class="photo-viewer-panel">
+          <div class="photo-viewer-head">
             <div class="photo-modal-series en">Series · Theater</div>
             <div class="photo-modal-series zh">系列 · 戏院</div>
             <div class="photo-modal-title en">《栓》Bound — I &amp; II</div>
             <div class="photo-modal-title zh">《栓》— 两帧</div>
             <div class="photo-modal-meta">2023.11.29 · 工映1970神犁文创社园</div>
           </div>
-          <div class="photo-series-grid">
-            <img src="photo_zhan_1.jpeg" alt="《栓》I" loading="lazy" />
-            <img src="photo_zhan_2.jpeg" alt="《栓》II" loading="lazy" />
-          </div>
-          <div class="photo-modal-caption">
-            <div class="photo-modal-poem" style="font-style:normal;font-family:'Noto Serif SC',serif;">
-              天空纵容着鸟的翅膀，<br>
-              远方牵扯着言的眺望，<br>
-              窗框死捉住一方风景，<br>
-              门扉轻闩上半生流浪。<br>
-              <span style="font-size:0.7rem;letter-spacing:0.08em;">——梁国福《栓》</span>
+          <div class="photo-viewer-layout">
+            <div class="photo-viewer-images photo-viewer-images--grid2">
+              <img src="photo_zhan_1.jpeg" alt="《栓》I" loading="lazy" />
+              <img src="photo_zhan_2.jpeg" alt="《栓》II" loading="lazy" />
+            </div>
+            <div class="photo-viewer-prose">
+              <div class="photo-modal-poem zh" style="font-style:normal;font-family:'Noto Serif SC',serif;">
+                天空纵容着鸟的翅膀，<br>
+                远方牵扯着言的眺望，<br>
+                窗框死捉住一方风景，<br>
+                门扉轻闩上半生流浪。<br>
+                <span style="font-size:0.75rem;letter-spacing:0.08em;">——梁国福《栓》</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="photo-series-block">
-          <div class="photo-series-header photo-modal-caption">
+        <div id="photoViewer-freedom" class="photo-viewer-panel">
+          <div class="photo-viewer-head">
             <div class="photo-modal-series en">Portrait · Freedom</div>
             <div class="photo-modal-series zh">人像 · 自由</div>
-            <div class="photo-modal-title en">《自由》Freedom — shadow named summer</div>
-            <div class="photo-modal-title zh">《自由》— 名为夏天的影子</div>
+            <div class="photo-modal-title en">《自由》Freedom — 名为夏天的影子</div>
+            <div class="photo-modal-title zh">《自由》Freedom — 名为夏天的影子</div>
             <div class="photo-modal-meta">2022.10.22 · 新平彝族傣族自治县 · 肖丹</div>
           </div>
-          <div class="photo-series-grid">
-            <img src="photo_ziyou.jpeg" alt="《自由》" loading="lazy" />
-          </div>
-          <div class="photo-modal-caption">
-            <div class="photo-modal-poem en">
-              Looking at your smile, I almost forgot to press the shutter.<br>
-              <span style="font-size:0.7rem;font-style:normal;letter-spacing:0.05em;">— Rachel Ji</span>
+          <div class="photo-viewer-layout">
+            <div class="photo-viewer-images">
+              <img src="photo_ziyou.jpeg" alt="《自由》" loading="lazy" />
             </div>
-            <div class="photo-modal-poem zh">
-              看着你的笑，我差点忘记按下快门。<br>
-              <span style="font-size:0.7rem;font-style:normal;letter-spacing:0.05em;">—— 季颖秋</span>
+            <div class="photo-viewer-prose">
+              <div class="photo-modal-poem en">
+                Looking at your smile, I almost forgot to press the shutter.<br>
+                <span style="font-size:0.75rem;font-style:normal;letter-spacing:0.05em;">— Rachel Ji</span>
+              </div>
+              <div class="photo-modal-poem zh">
+                看着你的笑，我差点忘记按下快门。<br>
+                <span style="font-size:0.75rem;font-style:normal;letter-spacing:0.05em;">—— 季颖秋</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="photo-series-block">
-          <div class="photo-series-header photo-modal-caption">
+        <div id="photoViewer-bicycle" class="photo-viewer-panel">
+          <div class="photo-viewer-head">
             <div class="photo-modal-series en">Street · Childhood</div>
             <div class="photo-modal-series zh">纪实 · 童年</div>
             <div class="photo-modal-title en">《单车》Bicycle — I &amp; II</div>
             <div class="photo-modal-title zh">《单车》— 两帧</div>
             <div class="photo-modal-meta">2022.10.23 · 新平彝族傣族自治县</div>
           </div>
-          <div class="photo-series-grid">
-            <img src="photo_danche_1.jpeg" alt="《单车》I" loading="lazy" />
-            <img src="photo_danche_2.jpeg" alt="《单车》II" loading="lazy" />
+          <div class="photo-viewer-layout">
+            <div class="photo-viewer-images photo-viewer-images--grid2">
+              <img src="photo_danche_1.jpeg" alt="《单车》I" loading="lazy" />
+              <img src="photo_danche_2.jpeg" alt="《单车》II" loading="lazy" />
+            </div>
+            <div class="photo-viewer-prose">
+              <p class="en" style="color:var(--muted);margin:0;line-height:1.85;">Same afternoon in Xinping — sun on the stone path, the small velocity of childhood.</p>
+              <p class="zh" style="color:var(--muted);margin:0.75rem 0 0;line-height:1.85;">新平的同一天里——石板路、光，和童年那一小段速度。（原作无长诗，仅作氛围说明）</p>
+            </div>
           </div>
         </div>
 
-        <div class="photo-series-block">
-          <div class="photo-series-header photo-modal-caption">
+        <div id="photoViewer-dream" class="photo-viewer-panel">
+          <div class="photo-viewer-head">
             <div class="photo-modal-series en">Portrait · Dream</div>
             <div class="photo-modal-series zh">人像 · 梦</div>
             <div class="photo-modal-title en">《梦》Dream — I &amp; II</div>
             <div class="photo-modal-title zh">《梦》— 两帧</div>
             <div class="photo-modal-meta">2023.05.02 · 滇池岸边</div>
           </div>
-          <div class="photo-series-grid">
-            <img src="photo_meng_1.jpeg" alt="《梦》I" loading="lazy" />
-            <img src="photo_meng_2.jpeg" alt="《梦》II" loading="lazy" />
-          </div>
-          <div class="photo-modal-caption">
-            <div class="photo-modal-poem zh" style="font-style:normal;font-family:'Noto Serif SC',serif;">
-              坐着谈也好，走道也好，上街买东西也好。<br>
-              爱是甘草，这苦的世界有了它就好上口了。<br>
-              <span style="font-size:0.7rem;font-style:normal;letter-spacing:0.05em;">—— 季颖秋</span>
+          <div class="photo-viewer-layout">
+            <div class="photo-viewer-images photo-viewer-images--grid2">
+              <img src="photo_meng_1.jpeg" alt="《梦》I" loading="lazy" />
+              <img src="photo_meng_2.jpeg" alt="《梦》II" loading="lazy" />
+            </div>
+            <div class="photo-viewer-prose">
+              <div class="photo-modal-poem zh" style="font-style:normal;font-family:'Noto Serif SC',serif;">
+                坐着谈也好，走道也好，上街买东西也好。<br>
+                爱是甘草，这苦的世界有了它就好上口了。<br>
+                <span style="font-size:0.75rem;font-style:normal;letter-spacing:0.05em;">—— 季颖秋</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="photo-series-block">
-          <div class="photo-series-header photo-modal-caption">
+        <div id="photoViewer-life" class="photo-viewer-panel">
+          <div class="photo-viewer-head">
             <div class="photo-modal-series en">Nature · Life</div>
             <div class="photo-modal-series zh">自然 · 生命</div>
             <div class="photo-modal-title en">《生命》Life — I &amp; II</div>
             <div class="photo-modal-title zh">《生命》— 两帧</div>
-            <div class="photo-modal-meta en">Rachel Ji</div>
-            <div class="photo-modal-meta zh">季颖秋 摄影</div>
+            <div class="photo-modal-meta en">Personal series</div>
+            <div class="photo-modal-meta zh">个人摄影系列</div>
           </div>
-          <div class="photo-series-grid">
-            <img src="photo_shengming_1.jpeg" alt="《生命》I" loading="lazy" />
-            <img src="photo_shengming_2.jpeg" alt="《生命》II" loading="lazy" />
-          </div>
-        </div>
-
-        <div class="photo-series-block">
-          <div class="photo-series-header photo-modal-caption">
-            <div class="photo-modal-series en">Field notes · Street</div>
-            <div class="photo-modal-series zh">现场笔记 · 街头</div>
-            <div class="photo-modal-title en">Anthropology wall · Child from behind · Rooftop football</div>
-            <div class="photo-modal-title zh">人类学墙面 · 孩童背影 · 屋顶足球</div>
-            <div class="photo-modal-meta en">Yunnan · color notes from the same archive</div>
-            <div class="photo-modal-meta zh">云南 · 与「最初筛选」同源的色彩笔记</div>
-          </div>
-          <div class="photo-series-grid">
-            <img src="ph_anthropology.jpg" alt="" loading="lazy" />
-            <img src="ph_child_back.jpg" alt="" loading="lazy" />
-            <img src="ph_rooftop_soccer.jpg" alt="" loading="lazy" />
+          <div class="photo-viewer-layout">
+            <div class="photo-viewer-images photo-viewer-images--grid2">
+              <img src="photo_shengming_1.jpeg" alt="《生命》I" loading="lazy" />
+              <img src="photo_shengming_2.jpeg" alt="《生命》II" loading="lazy" />
+            </div>
+            <div class="photo-viewer-prose">
+              <p class="zh" style="margin:0;line-height:1.9;color:var(--text);">个人摄影系列</p>
+              <p class="en" style="margin:0.5rem 0 0;line-height:1.85;color:var(--muted);">Personal photography series</p>
+            </div>
           </div>
         </div>
 
       </div>
     </div>
   </div>
+</div>
+
+<div id="photoZoomOverlay" class="photo-zoom-overlay" aria-hidden="true" role="dialog" aria-label="Image zoom" onclick="closePhotoZoom(event)">
+  <img id="photoZoomImg" src="" alt="">
 </div>
 
 <!-- WRITING MODAL -->
@@ -2461,6 +3054,14 @@
       <button onclick="closeModal('writing')" class="zh">关闭</button>
     </div>
     <div class="modal-body">
+      <div class="writing-placeholder">
+        <div class="modal-novel-type en">Writing · Archive in progress</div>
+        <div class="modal-novel-type zh">写作 · 档案整理中</div>
+        <div class="modal-novel-title en">More words will live here.</div>
+        <div class="modal-novel-title zh">这里会慢慢长出更多文字。</div>
+        <p class="en">The articles and excerpts are temporarily hidden while I reorganize the writing archive. This section will return in a clearer form.</p>
+        <p class="zh">文章与节选暂时隐藏，我正在重新整理写作档案。等它们找到更合适的样子，再回来见你。</p>
+      </div>
       <div class="modal-tabs">
         <button class="modal-tab active en" onclick="switchTab('writing',0,this)">热泪 / Hot Tears</button>
         <button class="modal-tab active zh" onclick="switchTab('writing',0,this)">热泪</button>
@@ -2534,18 +3135,16 @@
 
 <!-- MODAL: Painting -->
 <div class="modal-overlay" id="modalPainting" onclick="closeModalOutside(event)">
-  <div class="modal-box" style="max-width:820px;">
+  <div class="modal-box" style="max-width:min(960px,96vw);">
     <div class="modal-close">
       <button onclick="closeModal('painting')" class="en">Close</button>
       <button onclick="closeModal('painting')" class="zh">关闭</button>
     </div>
     <div class="modal-body">
-      <div class="modal-novel-type en">Sketch · Oil · Watercolor · Art-exam training</div>
-      <div class="modal-novel-type zh">素描 · 油画 · 水彩 · 艺考训练</div>
+      <div class="modal-novel-type en">Sketch · Oil · Watercolor</div>
+      <div class="modal-novel-type zh">素描 · 油画 · 水彩</div>
       <div class="modal-novel-title en">Painting & Drawing</div>
       <div class="modal-novel-title zh">绘画</div>
-      <div class="modal-novel-title-sub en">Art-exam background built a visual instinct that flows through filmmaking, photography, and composition. Selected oil studies below (web-sized JPEGs).</div>
-      <div class="modal-novel-title-sub zh">艺考训练积累的视觉直觉，渗透进了一切——影视、摄影、构图。下方为精选习作（网页用 JPEG）。</div>
       <div class="painting-gallery">
         <figure>
           <img src="paint_hannibal_1.jpg" alt="Oil study after a Hannibal still" loading="lazy" width="2000" height="1313" />
@@ -2572,6 +3171,56 @@
   </div>
 </div>
 
+<!-- MODAL: Voice -->
+<div class="modal-overlay" id="modalVoice" onclick="closeModalOutside(event)">
+  <div class="modal-box voice-box">
+    <div class="modal-close">
+      <button onclick="closeModal('voice')" class="en">Close</button>
+      <button onclick="closeModal('voice')" class="zh">关闭</button>
+    </div>
+    <div class="modal-body">
+      <h3 class="modal-novel-title en">My Voice</h3>
+      <h3 class="modal-novel-title zh">我的声音</h3>
+    </div>
+    <div class="vinyl-carousel" id="voiceCarousel">
+      <div class="vinyl-item" data-title-en="拥抱" data-title-zh="拥抱" data-artist="Rachel · 电子存档" data-note-en="A short listen here; the full song is on NetEase Cloud Music." data-note-zh="这里先听一小段，完整版本在网易云。" data-preview-src="media/voice/preview-hug.mp3" data-preview-url="https://music.163.com/song?id=3391813780" onclick="toggleVoiceRecord(this)">
+        <div class="vinyl-disc">
+          <div class="vinyl-cover"><img src="voice_cover_hug.jpg" alt="" loading="lazy" /></div>
+          <div class="vinyl-hole"></div>
+        </div>
+        <div class="vinyl-label en">拥抱 · Rachel <a class="voice-label-link" href="https://music.163.com/song?id=3391813780" target="_blank" rel="noopener noreferrer" aria-label="Open full song on NetEase Cloud Music" title="Full song" onclick="event.stopPropagation()">↗</a></div>
+        <div class="vinyl-label zh">拥抱 · Rachel <a class="voice-label-link" href="https://music.163.com/song?id=3391813780" target="_blank" rel="noopener noreferrer" aria-label="听拥抱全曲" title="听全曲" onclick="event.stopPropagation()">↗</a></div>
+      </div>
+      <div class="vinyl-item" data-title-en="Blue Light Yokohama" data-title-zh="Blue Light Yokohama ブルー・ライト・ヨコハマ" data-artist="Rachel · 电子存档" data-note-en="A short listen here; the full song is on NetEase Cloud Music." data-note-zh="这里先听一小段，完整版本在网易云。" data-preview-src="media/voice/preview-blue-light.mp3" data-preview-url="https://music.163.com/song?id=3396356501" onclick="toggleVoiceRecord(this)">
+        <div class="vinyl-disc">
+          <div class="vinyl-cover"><img src="voice_cover_blue_light.jpg" alt="" loading="lazy" /></div>
+          <div class="vinyl-hole"></div>
+        </div>
+        <div class="vinyl-label en">Blue Light Yokohama · Rachel <a class="voice-label-link" href="https://music.163.com/song?id=3396356501" target="_blank" rel="noopener noreferrer" aria-label="Open full song on NetEase Cloud Music" title="Full song" onclick="event.stopPropagation()">↗</a></div>
+        <div class="vinyl-label zh">Blue Light Yokohama · Rachel <a class="voice-label-link" href="https://music.163.com/song?id=3396356501" target="_blank" rel="noopener noreferrer" aria-label="听 Blue Light Yokohama 全曲" title="听全曲" onclick="event.stopPropagation()">↗</a></div>
+      </div>
+      <div class="vinyl-item" data-title-en="Kuroneko No Tango" data-title-zh="Kuroneko No Tango 黒ネコのタンゴ" data-artist="Rachel · 电子存档" data-note-en="A short listen here; the full song is on NetEase Cloud Music." data-note-zh="这里先听一小段，完整版本在网易云。" data-preview-src="media/voice/preview-kuroneko.mp3" data-preview-url="https://music.163.com/song?id=3396707939" onclick="toggleVoiceRecord(this)">
+        <div class="vinyl-disc">
+          <div class="vinyl-cover"><img src="voice_cover_kuroneko.jpg" alt="" loading="lazy" /></div>
+          <div class="vinyl-hole"></div>
+        </div>
+        <div class="vinyl-label en">Kuroneko No Tango · Rachel <a class="voice-label-link" href="https://music.163.com/song?id=3396707939" target="_blank" rel="noopener noreferrer" aria-label="Open full song on NetEase Cloud Music" title="Full song" onclick="event.stopPropagation()">↗</a></div>
+        <div class="vinyl-label zh">Kuroneko No Tango · Rachel <a class="voice-label-link" href="https://music.163.com/song?id=3396707939" target="_blank" rel="noopener noreferrer" aria-label="听 Kuroneko No Tango 全曲" title="听全曲" onclick="event.stopPropagation()">↗</a></div>
+      </div>
+      <div class="vinyl-item" data-title-en="魅せられて" data-title-zh="魅せられて" data-artist="Rachel · 电子存档" data-note-en="A short listen here; the full song is on NetEase Cloud Music." data-note-zh="这里先听一小段，完整版本在网易云。" data-preview-src="media/voice/preview-miserarete.mp3" data-preview-url="https://music.163.com/song?id=3407018113" onclick="toggleVoiceRecord(this)">
+        <div class="vinyl-disc">
+          <div class="vinyl-cover"><img src="voice_cover_miserarete.jpg" alt="" loading="lazy" /></div>
+          <div class="vinyl-hole"></div>
+        </div>
+        <div class="vinyl-label en">魅せられて · Rachel <a class="voice-label-link" href="https://music.163.com/song?id=3407018113" target="_blank" rel="noopener noreferrer" aria-label="Open full song on NetEase Cloud Music" title="Full song" onclick="event.stopPropagation()">↗</a></div>
+        <div class="vinyl-label zh">魅せられて · Rachel <a class="voice-label-link" href="https://music.163.com/song?id=3407018113" target="_blank" rel="noopener noreferrer" aria-label="听魅せられて全曲" title="听全曲" onclick="event.stopPropagation()">↗</a></div>
+      </div>
+    </div>
+    <div class="vinyl-hint en">← drag to browse &nbsp;·&nbsp; click to listen &nbsp;·&nbsp; ↗ for the full song →</div>
+    <div class="vinyl-hint zh">← 拖动浏览 &nbsp;·&nbsp; 点击试听 &nbsp;·&nbsp; ↗ 听全曲 →</div>
+  </div>
+</div>
+
 <!-- MODAL: Tastes -->
 <div class="modal-overlay" id="modalTastes" onclick="closeModalOutside(event)">
   <div class="modal-box tastes-box">
@@ -2583,19 +3232,21 @@
       </div>
       <div class="tastes-q en">What would you like to know?</div>
       <div class="tastes-q zh">你想了解哪一面？</div>
+      <p class="tastes-progress en">This archive is still being curated. The current selections stay open while more influences are added.</p>
+      <p class="tastes-progress zh">这份品味档案还在整理完善中。现有内容照常开放，更多影响会慢慢补进来。</p>
       <div class="taste-bubbles">
-        <button class="taste-bubble" style="--bx:10%;--by:12%;--br:-9deg" onclick="showTasteView('music')">
-          <span class="taste-bubble-icon">♪</span>
+        <button class="taste-bubble" style="--bx:9%;--by:10%;--br:-9deg" onclick="showTasteView('music')">
+          <span class="taste-bubble-icon taste-bubble-icon--music">♪</span>
           <span class="taste-bubble-label en">Music</span>
           <span class="taste-bubble-label zh">音乐</span>
         </button>
-        <button class="taste-bubble" style="--bx:52%;--by:40%;--br:7deg" onclick="showTasteView('film')">
-          <span class="taste-bubble-icon">◈</span>
+        <button class="taste-bubble" style="--bx:52%;--by:36%;--br:7deg" onclick="showTasteView('film')">
+          <span class="taste-bubble-icon taste-bubble-icon--film" aria-hidden="true"></span>
           <span class="taste-bubble-label en">Film</span>
           <span class="taste-bubble-label zh">电影</span>
         </button>
-        <button class="taste-bubble" style="--bx:22%;--by:62%;--br:-5deg" onclick="showTasteView('books')">
-          <span class="taste-bubble-icon">✦</span>
+        <button class="taste-bubble" style="--bx:21%;--by:62%;--br:-5deg" onclick="showTasteView('books')">
+          <span class="taste-bubble-icon taste-bubble-icon--book" aria-hidden="true"></span>
           <span class="taste-bubble-label en">Books</span>
           <span class="taste-bubble-label zh">书籍</span>
         </button>
@@ -2613,7 +3264,7 @@
         <button class="tastes-close-btn" onclick="closeModal('tastes')">×</button>
       </div>
       <div class="vinyl-carousel" id="vinylCarousel">
-        <div class="vinyl-item" data-title-en="Goodbye Henry." data-title-zh="Goodbye Henry." data-artist="RAYE" data-note-en="The kind of song that arrives at exactly the wrong moment and stays forever." data-note-zh="那种在最不对的时候出现、然后一直留着的歌。" data-preview-src="media/Goodbye%20Henry.%20%28feat.%20Al%20Green%29.mp3" data-preview-url="https://music.apple.com/us/song/goodbye-henry-feat-al-green/1871085707" onclick="toggleVinyl(this)">
+        <div class="vinyl-item" data-title-en="Goodbye Henry." data-title-zh="Goodbye Henry." data-artist="RAYE" data-note-en="The kind of song that arrives at exactly the wrong moment and stays forever." data-note-zh="那种在最不对的时候出现、然后一直留着的歌。" data-preview-src="media/preview-goodbye-henry.mp3" data-preview-url="https://music.apple.com/us/song/goodbye-henry-feat-al-green/1871085707" onclick="toggleVinyl(this)">
           <div class="vinyl-disc">
             <div class="vinyl-cover"><img src="cover_raye_goodbye.jpg" alt="" loading="lazy" /></div>
             <div class="vinyl-hole"></div>
@@ -2621,7 +3272,7 @@
           <div class="vinyl-label en">Goodbye Henry. · RAYE</div>
           <div class="vinyl-label zh">Goodbye Henry. · RAYE</div>
         </div>
-        <div class="vinyl-item" data-title-en="Genesis" data-title-zh="Genesis" data-artist="RAYE" data-note-en="Something beginning. Something already mourned." data-note-zh="某个开始。某个已经被哀悼过的东西。" data-preview-src="media/RAYE%20-%20Genesis..mp3" data-preview-url="https://music.apple.com/us/song/genesis/1765602814" onclick="toggleVinyl(this)">
+        <div class="vinyl-item" data-title-en="Genesis" data-title-zh="Genesis" data-artist="RAYE" data-note-en="Something beginning. Something already mourned." data-note-zh="某个开始。某个已经被哀悼过的东西。" data-preview-src="media/preview-raye-genesis.mp3" data-preview-url="https://music.apple.com/us/song/genesis/1765602814" onclick="toggleVinyl(this)">
           <div class="vinyl-disc">
             <div class="vinyl-cover"><img src="cover_raye_genesis.png" alt="" loading="lazy" /></div>
             <div class="vinyl-hole"></div>
@@ -2636,16 +3287,14 @@
           <div class="music-meta-label zh">当前选择</div>
           <div class="music-meta-title" id="musicTitle">—</div>
           <div class="music-meta-sub" id="musicArtist">—</div>
-          <div class="music-meta-note en" id="musicNoteEn">Choose a record. Plays a local ~30s clip if present; otherwise opens Apple Music.</div>
-          <div class="music-meta-note zh" id="musicNoteZh">选一张唱片。若有本地约 30 秒试听文件则直接播放；否则打开 Apple Music。</div>
+          <div class="music-meta-note en" id="musicNoteEn">Pick a record and listen to a little of it.</div>
+          <div class="music-meta-note zh" id="musicNoteZh">选一张唱片，听一小段。</div>
         </div>
         <button class="music-preview-btn" id="musicPreviewBtn" type="button" disabled>
-          <span class="en">30s preview</span>
-          <span class="zh">30秒试听</span>
+          <span class="en">Listen</span>
+          <span class="zh">试听</span>
         </button>
         <div class="music-preview-track"><div class="music-preview-fill" id="musicPreviewFill"></div></div>
-        <div class="music-media-hint en">Place clips in <code>media/</code>: <code>raye_goodbye_henry_30s.mp3</code>, <code>raye_genesis_30s.mp3</code></div>
-        <div class="music-media-hint zh">将试听文件放入 <code>media/</code>：<code>raye_goodbye_henry_30s.mp3</code>、<code>raye_genesis_30s.mp3</code></div>
       </div>
       <div class="vinyl-hint en">← drag to browse &nbsp;·&nbsp; click to spin →</div>
       <div class="vinyl-hint zh">← 拖动浏览 &nbsp;·&nbsp; 点击旋转 →</div>
@@ -2663,36 +3312,38 @@
       </div>
       <div class="film-grid" id="filmGrid">
         <div class="film-card">
-          <div class="film-poster"><img src="poster_film_comrades.jpg" alt="" loading="lazy" /></div>
+          <div class="film-poster"><img src="poster_film_comrades.png" alt="" loading="lazy" /></div>
           <div class="film-title en">Comrades: Almost a Love Story</div>
           <div class="film-title zh">甜蜜蜜</div>
           <div class="film-year">1996 · Peter Chan</div>
         </div>
         <div class="film-card">
-          <div class="film-poster"><img src="poster_film_yiyi.jpg" alt="" loading="lazy" /></div>
+          <div class="film-poster"><img src="poster_film_yiyi.png" alt="" loading="lazy" /></div>
           <div class="film-title en">Yi Yi</div>
           <div class="film-title zh">一一</div>
           <div class="film-year">2000 · Edward Yang</div>
         </div>
         <div class="film-card">
-          <div class="film-poster"><img src="poster_film_three.jpg" alt="" loading="lazy" /></div>
+          <div class="film-poster"><img src="poster_film_three.png" alt="" loading="lazy" /></div>
           <div class="film-title en">Three</div>
           <div class="film-title zh">三更</div>
           <div class="film-year">2002 · Chan / Kim / Nonzee</div>
         </div>
         <div class="film-card">
-          <div class="film-poster"><img src="poster_film_spring_fever.jpg" alt="" loading="lazy" /></div>
+          <div class="film-poster"><img src="poster_film_spring_fever.png" alt="" loading="lazy" /></div>
           <div class="film-title en">Spring Fever</div>
           <div class="film-title zh">春风沉醉的夜晚</div>
           <div class="film-year">2009 · Lou Ye</div>
         </div>
         <div class="film-card">
-          <div class="film-poster"><img src="poster_film_prometheus.jpg" alt="" loading="lazy" /></div>
+          <div class="film-poster"><img src="poster_film_prometheus.png" alt="" loading="lazy" /></div>
           <div class="film-title en">Prometheus</div>
           <div class="film-title zh">普罗米修斯</div>
           <div class="film-year">2012 · Ridley Scott</div>
         </div>
       </div>
+      <p style="font-size:0.72rem;color:var(--muted);padding:0 2rem 1.6rem;font-style:italic;font-family:'Cormorant Garamond',serif;line-height:1.8;" class="en">Films I return to. Not for plot, but for the way they made me feel something I couldn't name.</p>
+      <p style="font-size:0.72rem;color:var(--muted);padding:0 2rem 1.6rem;font-style:italic;font-family:'Cormorant Garamond',serif;line-height:1.8;" class="zh">反复去看的电影——不是为了剧情，而是它们触碰到某种我说不清楚的感受。</p>
     </div>
 
     <!-- BOOKS VIEW -->
@@ -2707,36 +3358,25 @@
       </div>
       <div class="books-slider">
         <div class="book-card">
-          <div class="book-spine" style="background:linear-gradient(180deg,#3a1a5a,#1a0f2e);"></div>
+          <div class="book-spine" style="padding:0;overflow:hidden;"><img src="book_deprofundis.png" alt="De Profundis" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" /></div>
           <div class="book-content">
-            <div class="book-title en">Book Title</div>
-            <div class="book-title zh">书名</div>
-            <div class="book-author en">Author</div>
-            <div class="book-author zh">作者</div>
-            <div class="book-excerpt en">An excerpt that means something — a sentence, a paragraph, whatever stayed with me — will go here.</div>
-            <div class="book-excerpt zh">一段对我有意义的原文节选，将在这里显示。</div>
+            <div class="book-title en">De Profundis</div>
+            <div class="book-title zh">自深深处</div>
+            <div class="book-author en">Oscar Wilde</div>
+            <div class="book-author zh">奥斯卡·王尔德</div>
+            <div class="book-excerpt en">"The most terrible thing about it is not that it breaks one's heart — hearts are made to be broken — but that it turns one's heart to stone."</div>
+            <div class="book-excerpt zh">「最可怕的，不是它让人心碎——心，本就是为了破碎而生——而是它让人的心，变成了石头。」</div>
           </div>
         </div>
         <div class="book-card">
-          <div class="book-spine" style="background:linear-gradient(180deg,#1a3a1a,#0f2e0f);"></div>
+          <div class="book-spine" style="padding:0;overflow:hidden;"><img src="book_niezi.png" alt="孽子" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" /></div>
           <div class="book-content">
-            <div class="book-title en">Book Title</div>
-            <div class="book-title zh">书名</div>
-            <div class="book-author en">Author</div>
-            <div class="book-author zh">作者</div>
-            <div class="book-excerpt en">An excerpt that means something — a sentence, a paragraph, whatever stayed with me — will go here.</div>
-            <div class="book-excerpt zh">一段对我有意义的原文节选，将在这里显示。</div>
-          </div>
-        </div>
-        <div class="book-card">
-          <div class="book-spine" style="background:linear-gradient(180deg,#3a2a1a,#2e1a0f);"></div>
-          <div class="book-content">
-            <div class="book-title en">Book Title</div>
-            <div class="book-title zh">书名</div>
-            <div class="book-author en">Author</div>
-            <div class="book-author zh">作者</div>
-            <div class="book-excerpt en">An excerpt that means something — a sentence, a paragraph, whatever stayed with me — will go here.</div>
-            <div class="book-excerpt zh">一段对我有意义的原文节选，将在这里显示。</div>
+            <div class="book-title en">Crystal Boys</div>
+            <div class="book-title zh">孽子</div>
+            <div class="book-author en">Pai Hsien-yung</div>
+            <div class="book-author zh">白先勇</div>
+            <div class="book-excerpt en">"In our kingdom, there is no sunlight, no day — only the long, dark night, and us."</div>
+            <div class="book-excerpt zh">「在我们的王国里，没有阳光，没有白天，只有漫漫长夜，和我们。」</div>
           </div>
         </div>
       </div>
@@ -2756,10 +3396,17 @@
   let lastFocusedElement = null;
   let previewTimer = null;
   let tastesPreviewAudio = null;
+  let voicePreviewTimer = null;
+  let voicePreviewAudio = null;
 
+  // Overlay state hook. Avoid locking the body; body-level scroll locks can move
+  // fixed modal layers out of hit-testing range on some browsers.
   function updateBodyLock() {
-    const anyModalOpen = document.querySelector('.modal-overlay.open');
-    document.body.style.overflow = anyModalOpen ? 'hidden' : '';
+    document.documentElement.classList.toggle(
+      'overlay-open',
+      !!document.querySelector('.modal-overlay.open') ||
+      !!document.getElementById('photoZoomOverlay')?.classList.contains('open')
+    );
   }
 
   function setupAccessibility() {
@@ -2780,9 +3427,10 @@
   // ── Gateway ──
   const gw = document.getElementById('gateway');
   function dismissGateway() {
-    gw.classList.add('leaving');
-    setTimeout(() => gw.classList.add('gone'), 750);
+    gw.classList.add('leaving', 'gone');
+    updateBodyLock();
     sessionStorage.setItem('rj-visited', '1');
+    setTimeout(() => gw.classList.remove('leaving'), 700);
   }
   function chooseGateway(section) {
     setView(section);
@@ -2800,6 +3448,17 @@
     document.documentElement.setAttribute('data-view', v);
   }
   // ── Work accordion ──
+  function toggleDomain(el) {
+    const domain = el.closest('.work-domain');
+    const wasOpen = domain.classList.contains('open');
+    document.querySelectorAll('.work-domain.open').forEach(d => {
+      d.classList.remove('open');
+    });
+    if (!wasOpen) {
+      domain.classList.add('open');
+    }
+  }
+
   function toggleWork(el) {
     const card = el.closest('.work-card');
     const wasOpen = card.classList.contains('open');
@@ -2826,6 +3485,7 @@
   }
   // Only show once per session
   if (sessionStorage.getItem('rj-visited')) gw.classList.add('gone');
+  updateBodyLock();
 
   // ── Theme toggle ──
   const themeBtn = document.getElementById('themeBtn');
@@ -2869,18 +3529,91 @@
   setLang(lang);
   btn.addEventListener('click', () => setLang(lang === 'en' ? 'zh' : 'en'));
 
+  // Photo gallery: series cards → viewer → lightbox zoom
+  function resetPhotoGalleryView() {
+    closePhotoZoom();
+    const home = document.getElementById('photoSeriesHome');
+    const viewer = document.getElementById('photoSeriesViewer');
+    if (home) home.classList.remove('photo-series-home--hidden');
+    if (viewer) {
+      viewer.classList.remove('photo-series-viewer--open');
+      viewer.setAttribute('aria-hidden', 'true');
+    }
+    document.getElementById('modalPhoto')?.classList.remove('photo-series-active');
+    document.querySelectorAll('.photo-viewer-panel').forEach(p => p.classList.remove('active'));
+  }
+  function openPhotoSeries(slug) {
+    const home = document.getElementById('photoSeriesHome');
+    const viewer = document.getElementById('photoSeriesViewer');
+    if (!home || !viewer) return;
+    home.classList.add('photo-series-home--hidden');
+    viewer.classList.add('photo-series-viewer--open');
+    viewer.setAttribute('aria-hidden', 'false');
+    document.getElementById('modalPhoto')?.classList.add('photo-series-active');
+    document.querySelectorAll('.photo-viewer-panel').forEach(p => {
+      p.classList.toggle('active', p.id === 'photoViewer-' + slug);
+    });
+  }
+  function closePhotoSeries() {
+    closePhotoZoom();
+    const home = document.getElementById('photoSeriesHome');
+    const viewer = document.getElementById('photoSeriesViewer');
+    if (home) home.classList.remove('photo-series-home--hidden');
+    if (viewer) {
+      viewer.classList.remove('photo-series-viewer--open');
+      viewer.setAttribute('aria-hidden', 'true');
+    }
+    document.getElementById('modalPhoto')?.classList.remove('photo-series-active');
+    document.querySelectorAll('.photo-viewer-panel').forEach(p => p.classList.remove('active'));
+  }
+  function openPhotoZoom(src) {
+    if (!src) return;
+    const im = document.getElementById('photoZoomImg');
+    const ov = document.getElementById('photoZoomOverlay');
+    if (!im || !ov) return;
+    im.src = src;
+    im.alt = '';
+    ov.classList.add('open');
+    ov.setAttribute('aria-hidden', 'false');
+    updateBodyLock();
+  }
+  function closePhotoZoom() {
+    const ov = document.getElementById('photoZoomOverlay');
+    const im = document.getElementById('photoZoomImg');
+    if (ov) {
+      ov.classList.remove('open');
+      ov.setAttribute('aria-hidden', 'true');
+    }
+    if (im) {
+      im.src = '';
+      im.alt = '';
+    }
+    updateBodyLock();
+  }
+
+  const photoSeriesViewerEl = document.getElementById('photoSeriesViewer');
+  if (photoSeriesViewerEl) {
+    photoSeriesViewerEl.addEventListener('click', (e) => {
+      const img = e.target.closest('.photo-viewer-images img');
+      if (img && img.src) openPhotoZoom(img.src);
+    });
+  }
+
   // Modal
   function openModal(id) {
     const key = id.charAt(0).toUpperCase() + id.slice(1);
     const modal = document.getElementById('modal' + key);
     lastFocusedElement = document.activeElement;
     modal.classList.add('open');
+    if (id === 'photo') resetPhotoGalleryView();
     const targetBtn = modal.querySelector('.modal-close button, .tastes-close-btn, .taste-back');
     if (targetBtn) targetBtn.focus();
     updateBodyLock();
   }
   function closeModal(id) {
     if (id === 'tastes') stopTastesMusic();
+    if (id === 'voice') stopVoiceMusic();
+    if (id === 'photo') resetPhotoGalleryView();
     const key = id.charAt(0).toUpperCase() + id.slice(1);
     const modal = document.getElementById('modal' + key);
     modal.classList.remove('open');
@@ -2891,7 +3624,9 @@
   }
   function closeModalOutside(e) {
     if (e.target.classList.contains('modal-overlay')) {
+      if (e.target.id === 'modalPhoto') resetPhotoGalleryView();
       if (e.target.id === 'modalTastes') stopTastesMusic();
+      if (e.target.id === 'modalVoice') stopVoiceMusic();
       e.target.classList.remove('open');
       updateBodyLock();
       if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
@@ -2911,11 +3646,26 @@
   }
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
+      const zoom = document.getElementById('photoZoomOverlay');
+      if (zoom && zoom.classList.contains('open')) {
+        e.preventDefault();
+        closePhotoZoom();
+        return;
+      }
+      const modalPhoto = document.getElementById('modalPhoto');
+      const viewer = document.getElementById('photoSeriesViewer');
+      if (modalPhoto && modalPhoto.classList.contains('open') && viewer && viewer.classList.contains('photo-series-viewer--open')) {
+        e.preventDefault();
+        closePhotoSeries();
+        return;
+      }
       document.querySelectorAll('.modal-overlay.open').forEach(m => {
         if (m.id === 'modalTastes') stopTastesMusic();
+        if (m.id === 'modalVoice') stopVoiceMusic();
         m.classList.remove('open');
       });
       updateBodyLock();
+      resetPhotoGalleryView();
     }
     if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('work-card-header')) {
       e.preventDefault();
@@ -2989,6 +3739,28 @@
     resetPreviewFill();
   }
 
+  function resetVoicePreviewFill() {
+    if (voicePreviewTimer) {
+      clearInterval(voicePreviewTimer);
+      voicePreviewTimer = null;
+    }
+    const fill = document.getElementById('voicePreviewFill');
+    if (fill) fill.style.width = '0%';
+  }
+
+  function stopVoiceMusic() {
+    if (voicePreviewAudio) {
+      try {
+        voicePreviewAudio.pause();
+        voicePreviewAudio.removeAttribute('src');
+        voicePreviewAudio.load();
+      } catch (err) {}
+      voicePreviewAudio = null;
+    }
+    document.querySelectorAll('#voiceCarousel .vinyl-item.playing').forEach(v => v.classList.remove('playing'));
+    resetVoicePreviewFill();
+  }
+
   function showTasteView(name) {
     document.getElementById('tastesScatter').classList.add('hidden');
     document.querySelectorAll('.taste-view').forEach(v => v.classList.remove('active'));
@@ -3011,6 +3783,57 @@
     } else {
       syncMusicDetail(null);
     }
+  }
+
+  const voicePreviewFill = document.getElementById('voicePreviewFill');
+  function toggleVoiceRecord(el) {
+    const wasPlaying = el.classList.contains('playing') && isVoiceAudioPlaying();
+    if (wasPlaying) {
+      stopVoiceMusic();
+      return;
+    }
+    document.querySelectorAll('#voiceCarousel .vinyl-item.playing').forEach(v => v.classList.remove('playing'));
+    playVoicePreview((el.dataset.previewSrc || '').trim());
+    el.classList.add('playing');
+  }
+
+  function isVoiceAudioPlaying() {
+    return voicePreviewAudio && !voicePreviewAudio.paused;
+  }
+
+  function playVoicePreview(src) {
+    if (!src) return;
+    stopVoiceMusic();
+    stopTastesMusic();
+    voicePreviewAudio = new Audio();
+    voicePreviewAudio.preload = 'auto';
+    voicePreviewAudio.src = src;
+    const previewCap = 30;
+    const onTime = () => {
+      if (!voicePreviewAudio) return;
+      if (voicePreviewAudio.currentTime >= previewCap) {
+        stopVoiceMusic();
+        return;
+      }
+      if (!voicePreviewFill) return;
+      const d = voicePreviewAudio.duration;
+      if (d && isFinite(d)) {
+        const denom = Math.min(d, previewCap);
+        voicePreviewFill.style.width = (Math.min(voicePreviewAudio.currentTime, previewCap) / denom) * 100 + '%';
+      }
+    };
+    voicePreviewAudio.addEventListener('timeupdate', onTime);
+    voicePreviewAudio.addEventListener('ended', () => { stopVoiceMusic(); });
+    voicePreviewAudio.addEventListener('error', () => {
+      const zh = html.getAttribute('data-lang') === 'zh';
+      alert(zh ? '未找到或无法播放该试听文件。' : 'Could not load this preview file.');
+      stopVoiceMusic();
+    });
+    voicePreviewAudio.play().catch(() => {
+      const zh = html.getAttribute('data-lang') === 'zh';
+      alert(zh ? '无法开始播放。请先点击页面后再试。' : 'Playback could not start. Click the page and try again.');
+      stopVoiceMusic();
+    });
   }
 
   const musicTitle = document.getElementById('musicTitle');
