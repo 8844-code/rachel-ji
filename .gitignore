@@ -1,5 +1,6 @@
 # Preview / dev files — not deployed to GitHub Pages
 logo-preview.html
+.DS_Store
 
 # Huge lossless exports (use compressed paint_*.jpg for the site; masters stay local / elsewhere)
 paint_hannibal_*.png
