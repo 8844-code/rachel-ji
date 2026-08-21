@@ -3622,7 +3622,6 @@
 
   // ── Theme toggle ──
   const themeBtn = document.getElementById('themeBtn');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
   function applyTheme(theme) {
     html.setAttribute('data-theme', theme);
@@ -3630,25 +3629,13 @@
     themeBtn.setAttribute('aria-label', theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode');
   }
 
-  // Load: saved preference → system preference
-  const savedTheme = localStorage.getItem('rj-theme');
-  if (savedTheme) {
-    applyTheme(savedTheme);
-  } else {
-    applyTheme(prefersDark.matches ? 'dark' : 'light');
-  }
+  // Always open in dark mode; light mode is available only through the toggle.
+  localStorage.removeItem('rj-theme');
+  applyTheme('dark');
 
   themeBtn.addEventListener('click', () => {
     const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
     applyTheme(next);
-    localStorage.setItem('rj-theme', next);
-  });
-
-  // Auto-update if system preference changes (and user hasn't manually set a preference)
-  prefersDark.addEventListener('change', e => {
-    if (!localStorage.getItem('rj-theme')) {
-      applyTheme(e.matches ? 'dark' : 'light');
-    }
   });
 
   const btn = document.getElementById('langBtn');
