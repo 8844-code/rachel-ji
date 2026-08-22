@@ -78,6 +78,16 @@
       font-family: 'Space Grotesk', 'Noto Serif SC', serif;
       line-height: 1.6;
     }
+    html.overlay-open,
+    html.overlay-open body {
+      overflow: hidden;
+      overscroll-behavior: none;
+    }
+    html.overlay-open body {
+      position: fixed;
+      inset-inline: 0;
+      width: 100%;
+    }
     /* overflow-x clip lives on a wrapper, NOT body — avoids iOS Safari scroll bug */
     body > *:not(#gateway):not(.modal-overlay):not(#photoZoomOverlay) {
       max-width: 100%;
@@ -778,6 +788,7 @@
       background: var(--bg);
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
       transition: opacity 0.7s ease, visibility 0.7s ease;
     }
     #gateway.leaving { opacity: 0; pointer-events: none; }
@@ -3531,15 +3542,32 @@
   let tastesPreviewAudio = null;
   let voicePreviewTimer = null;
   let voicePreviewAudio = null;
+  let lockedScrollY = 0;
 
-  // Overlay state hook. Avoid locking the body; body-level scroll locks can move
-  // fixed modal layers out of hit-testing range on some browsers.
+  // Keep the page behind gateways and modal layers fixed in place on touch devices.
   function updateBodyLock() {
-    document.documentElement.classList.toggle(
-      'overlay-open',
+    const shouldLock =
+      !document.getElementById('gateway')?.classList.contains('gone') ||
       !!document.querySelector('.modal-overlay.open') ||
-      !!document.getElementById('photoZoomOverlay')?.classList.contains('open')
-    );
+      !!document.getElementById('photoZoomOverlay')?.classList.contains('open');
+    const isLocked = document.documentElement.classList.contains('overlay-open');
+
+    if (shouldLock === isLocked) return;
+
+    if (shouldLock) {
+      lockedScrollY = window.scrollY || document.documentElement.scrollTop || 0;
+      document.body.style.top = `-${lockedScrollY}px`;
+      document.documentElement.classList.add('overlay-open');
+    } else {
+      document.documentElement.classList.remove('overlay-open');
+      document.body.style.top = '';
+      const previousScrollBehavior = document.documentElement.style.scrollBehavior;
+      document.documentElement.style.scrollBehavior = 'auto';
+      window.scrollTo(0, lockedScrollY);
+      requestAnimationFrame(() => {
+        document.documentElement.style.scrollBehavior = previousScrollBehavior;
+      });
+    }
   }
 
   function setupAccessibility() {
@@ -3614,7 +3642,8 @@
   function showGateway() {
     sessionStorage.removeItem('rj-visited');
     gw.classList.remove('gone', 'leaving');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    gw.scrollTo({ top: 0, behavior: 'auto' });
+    updateBodyLock();
   }
   // Only show once per session
   if (sessionStorage.getItem('rj-visited')) gw.classList.add('gone');
