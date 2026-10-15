@@ -1,15 +1,37 @@
 <!DOCTYPE html>
-<html lang="en" data-lang="en" data-theme="dark">
+<html lang="zh-CN" data-lang="zh" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    // Resolve preferences before styling, so the first paint matches the device.
+    (() => {
+      let themeChoice = null;
+      let languageChoice = null;
+      try {
+        themeChoice = localStorage.getItem('rj-theme');
+        // The old rj-lang key also stored automatic English defaults.
+        // Only an explicit language choice is saved under the new key.
+        languageChoice = localStorage.getItem('rj-language-choice');
+      } catch (_) {}
+      const systemDark = typeof window.matchMedia === 'function' &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = ['light', 'dark'].includes(themeChoice) ? themeChoice : (systemDark ? 'dark' : 'light');
+      const language = ['zh', 'en'].includes(languageChoice) ? languageChoice : 'zh';
+      const root = document.documentElement;
+      root.setAttribute('data-theme', theme);
+      root.style.colorScheme = theme;
+      root.setAttribute('data-lang', language);
+      root.setAttribute('lang', language === 'zh' ? 'zh-CN' : 'en');
+    })();
+  </script>
   <title>Rachel Ji — 季颖秋</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23F7F7F4'/%3E%3Ctext x='16' y='13' font-family='Georgia%2Cserif' font-style='italic' font-size='12' fill='%23666660' text-anchor='middle'%3ER%3C/text%3E%3Ctext x='16' y='30' font-family='Georgia%2Cserif' font-style='italic' font-size='24' font-weight='700' fill='%23111111' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      color-scheme: dark light;
+      color-scheme: dark;
 
       /* ── 深色主题（默认）── */
       --bg:        #111111;
@@ -44,6 +66,7 @@
 
     /* ── 浅色主题 ── */
     [data-theme="light"] {
+      color-scheme: light;
       --bg:        #F7F7F4;
       --surface:   #ECECE7;
       --surface2:  #E2E2DC;
@@ -2226,8 +2249,8 @@
       <li><a href="#work" class="en">Work</a><a href="#work" class="zh">工作</a></li>
       <li><a href="#contact" class="en">Contact</a><a href="#contact" class="zh">联系</a></li>
     </ul>
-    <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme">☾</button>
-    <button class="lang-toggle" id="langBtn">中文</button>
+    <button class="theme-toggle" id="themeBtn" aria-label="切换为深色模式">☀</button>
+    <button class="lang-toggle" id="langBtn" aria-label="Switch to English">EN</button>
   </div>
 </nav>
 
@@ -3651,32 +3674,51 @@
 
   // ── Theme toggle ──
   const themeBtn = document.getElementById('themeBtn');
+  const prefersDark = typeof window.matchMedia === 'function'
+    ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  let themeChoice = null;
+  try {
+    const savedTheme = localStorage.getItem('rj-theme');
+    if (savedTheme === 'light' || savedTheme === 'dark') themeChoice = savedTheme;
+  } catch (_) {}
 
   function applyTheme(theme) {
     html.setAttribute('data-theme', theme);
+    html.style.colorScheme = theme;
     themeBtn.textContent = theme === 'light' ? '☀' : '☾';
-    themeBtn.setAttribute('aria-label', theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode');
+    const chinese = html.getAttribute('data-lang') === 'zh';
+    themeBtn.setAttribute('aria-label', chinese
+      ? (theme === 'light' ? '切换为深色模式' : '切换为浅色模式')
+      : (theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'));
   }
 
-  // Always open in dark mode; light mode is available only through the toggle.
-  localStorage.removeItem('rj-theme');
-  applyTheme('dark');
+  applyTheme(themeChoice || (prefersDark?.matches ? 'dark' : 'light'));
 
   themeBtn.addEventListener('click', () => {
     const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    themeChoice = next;
     applyTheme(next);
+    try { localStorage.setItem('rj-theme', next); } catch (_) {}
+  });
+  prefersDark?.addEventListener('change', event => {
+    if (!themeChoice) applyTheme(event.matches ? 'dark' : 'light');
   });
 
   const btn = document.getElementById('langBtn');
-  let lang = localStorage.getItem('rj-lang') || 'en';
+  let lang = html.getAttribute('data-lang');
   function setLang(l) {
     lang = l;
     html.setAttribute('data-lang', l);
+    html.setAttribute('lang', l === 'zh' ? 'zh-CN' : 'en');
     btn.textContent = l === 'en' ? '中文' : 'EN';
-    localStorage.setItem('rj-lang', l);
+    btn.setAttribute('aria-label', l === 'en' ? '切换为中文' : 'Switch to English');
+    applyTheme(html.getAttribute('data-theme'));
   }
   setLang(lang);
-  btn.addEventListener('click', () => setLang(lang === 'en' ? 'zh' : 'en'));
+  btn.addEventListener('click', () => {
+    setLang(lang === 'en' ? 'zh' : 'en');
+    try { localStorage.setItem('rj-language-choice', lang); } catch (_) {}
+  });
 
   // Photo gallery: series cards → viewer → lightbox zoom
   function resetPhotoGalleryView() {
